@@ -68,6 +68,197 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-清除浮动与BFC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/12/清除浮动与BFC/" class="article-date">
+  <time datetime="2016-08-12T15:46:48.000Z" itemprop="datePublished">2016-08-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/清除浮动与BFC/">清除浮动与BFC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上次提到了BFC相关知识，而这次我们来探讨下浮动。在说浮动之前，首先要介绍css可视化模型里面一个非常重要的概念–定位方案。定位方案是控制元素的布局，在css2.1中，有三种定位方案—普通流，浮动和绝对定位。</p>
+<h4 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h4><p>普通流中，元素按照其在html中的先后顺序至上而下布局，在这个过程中，行内元素水平排列，直至当前行占满，而块级元素会独占一行。除非另外指定，基本所有元素都是普通流定位，位置由该元素在文档中的文章决定<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/12/清除浮动与BFC/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/12/清除浮动与BFC/" data-id="cirrwsq620007u8j3dht27ky5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-Css/">Html,Css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/12/BFC/" class="article-date">
+  <time datetime="2016-08-12T15:25:56.000Z" itemprop="datePublished">2016-08-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/BFC/">BFC(Block Formatting Context)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="What-is-BFC"><a href="#What-is-BFC" class="headerlink" title="What is BFC?"></a>What is BFC?</h3><p>BFC是W3C CSS 2.1<br>规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。当涉及到可视化布局的时候，<strong>Block Formatting Context提供了一个环境，HTML元素在这个环境中按照一定规则进行布局</strong>。一个环境中的元素不会影响到其它环境中的布局。<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/12/BFC/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/12/BFC/" data-id="cirrwsq5n0000u8j3okp7olpj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-Css/">Html,Css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-font-skill" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/12/font-skill/" class="article-date">
+  <time datetime="2016-08-12T15:19:32.000Z" itemprop="datePublished">2016-08-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具相关/">工具相关</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/font-skill/">修改控制台字体</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>修改控制台字体为sublime默认字体Consolas。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Windows Registry Editor Version 5.00</div><div class="line">[HKEY_CURRENT_USER\Console\%SystemRoot%_system32_cmd.exe]</div><div class="line">&quot;WindowSize&quot;=dword:00170058</div><div class="line">&quot;ScreenBufferSize&quot;=dword:01900119</div><div class="line">&quot;WindowPosition&quot;=dword:0079004b</div><div class="line">&quot;ColorTable01&quot;=dword:00235600</div><div class="line">&quot;FontSize&quot;=dword:00150000</div><div class="line">&quot;FontWeight&quot;=dword:00000190</div><div class="line">&quot;FaceName&quot;=&quot;Consolas&quot;</div><div class="line">&quot;FontFamily&quot;=dword:00000036</div></pre></td></tr></table></figure><br>右键复制，另存为Consolas.reg,双击运行就ok！</p>
+<p>顺便粘几个sublime text3注册码，毕竟每次新装都要去搜一遍，懒！<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/12/font-skill/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/12/font-skill/" data-id="cirrwsq600004u8j3jho2k5tk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-haslayout" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/12/haslayout/" class="article-date">
+  <time datetime="2016-08-12T14:45:56.000Z" itemprop="datePublished">2016-08-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/haslayout/">haslayout相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：笔记内容大都参考而来，虽然早已找不到作者和翻译者，但还是衷心说声谢谢！ </p>
+<h3 id="什么是haslayout"><a href="#什么是haslayout" class="headerlink" title="什么是haslayout"></a>什么是haslayout</h3><p>haslayout是Windows Internet Explorer的一个私有概念，它决定了元素如何对其内容定位和尺寸计算，以及如何与其他元素关系和相互作用。简单来讲，当一个元素“拥有布局”时，它会负责本身以及子元素的尺寸和定位，反之则由最近拥有布局的祖先元素控制。<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/12/haslayout/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/12/haslayout/" data-id="cirrwsq610005u8j3emr9lz9p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-Css/">Html,Css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Javascript面向对象编程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/11/Javascript面向对象编程/" class="article-date">
@@ -94,21 +285,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>摘要：笔记。对，笔记。划重点啊喂！<br>javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。<br>So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？</p>
-<p>一、石器时代（最开始的我）<br>举个栗子，虽然后面的也会一直用这个例子。拿我家狗蛋（一只欠到不行的蓝猫）来讲，身为对象他有两个属性，名字 and 颜色。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var Golden = &#123;</div><div class="line">    name: &apos;&apos;,</div><div class="line">    color: &apos;&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后简单的封装完成，下一步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var cat1 = &#123;&#125;; //空对象</div><div class="line">    cat1.name = &apos;狗蛋&apos;;</div><div class="line">    cat1.color = &apos;蓝色&apos;;</div></pre></td></tr></table></figure><br>Well done!但是问题来了，如果我再多一只猫，我岂不是还要在复制一遍，程序员出名的懒。<br>再说了，这两只猫看上去和我的狗蛋原型没啥联系啊，所以历史的车轮需要变迁。。</p>
-<p>二、青铜器时代<br>说到程序员的懒，不是真正的懒，只是不想花费时间去做无用功。<br>有句话说的好，世界是懒人的，但终归到底还是勤快动脑筋的懒人的。<br>所以接下来要做的就是合并代码，来解决代码重复问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Golden(name,color)&#123;</div><div class="line">    return&#123;</div><div class="line">        name:name,</div><div class="line">        color:color</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//实例化</div><div class="line">var cat1 = Golden(&quot;狗蛋&quot;，&quot;蓝色&quot;);</div><div class="line">var cat2 = Golden(&quot;盖茨&quot;,&quot;蓝色重点色&quot;);</div></pre></td></tr></table></figure><br>那么问题来了，现在他俩都是一个妈生的（我自己都好奇，这猫到底啥品种），怎么才能看出他俩是兄弟关系呢？</p>
-<p>三、铁器时代<br>为了解决原型对象生成实例的问题，javascript提供了一个构造函数模式。<br>所谓的构造函数呢，就是一个内部使用this变量的普通函数。对构造函数使用 new 运算符就能生成实例，并且 this 变量会一直绑定在实例对象上。<br>so，coding！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Golden(name,color)&#123;</div><div class="line">　　this.name=name;</div><div class="line">　　this.color=color;</div><div class="line">&#125;</div><div class="line">//开始实例化</div><div class="line">var cat1 = Golden(&quot;狗蛋&quot;，&quot;蓝色&quot;);</div><div class="line">var cat2 = Golden(&quot;盖茨&quot;,&quot;蓝色重点色&quot;);</div></pre></td></tr></table></figure><br>到这，实例化完成，每个猫崽子都有着一个constructor属性，指向他们的妈咪，也就是Golden构造函数。<br>当然js还提供了一个亲子鉴定函数instanceof，来验证原型对象和实例化对象间的关系，我自己姑且叫它“从哪来”。<br>用法like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(cat1 instanceof Golden) //true</div></pre></td></tr></table></figure>
-<p>顺便推荐首歌听。。</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/siQJhIp-UTU" frameborder="0" allowfullscreen></iframe></div>
-<p>————————————————————  我是今天就写到这的分割线  ————————————————————</p>
-
+        <p>摘要：笔记。对，笔记。划重点啊喂！<br>javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。<br>So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/11/Javascript面向对象编程/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/" data-id="cirqab2x3000098j3sqhaajl9" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/" data-id="cirrwsq5s0001u8j3jj17zoaj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
@@ -129,7 +315,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具相关/">工具相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
     </div>
   </div>
 
@@ -139,7 +325,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html-Css/">Html,Css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
     </div>
   </div>
 
@@ -149,7 +335,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a>
+      <a href="/tags/Html-Css/" style="font-size: 20px;">Html,Css</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a>
     </div>
   </div>
 
@@ -169,6 +355,22 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/12/清除浮动与BFC/">清除浮动与BFC</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/BFC/">BFC(Block Formatting Context)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/font-skill/">修改控制台字体</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/haslayout/">haslayout相关</a>
+          </li>
         
           <li>
             <a href="/2016/08/11/Javascript面向对象编程/">Javascript 面向对象编程</a>

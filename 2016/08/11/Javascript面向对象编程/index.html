@@ -5,19 +5,16 @@
   
   <title>Javascript 面向对象编程 | Somnus13</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：笔记。对，笔记。划重点啊喂！javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？
-一、石器时代（最开始的我）举个栗子，虽然后面">
+  <meta name="description" content="摘要：笔记。对，笔记。划重点啊喂！javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript 面向对象编程">
 <meta property="og:url" content="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/index.html">
 <meta property="og:site_name" content="Somnus13">
-<meta property="og:description" content="摘要：笔记。对，笔记。划重点啊喂！javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？
-一、石器时代（最开始的我）举个栗子，虽然后面">
-<meta property="og:updated_time" content="2016-08-11T13:05:08.347Z">
+<meta property="og:description" content="摘要：笔记。对，笔记。划重点啊喂！javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？">
+<meta property="og:updated_time" content="2016-08-12T14:58:32.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 面向对象编程">
-<meta name="twitter:description" content="摘要：笔记。对，笔记。划重点啊喂！javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？
-一、石器时代（最开始的我）举个栗子，虽然后面">
+<meta name="twitter:description" content="摘要：笔记。对，笔记。划重点啊喂！javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？">
   
     <link rel="alternate" href="/atom.xml" title="Somnus13" type="application/atom+xml">
   
@@ -96,8 +93,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>摘要：笔记。对，笔记。划重点啊喂！<br>javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。<br>So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？</p>
-<p>一、石器时代（最开始的我）<br>举个栗子，虽然后面的也会一直用这个例子。拿我家狗蛋（一只欠到不行的蓝猫）来讲，身为对象他有两个属性，名字 and 颜色。</p>
+        <p>摘要：笔记。对，笔记。划重点啊喂！<br>javascript是一种基于对象的语言，俗话说一切皆对象，但是却又不是真正的面向对象编程语言，你要问我面向对象（OOP）是啥，我不会告诉你封装、继承和多态什么的我都忘得一干二净了。Javascript区别于它的地方在于语法中不存在类(class)的概念。<br>So,我们该如何把属性和方法封装成一个对象，并能去实例化使用呢？<br><a id="more"></a><br>一、石器时代（最开始的我）<br>举个栗子，虽然后面的也会一直用这个例子。拿我家狗蛋（一只欠到不行的蓝猫）来讲，身为对象他有两个属性，名字 and 颜色。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var Golden = &#123;</div><div class="line">    name: &apos;&apos;,</div><div class="line">    color: &apos;&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>然后简单的封装完成，下一步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var cat1 = &#123;&#125;; //空对象</div><div class="line">    cat1.name = &apos;狗蛋&apos;;</div><div class="line">    cat1.color = &apos;蓝色&apos;;</div></pre></td></tr></table></figure><br>Well done!但是问题来了，如果我再多一只猫，我岂不是还要在复制一遍，程序员出名的懒。<br>再说了，这两只猫看上去和我的狗蛋原型没啥联系啊，所以历史的车轮需要变迁。。</p>
 <p>二、青铜器时代<br>说到程序员的懒，不是真正的懒，只是不想花费时间去做无用功。<br>有句话说的好，世界是懒人的，但终归到底还是勤快动脑筋的懒人的。<br>所以接下来要做的就是合并代码，来解决代码重复问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Golden(name,color)&#123;</div><div class="line">    return&#123;</div><div class="line">        name:name,</div><div class="line">        color:color</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//实例化</div><div class="line">var cat1 = Golden(&quot;狗蛋&quot;，&quot;蓝色&quot;);</div><div class="line">var cat2 = Golden(&quot;盖茨&quot;,&quot;蓝色重点色&quot;);</div></pre></td></tr></table></figure><br>那么问题来了，现在他俩都是一个妈生的（我自己都好奇，这猫到底啥品种），怎么才能看出他俩是兄弟关系呢？</p>
@@ -110,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/" data-id="cirqab2x3000098j3sqhaajl9" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/" data-id="cirrwsq5s0001u8j3jj17zoaj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
@@ -119,6 +115,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/08/12/haslayout/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          haslayout相关
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -130,7 +140,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具相关/">工具相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
     </div>
   </div>
 
@@ -140,7 +150,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html-Css/">Html,Css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
     </div>
   </div>
 
@@ -150,7 +160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a>
+      <a href="/tags/Html-Css/" style="font-size: 20px;">Html,Css</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a>
     </div>
   </div>
 
@@ -170,6 +180,22 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/12/清除浮动与BFC/">清除浮动与BFC</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/BFC/">BFC(Block Formatting Context)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/font-skill/">修改控制台字体</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/haslayout/">haslayout相关</a>
+          </li>
         
           <li>
             <a href="/2016/08/11/Javascript面向对象编程/">Javascript 面向对象编程</a>
