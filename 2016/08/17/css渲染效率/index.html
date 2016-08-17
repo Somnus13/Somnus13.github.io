@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css渲染效率 | Somnus13</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上节提到了Repaint和Reflow，以及如何优化的问题。我们知道浏览器工作流程第三步就是解析css然后计算元素位置并放置，那么如何从这点上来提高效率呢？这就要提到css的渲染效率了，本节我们来探讨下。  
+浏览器如何识别你的选择器我在查阅相关资料的时候，看到一篇文章，是Chris Coyier的《Efficiently Rendering CSS》 。文中提到浏览器读取你的选择器，遵循的原则就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css渲染效率">
+<meta property="og:url" content="http://Somnus13.github.io/2016/08/17/css渲染效率/index.html">
+<meta property="og:site_name" content="Somnus13">
+<meta property="og:description" content="上节提到了Repaint和Reflow，以及如何优化的问题。我们知道浏览器工作流程第三步就是解析css然后计算元素位置并放置，那么如何从这点上来提高效率呢？这就要提到css的渲染效率了，本节我们来探讨下。  
+浏览器如何识别你的选择器我在查阅相关资料的时候，看到一篇文章，是Chris Coyier的《Efficiently Rendering CSS》 。文中提到浏览器读取你的选择器，遵循的原则就">
+<meta property="og:updated_time" content="2016-08-17T11:40:41.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css渲染效率">
+<meta name="twitter:description" content="上节提到了Repaint和Reflow，以及如何优化的问题。我们知道浏览器工作流程第三步就是解析css然后计算元素位置并放置，那么如何从这点上来提高效率呢？这就要提到css的渲染效率了，本节我们来探讨下。  
+浏览器如何识别你的选择器我在查阅相关资料的时候，看到一篇文章，是Chris Coyier的《Efficiently Rendering CSS》 。文中提到浏览器读取你的选择器，遵循的原则就">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus13" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus13</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">撸猫的时间用来撸代码</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Somnus13.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css渲染效率" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/17/css渲染效率/" class="article-date">
+  <time datetime="2016-08-17T11:36:20.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css渲染效率
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上节提到了Repaint和Reflow，以及如何优化的问题。我们知道浏览器工作流程第三步就是解析css然后计算元素位置并放置，那么如何从这点上来提高效率呢？这就要提到css的渲染效率了，本节我们来探讨下。  </p>
+<h3 id="浏览器如何识别你的选择器"><a href="#浏览器如何识别你的选择器" class="headerlink" title="浏览器如何识别你的选择器"></a>浏览器如何识别你的选择器</h3><p>我在查阅相关资料的时候，看到一篇文章，是Chris Coyier的<a href="https://css-tricks.com/efficiently-rendering-css/" target="_blank" rel="external">《Efficiently Rendering CSS》</a> 。文中提到<code>浏览器读取你的选择器，遵循的原则就是从选择器的右边到左边读取。换句话说，浏览器读取选择器的顺序是由右到左进行</code>。举个栗子：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">div.header &gt; ul li p</div></pre></td></tr></table></figure></p>
+<p>上述选择器，浏览器会尝试在你的html标签中寻找<strong>p</strong>元素,接着匹配<strong>li</strong>和<strong>ul</strong>，最后再去匹配<strong>div.header</strong>,所谓的<strong>由右到左</strong>就是这样。<br>选择器的最后一部分，也就是最右边的部分被称为<strong>关键选择器</strong>，而它决定着你的选择器效率的高低。而关键选择器的作用就是提高选择器的效率，每少检查一个给定的规则，就会更有效的将样式匹配给对应的html元素。所以我们的方向就是让关键选择器更加有效性能化更高，那么如何实现呢？很简单，<strong>关键选择器越具体，性能化就越高</strong>。</p>
+<h3 id="选择器效率"><a href="#选择器效率" class="headerlink" title="选择器效率"></a>选择器效率</h3><p>如果你稍微接触过一段时间前端，对css选择器有一定了解的话，就会对那些选择器以及它的优先级不会太陌生。<br>来让我们看下<a href="http://stevesouders.com/" target="_blank" rel="external">Steve Souders</a>大神给的优先级排序：</p>
+<ol>
+<li>id选择器 (#id)</li>
+<li>类选择器 (.class)</li>
+<li>标签选择器 (h1,div,p..)</li>
+<li>相邻选择器 (h1+p)</li>
+<li>子选择器 (div &lt; span)</li>
+<li>后代选择器 (div span)</li>
+<li>通配符选择器 (*)</li>
+<li>属性选择器 (a[rel=’’])</li>
+<li>伪类选择器 (a:hover,li:nth-child(1))  </li>
+</ol>
+<p>上述选择器优先级按照降序排列，当然还有上面你没提到的行内样式和!important，笔者建议还是少用为妙，毕竟对于维护来讲太恶心。</p>
+<h3 id="如何书写高效的css选择器"><a href="#如何书写高效的css选择器" class="headerlink" title="如何书写高效的css选择器"></a>如何书写高效的css选择器</h3><h4 id="来自Mozilla的几点建议"><a href="#来自Mozilla的几点建议" class="headerlink" title="来自Mozilla的几点建议"></a>来自Mozilla的几点建议</h4><p>David在<a href="http://code.google.com/speed/page-speed/docs/rendering.html" target="_blank" rel="external">《Use efficient CSS selectors》</a>中介绍了几种书写高效率的CSS选择器的方法，下面我将他们移到这里来让大家参考：</p>
+<ol>
+<li>避免普遍规则</li>
+<li>不要在ID选择器前加标签名或类名</li>
+<li>不要在类名选择器前加标签名</li>
+<li>尽可能使用具体的类别</li>
+<li>避免使用后代选择器</li>
+<li>标签分类规则中不应该包含一个子选择器</li>
+<li>子选择器的问题</li>
+<li>借助相关继承关系</li>
+<li>使用范围内的样式表</li>
+</ol>
+<h4 id="一些降低渲染资源消耗的实战经验"><a href="#一些降低渲染资源消耗的实战经验" class="headerlink" title="一些降低渲染资源消耗的实战经验"></a>一些降低渲染资源消耗的实战经验</h4><ol>
+<li><strong>十六进制颜色值对位数与大小写</strong><br> 默认标准是大写以及6位数标注，建议书写规范，虽然未有确实数据表明不采用写法会对渲染速率有影响。</li>
+<li><strong>display 与 visibility 差异</strong><br> 两者均用于设置或检索是否显示对象。前者隐藏对象且不保留物理空间，而后者会保存物理空间。浏览器渲染被占据的物理空间时，会有所消耗。建议采用display:none;</li>
+<li><strong>border:none; 与 border:0;区别</strong><br> 区别同上；border:0;把border设为“0”像素虽然在页面上看不见，但按border默认值理解，浏览器依然对border-width/border-color进行了渲染，即已经占用了内存值。border:none;把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。<br> 建议使用border:none;</li>
+<li><strong>不宜过小的图片平铺</strong><br> 一张宽高1px的背景图片，虽然文件体积非常之小，但渲染宽高500px的板块需要重复平铺2500次。提高背景图片渲染效率跟图片尺寸及体积有关，最大的图片文件体积保持约70KB。建议采用衡量适中体积及尺寸的背景图片</li>
+<li><strong>IE的滤镜</strong><br> IE的滤镜除了比较消耗资源外也有兼容性问题。当中有令PNG透明的滤镜，可采用GIF或JPG似透非透的办法来避免使用此滤镜。建议只在IE6应用GIF透明，因为IE7以上已经支持了PNG透明。</li>
+<li><strong>通配符*{margin:0;padding:0;}</strong><br> *号通配符把所有标签都初始化一遍，浏览器的渲染消耗一定的资源。有部分在标签在不同浏览器上几乎无差异，或是某些已经不推荐使用的标签(因为你不会去用它)，它们不需通配符要重新初始化一遍这样做能节省一点资源。<br> 推荐方案(代替reset)：normalize.css(如果没听说过自行百度)</li>
+<li><p><strong>不要添加额外的标签来描述class或id</strong><br> 如果你有一个选择器是以id作为关键选择符，请不要添加多余标签名上去。因为ID是唯一的，你不要为了一个不存在的理由而降低了匹配的效率。  </p>
+<ul>
+<li>不赞成 - button#backButton { }</li>
+<li>不赞成 - .menu-left #newMenuIcon { }</li>
+<li>建议用 - #backButton { }</li>
+<li>建议用 - #newMenuIcon { }  </li>
+</ul>
+</li>
+<li><p><strong>尽量选择最特殊的类来存放选择器</strong><br> 降低系统效率的一个最大原因是我们在标签类中用了过多的选择符。通过添加 class 到元素，我们可以将类别进行再细分为 class 类，这样就不用为了一个标签浪费时间去匹配过多的选择符了。</p>
+<ul>
+<li>不赞成 - treeitem[mailfolder=”true”] &gt; treerow &gt; treecell { }</li>
+<li>建议用 - .treecell-mailfolder { }</li>
+</ul>
+</li>
+<li><p><strong>避免子孙选择符</strong></p>
+<p> 子孙选择符是CSS中最耗资源的选择符。他真的是非常的耗资源，尤其是在选择器使用标签类或通用类的时候。很多情况中，我们真正想要的是子选择符。除非有明确说明，在 UI CSS 中是严禁使用子孙选择符的。</p>
+<ul>
+<li>不赞成 - treehead treerow treecell { }</li>
+<li>好一点，但还是不行(参照下一条) - treehead &gt; treerow &gt; treecell { }</li>
+</ul>
+</li>
+<li><p><strong>标签类中不要包含子选择符</strong></p>
+<p>不要在标签类中使用子选择符。否则，每次元素的出现，都会额外地增加匹配时间。（特别是当选择器似乎多半会被匹配的情况下）</p>
+<ul>
+<li>不赞成 - treehead &gt; treerow &gt; treecell { }</li>
+<li>建议用 - .treecell-header { }  </li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p><strong>留意所有子选择符的使用</strong></p>
+<p>小心地使用子选择符。如果你能想出一个的不使用他的方法，那么就不要使用。特别是在 RDF 树和菜单会频繁地使用子选择符，像这样。</p>
+<ul>
+<li>不赞成 - treeitem[IsImapServer=”true”] &gt; treerow &gt; .tree-folderpane-icon { }<br>  请记住 RDF 的属性是可以在模板中被复制的！利用这一点，我们可以复制那些想基于该属性改变的子 XUL 元素上的 RDF 属性。</li>
+<li>建议用 - .tree-folderpane-icon[IsImapServer=”true”] { }</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/17/css渲染效率/" data-id="cirytrogu00046gj3uynoqftw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/17/Repaint和Reflow/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Repaint和Reflow</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具相关/">工具相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html-css/">Html,css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Html-css/" style="font-size: 20px;">Html,css</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/17/css渲染效率/">css渲染效率</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/Repaint和Reflow/">Repaint和Reflow</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/jser-1/">从零开始学习Javascript(一)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/tips/">琐碎知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/清除浮动与BFC/">清除浮动与BFC</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Somnus13<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

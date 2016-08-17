@@ -68,6 +68,102 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css渲染效率" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/17/css渲染效率/" class="article-date">
+  <time datetime="2016-08-17T11:36:20.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/17/css渲染效率/">css渲染效率</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上节提到了Repaint和Reflow，以及如何优化的问题。我们知道浏览器工作流程第三步就是解析css然后计算元素位置并放置，那么如何从这点上来提高效率呢？这就要提到css的渲染效率了，本节我们来探讨下。  </p>
+<h3 id="浏览器如何识别你的选择器"><a href="#浏览器如何识别你的选择器" class="headerlink" title="浏览器如何识别你的选择器"></a>浏览器如何识别你的选择器</h3><p>我在查阅相关资料的时候，看到一篇文章，是Chris Coyier的<a href="https://css-tricks.com/efficiently-rendering-css/">《Efficiently Rendering CSS》</a> 。文中提到<code>浏览器读取你的选择器，遵循的原则就是从选择器的右边到左边读取。换句话说，浏览器读取选择器的顺序是由右到左进行</code>。举个栗子：<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/17/css渲染效率/#more">More..</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/17/css渲染效率/" data-id="cirytrogu00046gj3uynoqftw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Repaint和Reflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/17/Repaint和Reflow/" class="article-date">
+  <time datetime="2016-08-17T11:36:03.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/17/Repaint和Reflow/">Repaint和Reflow</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前看别人的文章谈到了css选择器的问题，当时还是不太懂，然后转眼看了下自己的代码，偶哈哈，惨不忍睹，该避开的全中！然后后来查阅资料认识了Repain和Reflow后，有点明白了，趁此机会总结下为什么 and 应该如何去做。</p>
+<h3 id="什么是Repaint-Reflow"><a href="#什么是Repaint-Reflow" class="headerlink" title="什么是Repaint/Reflow?"></a>什么是Repaint/Reflow?</h3><p>先扒一张图，来解释下浏览器的工作流程<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/17/Repaint和Reflow/#more">More..</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/17/Repaint和Reflow/" data-id="cirytrogn00016gj3j5jz1zm8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jser-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/15/jser-1/" class="article-date">
@@ -103,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/15/jser-1/" data-id="cirw2nt6m0007w0j3q1nm98p9" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/15/jser-1/" data-id="cirytrohl000q6gj3ztklb6fs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
@@ -152,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/15/tips/" data-id="cirw2nt6r000dw0j30qig28gb" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/15/tips/" data-id="cirytrohb000g6gj3nxejobdc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
@@ -200,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/12/清除浮动与BFC/" data-id="cirw2nt6p000aw0j3iym7x9wk" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/12/清除浮动与BFC/" data-id="cirytrohh000p6gj38ms2dr4u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
@@ -247,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/12/BFC/" data-id="cirw2nt660000w0j3awu59wrl" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/12/BFC/" data-id="cirytrogj00006gj3bc1mairm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
@@ -295,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/12/font-skill/" data-id="cirw2nt6j0004w0j3q9k9r824" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/12/font-skill/" data-id="cirytrohd000i6gj35z86yrst" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
@@ -343,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/12/haslayout/" data-id="cirw2nt6l0005w0j3zexkisux" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/12/haslayout/" data-id="cirytroh8000f6gj3o83u4tcv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
@@ -390,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/" data-id="cirw2nt6b0001w0j3r0vo109m" class="article-share-link">Share</a>
+      <a data-url="http://Somnus13.github.io/2016/08/11/Javascript面向对象编程/" data-id="cirytrohf000l6gj38jltph6r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
@@ -453,6 +549,14 @@
       <ul>
         
           <li>
+            <a href="/2016/08/17/css渲染效率/">css渲染效率</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/Repaint和Reflow/">Repaint和Reflow</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/15/jser-1/">从零开始学习Javascript(一)</a>
           </li>
         
@@ -462,14 +566,6 @@
         
           <li>
             <a href="/2016/08/12/清除浮动与BFC/">清除浮动与BFC</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/12/BFC/">BFC(Block Formatting Context)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/12/font-skill/">修改控制台字体</a>
           </li>
         
       </ul>

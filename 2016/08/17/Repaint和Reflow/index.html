@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Repaint和Reflow | Somnus13</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="之前看别人的文章谈到了css选择器的问题，当时还是不太懂，然后转眼看了下自己的代码，偶哈哈，惨不忍睹，该避开的全中！然后后来查阅资料认识了Repain和Reflow后，有点明白了，趁此机会总结下为什么 and 应该如何去做。
+什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Repaint和Reflow">
+<meta property="og:url" content="http://Somnus13.github.io/2016/08/17/Repaint和Reflow/index.html">
+<meta property="og:site_name" content="Somnus13">
+<meta property="og:description" content="之前看别人的文章谈到了css选择器的问题，当时还是不太懂，然后转眼看了下自己的代码，偶哈哈，惨不忍睹，该避开的全中！然后后来查阅资料认识了Repain和Reflow后，有点明白了，趁此机会总结下为什么 and 应该如何去做。
+什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程">
+<meta property="og:image" content="http://i.imgur.com/LfRrnQ9.png">
+<meta property="og:updated_time" content="2016-08-17T11:37:51.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Repaint和Reflow">
+<meta name="twitter:description" content="之前看别人的文章谈到了css选择器的问题，当时还是不太懂，然后转眼看了下自己的代码，偶哈哈，惨不忍睹，该避开的全中！然后后来查阅资料认识了Repain和Reflow后，有点明白了，趁此机会总结下为什么 and 应该如何去做。
+什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程">
+<meta name="twitter:image" content="http://i.imgur.com/LfRrnQ9.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus13" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus13</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">撸猫的时间用来撸代码</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Somnus13.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Repaint和Reflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/17/Repaint和Reflow/" class="article-date">
+  <time datetime="2016-08-17T11:36:03.000Z" itemprop="datePublished">2016-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Repaint和Reflow
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前看别人的文章谈到了css选择器的问题，当时还是不太懂，然后转眼看了下自己的代码，偶哈哈，惨不忍睹，该避开的全中！然后后来查阅资料认识了Repain和Reflow后，有点明白了，趁此机会总结下为什么 and 应该如何去做。</p>
+<h3 id="什么是Repaint-Reflow"><a href="#什么是Repaint-Reflow" class="headerlink" title="什么是Repaint/Reflow?"></a>什么是Repaint/Reflow?</h3><p>先扒一张图，来解释下浏览器的工作流程<br><a id="more"></a><br><img src="http://i.imgur.com/LfRrnQ9.png" alt="浏览器工作原理"><br>上图可归纳成四步：<br>1.<strong>解析HTML构建DOM树：</strong>渲染引擎开始解析html文档，转换树中的标签或者生成的标签到DOM节点，这时的它称为内容树<br>2.<strong>构建渲染树：</strong>解析CSS(所有)，并据此计算节点样式，创建渲染树<br>3.<strong>布局渲染树：</strong>从根节点递归调用，计算每个元素的大小位置，并把每个节点放在该出现的精准坐标位置<br>4.<strong>绘制渲染树：</strong>遍历渲染树，每个节点使用UI后端层绘制<br>不难看出Repaint和Reflow发生在了三四步，所以给出定义：</p>
+<blockquote>
+<p>浏览器在解析页面时，根据css以及js来计算并把相应的元素放到该出现的位置，这个过程就是Reflow；当元素的位置大小颜色等都确定后，浏览器会按照各自的属性特性绘制一遍，而这个过程就叫做Repaint. 所以我们要做的就是了解会引发这些的操作并尽量减少以提高渲染速度。   </p>
+</blockquote>
+<h3 id="引起Repaint-Reflow的一些操作"><a href="#引起Repaint-Reflow的一些操作" class="headerlink" title="引起Repaint/Reflow的一些操作"></a>引起Repaint/Reflow的一些操作</h3><p>Reflow 的成本比 Repaint 的成本高得多的多。DOM Tree 里的每个结点都会有 reflow 方法，一个结点的 reflow 很有可能导致子结点，甚至父点以及同级结点的 reflow。在一些高性能的电脑上也许还没什么，但是如果 reflow 发生在手机上，那么这个过程是非常痛苦和耗电的。<br>所以，下面这些动作有很大可能会是成本比较高的。</p>
+<ul>
+<li>当你增加、删除、修改 DOM 结点时，会导致 Reflow 或 Repaint。</li>
+<li>当你移动 DOM 的位置，或是搞个动画的时候。</li>
+<li>当你修改 CSS 样式的时候。</li>
+<li>当你 Resize 窗口的时候（移动端没有这个问题），或是滚动的时候。</li>
+<li>当你修改网页的默认字体时。<br>注：display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发现位置变化。</li>
+</ul>
+<h3 id="如何优化"><a href="#如何优化" class="headerlink" title="如何优化"></a>如何优化</h3><p>Reflow是不可避免的，只能将Reflow对性能的影响减到最小,给出下面几条建议：</p>
+<ul>
+<li><p>不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 不好的写法</div><div class="line">var left = 10,</div><div class="line">top = 10;</div><div class="line">el.style.left = left + &quot;px&quot;;</div><div class="line">el.style.top  = top  + &quot;px&quot;;</div><div class="line">// 推荐写法</div><div class="line">el.className += &quot; theclassname&quot;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>把 DOM 离线后修改。如：</p>
+<ul>
+<li>a&gt; 使用 documentFragment 对象在内存里操作 DOM。</li>
+<li>b&gt; 先把 DOM 给 display:none (有一次 repaint)，然后你想怎么改就怎么改。比如修改 100 次，然后再把他显示出来。</li>
+<li>c&gt; clone 一个 DOM 节点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下。</li>
+</ul>
+</li>
+<li>不要把 DOM 节点的属性值放在一个循环里当成循环里的变量。不然这会导致大量地读写这个结点的属性。</li>
+<li>尽可能的修改层级比较低的 DOM节点。当然，改变层级比较底的 DOM节点有可能会造成大面积的 reflow，但是也可能影响范围很小。</li>
+<li>为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是会大大减小 reflow 。</li>
+<li>千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/17/Repaint和Reflow/" data-id="cirytrogn00016gj3j5jz1zm8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-css/">Html,css</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/17/css渲染效率/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css渲染效率
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/15/jser-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">从零开始学习Javascript(一)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具相关/">工具相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html-css/">Html,css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Html-css/" style="font-size: 20px;">Html,css</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/17/css渲染效率/">css渲染效率</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/Repaint和Reflow/">Repaint和Reflow</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/jser-1/">从零开始学习Javascript(一)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/tips/">琐碎知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/12/清除浮动与BFC/">清除浮动与BFC</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Somnus13<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
