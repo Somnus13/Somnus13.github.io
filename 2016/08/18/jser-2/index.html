@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>从零开始学习Javascript(二) | Somnus13</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="流程控制与错误处理JavaScript 语句简洁灵活而又紧凑，特别是控制流语句，你可以用它构建结合交互式的应用程序。本章节我们将带来关于JavaScript语句的一些概览。
+在JavaScript中，任何表达式(expression)都可以看作一条语句(statement)，每条语句可以使用分号( ; )来分隔。你可以在每行书写一条语句；也可以在一行书写多条语句。但是我们推荐在书写代码的时候采用第">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始学习Javascript(二)">
+<meta property="og:url" content="http://Somnus13.github.io/2016/08/18/jser-2/index.html">
+<meta property="og:site_name" content="Somnus13">
+<meta property="og:description" content="流程控制与错误处理JavaScript 语句简洁灵活而又紧凑，特别是控制流语句，你可以用它构建结合交互式的应用程序。本章节我们将带来关于JavaScript语句的一些概览。
+在JavaScript中，任何表达式(expression)都可以看作一条语句(statement)，每条语句可以使用分号( ; )来分隔。你可以在每行书写一条语句；也可以在一行书写多条语句。但是我们推荐在书写代码的时候采用第">
+<meta property="og:updated_time" content="2016-08-18T12:11:14.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零开始学习Javascript(二)">
+<meta name="twitter:description" content="流程控制与错误处理JavaScript 语句简洁灵活而又紧凑，特别是控制流语句，你可以用它构建结合交互式的应用程序。本章节我们将带来关于JavaScript语句的一些概览。
+在JavaScript中，任何表达式(expression)都可以看作一条语句(statement)，每条语句可以使用分号( ; )来分隔。你可以在每行书写一条语句；也可以在一行书写多条语句。但是我们推荐在书写代码的时候采用第">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus13" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus13</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">撸猫的时间用来撸代码</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Somnus13.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jser-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/18/jser-2/" class="article-date">
+  <time datetime="2016-08-18T12:09:04.000Z" itemprop="datePublished">2016-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      从零开始学习Javascript(二)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="流程控制与错误处理"><a href="#流程控制与错误处理" class="headerlink" title="流程控制与错误处理"></a>流程控制与错误处理</h1><p>JavaScript 语句简洁灵活而又紧凑，特别是控制流语句，你可以用它构建结合交互式的应用程序。本章节我们将带来关于JavaScript语句的一些概览。</p>
+<p>在JavaScript中，任何表达式(expression)都可以看作一条语句(statement)，每条语句可以使用分号( ; )来分隔。你可以在每行书写一条语句；也可以在一行书写多条语句。但是我们推荐在书写代码的时候采用第一种方式，以便于后期的代码维护。<br><a id="more"></a> </p>
+<h2 id="语句块（Block-Statement）EDIT"><a href="#语句块（Block-Statement）EDIT" class="headerlink" title="语句块（Block Statement）EDIT"></a>语句块（Block Statement）EDIT</h2><p>大多数程序都使用语句块来给语句分组，这样可以使语句的结构清晰明了。我们使用一对花括号（ {} ）来分组语句块，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   statement_1;   statement_2;</div><div class="line">   statement_3;</div><div class="line">   ...</div><div class="line">   statement_n;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>语句块通常大多数用于流程控制，如 if, for, while等等。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while (x &lt; 10)&#123;</div><div class="line">  x++;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里{ x++; } 就是语句块。</p>
+<p>注意：在ECMAScript 6标准之前，Javascript没有块作用域。如果你在块的外部声明了一个变量，然后在块中声明了一个相同变量名的变量，并赋予不同的值。那么在程序执行中将会使用块中的值，这样做虽然是合法的，但是这不同于JAVA与C。示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var x = 1;</div><div class="line">&#123;</div><div class="line">  var x = 2;</div><div class="line">&#125;</div><div class="line">alert(x); // 输出的结果为 2</div></pre></td></tr></table></figure></p>
+<p>这段代码的输出是２，这是因为 var x = 2 的作用范围与 var x = 1 的作用范围相同，在C语言或是Java语言中，同样的代码输出的结果是１。</p>
+<p>从 ECMAScript 6 开始，使用 let 定义的变量是块作用域的。 参阅 let 。</p>
+<h2 id="条件判断语句（Conditional-Statements）EDIT"><a href="#条件判断语句（Conditional-Statements）EDIT" class="headerlink" title="条件判断语句（Conditional Statements）EDIT"></a>条件判断语句（Conditional Statements）EDIT</h2><p>条件判断语句指的是根据指定的条件所返回的结果（真或假或其它预定义的），来执行特定的语句。JavaScript提供了两种条件判断语句：if…else 和 switch。</p>
+<h3 id="if…else-语句"><a href="#if…else-语句" class="headerlink" title="if…else 语句"></a>if…else 语句</h3><p>当一个逻辑条件为真，用if语句执行一个语句。当这个条件为假，使用可选择的else从句来执行这个语句。if语句如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if (condition) &#123;</div><div class="line">  statement_1;</div><div class="line">&#125;</div><div class="line">[else &#123;</div><div class="line">  statement_2;</div><div class="line">&#125;] //推荐使用严格的语句块模式，语句else可选</div></pre></td></tr></table></figure></p>
+<p>条件可以是任何返回结果是 true 或 false的表达式。如果条件表达式返回的是 true，statement_1 会被执行；否则，statement_2 被执行。statement_1 和 statement_2 可以是任何语句，甚至你可以将另一个if语句嵌套其中。 </p>
+<p>你也可以组合语句通过使用 else if 来测试连续的多种条件判断，就像下面这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">if (condition_1) &#123;</div><div class="line">  statement_1;</div><div class="line">&#125;</div><div class="line">[else if (condition_2) &#123;</div><div class="line">  statement_2;</div><div class="line">&#125;]</div><div class="line">...</div><div class="line">[else if (condition_n_1) &#123;</div><div class="line">  statement_n_1;</div><div class="line">&#125;]</div><div class="line">[else &#123;</div><div class="line">  statement_n;</div><div class="line">&#125;]</div></pre></td></tr></table></figure></p>
+<p>要执行多个语句，使用语句块({ … }) 来分组这些语句。一般情况下，总是使用语句块是一个好的习惯，特别是在代码涉及比较多的 if 语句时:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (condition) &#123;</div><div class="line">  statement_1_runs_if_condition_is_true;</div><div class="line">  statement_2_runs_if_condition_is_true;</div><div class="line">&#125; else &#123;</div><div class="line">  statement_3_runs_if_condition_is_false;</div><div class="line">  statement_4_runs_if_condition_is_false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在条件表达式中最好不要使用“=”来判断条件是否相等，因为这会产生非预期结果。不要使用下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (x = y) &#123;</div><div class="line">  /* do the right thing */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你需要在条件表达式中使用赋值，一个共同的习惯是在赋值语句前后额外的添加一对括号。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if ((x = y)) &#123;</div><div class="line">  /* do the right thing */</div><div class="line">&#125;</div><div class="line">False values</div></pre></td></tr></table></figure>
+<p>下面这些值将被计算出 false (also known as Falsy values):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">false</div><div class="line">undefined</div><div class="line">null</div><div class="line">0</div><div class="line">NaN</div><div class="line">空字符串 (&quot;&quot;)</div></pre></td></tr></table></figure>
+<p>当传递给条件语句时，所有其他值，包括所有对象会被计算为 true 。</p>
+<p>请不要混淆原始的布尔值true和false 与 布尔对象的值true和false（译者注：下例中b属于对象，会被计算为true！）。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var b = new Boolean(false);</div><div class="line">if (b) // this condition evaluates to true</div><div class="line">if (b == true) // this condition evaluates to false</div></pre></td></tr></table></figure>
+<p>在下面的例子中，如果一个文本对象中的字符串长度是3，函数checkData返回true；否则，函数显示一个alert的弹出框消息并返回false。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function checkData() &#123;</div><div class="line">  if (document.form1.threeChar.value.length == 3) &#123;</div><div class="line">    return true;</div><div class="line">  &#125; else &#123;</div><div class="line">    alert(&quot;Enter exactly three characters. &quot; +</div><div class="line">      document.form1.threeChar.value + &quot; is not valid.&quot;);</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="switch-语句（Switch-Statement）"><a href="#switch-语句（Switch-Statement）" class="headerlink" title="switch 语句（Switch Statement）"></a>switch 语句（Switch Statement）</h3><p>switch语句允许一个程序求一个表达式的值并且尝试去匹配表达式的值到一个case label。如果匹配成功，这个程序执行相关的语句。开关语句如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">switch (expression) &#123;</div><div class="line">   case label_1:</div><div class="line">      statements_1</div><div class="line">      [break;]</div><div class="line">   case label_2:</div><div class="line">      statements_2</div><div class="line">      [break;]</div><div class="line">   ...</div><div class="line">   default:</div><div class="line">      statements_def</div><div class="line">      [break;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>程序首先查找一个与 expression 匹配的 case 语句，然后将控制权转移到该子句，执行相关的语句。如果没有匹配值， 程序会去找 default 语句，如果找到了，控制权转移到该子句，执行相关的语句。如果没有找到 default，程序会继续执行 switch 语句后面的语句。default 语句通常出现在switch语句里的最后面，当然这不是必须的。</p>
+<p>可选的 break 语句与每个 case 语句相关联， 保证在匹配匹配的语句被执行后程序可以跳出 switch 并且继续执行 switch 后面的语句。如果不写 break , 程序将继续执行 switch 中的语句。</p>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><p>在如下示例中, 如果 fruittype 等于 “Bananas”, 程序匹配到对应 “Bananas” 的case 语句，并执行相关语句。 当执行到 break 时，程序结束了 switch 并执行 switch 后面的语句。 如果不写 break ，那么程序将会执行 case “Cherries” 下的语句。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">switch (fruittype) &#123;</div><div class="line">   case &quot;Oranges&quot;:</div><div class="line">      document.write(&quot;Oranges are $0.59 a pound.&lt;br&gt;&quot;);</div><div class="line">      break;</div><div class="line">   case &quot;Apples&quot;:</div><div class="line">      document.write(&quot;Apples are $0.32 a pound.&lt;br&gt;&quot;);</div><div class="line">      break;</div><div class="line">   case &quot;Bananas&quot;:</div><div class="line">      document.write(&quot;Bananas are $0.48 a pound.&lt;br&gt;&quot;);</div><div class="line">      break;</div><div class="line">   case &quot;Cherries&quot;:</div><div class="line">      document.write(&quot;Cherries are $3.00 a pound.&lt;br&gt;&quot;);</div><div class="line">      break;</div><div class="line">   case &quot;Mangoes&quot;:</div><div class="line">   case &quot;Papayas&quot;:</div><div class="line">      document.write(&quot;Mangoes and papayas are $2.79 a pound.&lt;br&gt;&quot;);</div><div class="line">      break;</div><div class="line">   default:</div><div class="line">      document.write(&quot;Sorry, we are out of &quot; + fruittype + &quot;.&lt;br&gt;&quot;);</div><div class="line">&#125;</div><div class="line">document.write(&quot;Is there anything else you&apos;d like?&lt;br&gt;&quot;);</div></pre></td></tr></table></figure>
+<h3 id="循环语句（Loop-Statement）EDIT"><a href="#循环语句（Loop-Statement）EDIT" class="headerlink" title="循环语句（Loop Statement）EDIT"></a>循环语句（Loop Statement）EDIT</h3><p>循环语句是一系列反复执行直到符合特定条件的命令。JavaScript 支持 for, do while, while这些循环语句，还有Label (label 本身不是一个循环语句，但是经常和这些语句一起使用)。另外，你可以在循环语句中使用break和continue 语句 。</p>
+<p>另一个语句：for…in也反复执行语句，但它是用来操作对象的。参见 Object Manipulation Statements。</p>
+<p>循环流程控制语句有：</p>
+<ul>
+<li>for Statement</li>
+<li>do…while Statement</li>
+<li>while Statement</li>
+<li>label Statement</li>
+<li>break Statement</li>
+<li>continue Statement</li>
+</ul>
+<h3 id="for语句（for-Statement）"><a href="#for语句（for-Statement）" class="headerlink" title="for语句（for Statement）"></a>for语句（for Statement）</h3><p>for 循环反复直到一个特定的条件计算为假。JavaScript中的循环和Java以及C中的循环相似。for语句如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for ([initialExpression]; [condition]; [incrementExpression])</div><div class="line">   statement</div></pre></td></tr></table></figure>
+<p>在一个for 执行的过程中，会发生以下事情：</p>
+<ol>
+<li><p>[initialExpression]：初始化表达式，若存在则执行。此表达式通常初始化了一个或多个循环用计数器，语法上也允许设定一个任意复杂度的表达式。表达式里还可以声明变量。</p>
+</li>
+<li><p>[condition]：条件表达式。如果表达式的值为true，将执行循环语句；若为flase，循环终止。若要完全忽略此条件表达式，则设此表达式的值为true。</p>
+</li>
+<li><p>statement：需执行的语句。如果要执行多条语句，就要用中括号（{…}）把语句括起来。</p>
+</li>
+<li><p>[incrementExpression]：累计表达式。若存在则执行，然后会回到第2步执行语句。</p>
+</li>
+</ol>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例:"></a>示例:</h4><p>下面的这个函数包含了一个for语句，用来计算一个选择列表（一个可以多选的选择列表）中被选择项目的数量。这个for语句定义了一个初始化值为0的变量i，它检查i小于选择列表的项目数量，然后执行了for循环里面的if语句，每次循环后i则自动加 1。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"></div><div class="line">function howMany(selectObject) &#123;</div><div class="line">   var numberSelected = 0;</div><div class="line">   for (var i = 0; i &lt; selectObject.options.length; i++) &#123;</div><div class="line">      if (selectObject.options[i].selected)</div><div class="line">         numberSelected++;</div><div class="line">   &#125;</div><div class="line">   return numberSelected;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line">&lt;form name=&quot;selectForm&quot;&gt;</div><div class="line">   &lt;p&gt;</div><div class="line">      &lt;strong&gt;Choose some music types, then click the button below:&lt;/strong&gt;</div><div class="line">      &lt;br/&gt;</div><div class="line">      &lt;select name=&quot;musicTypes&quot; multiple=&quot;multiple&quot;&gt;</div><div class="line">         &lt;option selected=&quot;selected&quot;&gt;R&amp;B&lt;/option&gt;</div><div class="line">         &lt;option&gt;Jazz&lt;/option&gt;</div><div class="line">         &lt;option&gt;Blues&lt;/option&gt;</div><div class="line">         &lt;option&gt;New Age&lt;/option&gt;</div><div class="line">         &lt;option&gt;Classical&lt;/option&gt;</div><div class="line">         &lt;option&gt;Opera&lt;/option&gt;</div><div class="line">      &lt;/select&gt;</div><div class="line">   &lt;/p&gt;</div><div class="line">   &lt;p&gt;</div><div class="line">      &lt;input type=&quot;button&quot; value=&quot;How many are selected?&quot;</div><div class="line">         onclick=&quot;alert (&apos;Number of options selected: &apos; + howMany(document.selectForm.musicTypes))&quot;/&gt;</div><div class="line">   &lt;/p&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<h3 id="do…while-语句"><a href="#do…while-语句" class="headerlink" title="do…while 语句"></a>do…while 语句</h3><p>do…while 语句反复直到一个特定条件计算为假。do…while 语句如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">do</div><div class="line">   statement</div><div class="line">while (condition);</div></pre></td></tr></table></figure>
+<p>语句（statement）会在条件判断前执行一次。如果要执行多条语句，就要用中括号（{…}）把语句括起来。如果条件表达式（condition）为true，语句将再次执行。在每次语句执行完毕时，会执行条件判断。如果条件表达式（condition）为false，执行停止并跳到do…while后继续执行下面的语句。</p>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><p>在下面的例子中，do循环至少迭代一次，然后重复执行直到i不再小于5。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">do &#123;</div><div class="line">   i += 1;</div><div class="line">   document.write(i);</div><div class="line">&#125; while (i &lt; 5);</div></pre></td></tr></table></figure>
+<h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><p>while语句只要一个特定条件计算为真就执行语句。如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">while (condition)</div><div class="line">   statement</div></pre></td></tr></table></figure>
+<p>如果条件表达式（condition）为false，在循环体内的语句停止执行，然后跳到循环体后的语句继续执行。</p>
+<p>条件（condition）在循环体内的语句执行之前进行判断。如果条件表达式（condition）为false，语句（statement）将会试行并且条件会再次进行判断。如果条件表达式（condition）为false，执行停止，然后跳到while循环体后的语句执行。</p>
+<p>如果要执行多条语句，就要用中括号（{…}）把语句括起来。</p>
+<h4 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h4><p>下面的while循环只在n小于3的时候反复执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">n = 0;</div><div class="line">x = 0;</div><div class="line">while (n &lt; 3) &#123;</div><div class="line">   n++;</div><div class="line">   x += n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在每次迭代中，循环计数器n会增加1并会与x相加。因此，x与n在每次迭代中的值为：</p>
+<p>第一次执行后：n=1，x=1；<br>第二次执行后：n=2，x=3；<br>第三次执行后：n=3，x=6。<br>在第三次执行完成后，条件判断 n&lt;3 不再为true，循环终止。</p>
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h4><p>避免死循环。 确保循环里的条件最终会变为false; 否则，这个循环将永远不会停止。下面的语句将一直循环，应为它的条件永远不会变为false:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while (true) &#123;</div><div class="line">   alert(&quot;Hello, world&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="标签语句（label-Statement）"><a href="#标签语句（label-Statement）" class="headerlink" title="标签语句（label Statement）"></a>标签语句（label Statement）</h3><p>标签语句提供一种使你同一程序的在另一处找到它的标识。例如，你可以用一个标签来识别一个循环，并用break或continue语句来说明一个程序是否要中断这个循环或是继续执行。如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">label :</div><div class="line">   statement</div></pre></td></tr></table></figure>
+<p>label 的值可以是js的任何非保留字标识符。 用label 标识的语句可以是任何语句。</p>
+<p>例如</p>
+<p>在这个示例中，markLoop这个标签定义了一个while循环。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">markLoop:</div><div class="line">while (theMark == true) &#123;</div><div class="line">   doSomething();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="中断语句（break-Statement）"><a href="#中断语句（break-Statement）" class="headerlink" title="中断语句（break Statement）"></a>中断语句（break Statement）</h3><p>使用中断语句终止循环、开关或与标签语句连接。</p>
+<p>当你使用没有带标签语句的中断语句（break）时，while，do-while，for或者switch封闭的内部语句将立即终止，并转移到后面的语句执行。<br>当你使用带有标签语句的中断语句（break）时，将终止在特定的标签语句。<br>中断语句的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">break;</div><div class="line">break label;</div></pre></td></tr></table></figure>
+<p>第一种语法形式用于终止在循环体或者switch的封闭内部；第二种语法形式用于在特定的封闭标签语句。</p>
+<h4 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h4><p>下面的例子中，对一个数组里的元素进行循环处理，直到数组元素下标等于theValue的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for (i = 0; i &lt; a.length; i++) &#123;</div><div class="line">   if (a[i] == theValue)</div><div class="line">      break;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="示例2：中断跳到标签语句"><a href="#示例2：中断跳到标签语句" class="headerlink" title="示例2：中断跳到标签语句"></a>示例2：中断跳到标签语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var x = 0;</div><div class="line">var z = 0</div><div class="line">labelCancelLoops: while (true) &#123;</div><div class="line">    console.log(&quot;Outer loops: &quot; + x);</div><div class="line">    x += 1;</div><div class="line">    z = 1;</div><div class="line">    while (true) &#123;</div><div class="line">        console.log(&quot;Inner loops: &quot; + z);</div><div class="line">        z += 1;</div><div class="line">        if (z === 10 &amp;&amp; x === 10) &#123;</div><div class="line">            break labelCancelLoops;</div><div class="line">        &#125; else if (z === 10) &#123;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="连续语句（continue-Statement）"><a href="#连续语句（continue-Statement）" class="headerlink" title="连续语句（continue Statement）"></a>连续语句（continue Statement）</h3><p>连续语句用于重新开始 while, do-while, for语句，或者标签语句（label statement）。</p>
+<p>当你使用没有带标签语句的连续语句（continue Statement）时，将在当前的while，do-while或者for循环体封闭的内部语句中止执行，然后进入下一次循环继续执行。与中断语句（break Statement）相比，连续语句不会把整个循环终止。在while循环里，将跳回条件判断（condition）；在for循环里，则跳回累计表达式（increment-expression）。<br>当你使用带有标签语句的连续语句时，用于识别循环体中的标签语句。<br>连续语句的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">continue</div><div class="line">continue label</div></pre></td></tr></table></figure>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h4><p>下面的例子实现了一个带有连续语句的while循环，当i的值为3时，该连续语句执行。因此，n的值分别为1、3、7和12。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">i = 0;</div><div class="line">n = 0;</div><div class="line">while (i &lt; 5) &#123;</div><div class="line">   i++;</div><div class="line">   if (i == 3)</div><div class="line">      continue;</div><div class="line">   n += i;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h4><p>一个标签语句checkiandj包含了一个标签语句checkj。如果连续语句被触发，程序会中止在当前循环中的checkj然后开始下一轮循环。每次连续语句被触发，checkj会重复直到该条件判断返回false值。当返回false值时，会完成剩下的checkiandj语句，然后checkiandj会重复直到其条件判断返回false值。当返回false值时，程序会继续执行在checkiandj后面的语句。</p>
+<p>如果连续语句包含的是checkiandj标签，那么程序会在checkiandj语句的顶层继续执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">checkiandj :</div><div class="line">   while (i &lt; 4) &#123;</div><div class="line">      document.write(i + &quot;&lt;br/&gt;&quot;);</div><div class="line">      i += 1;</div><div class="line">      checkj :</div><div class="line">         while (j &gt; 4) &#123;</div><div class="line">            document.write(j + &quot;&lt;br/&gt;&quot;);</div><div class="line">            j -= 1;</div><div class="line">            if ((j % 2) == 0)</div><div class="line">               continue checkj;</div><div class="line">            document.write(j + &quot; is odd.&lt;br/&gt;&quot;);</div><div class="line">         &#125;</div><div class="line">      document.write(&quot;i = &quot; + i + &quot;&lt;br/&gt;&quot;);</div><div class="line">      document.write(&quot;j = &quot; + j + &quot;&lt;br/&gt;&quot;);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h2 id="对象操作语句（Object-Manipulation-Statements）EDIT"><a href="#对象操作语句（Object-Manipulation-Statements）EDIT" class="headerlink" title="对象操作语句（Object Manipulation Statements）EDIT"></a>对象操作语句（Object Manipulation Statements）EDIT</h2><p>JavaScript 用 for…in, for each…in和 with语句来操作对象。</p>
+<h3 id="对象操作语句"><a href="#对象操作语句" class="headerlink" title="对象操作语句"></a>对象操作语句</h3><p>for…in 语句迭代一个指定的变量去遍历这个对象的属性，每个属性，javascript 执行指定的语句。一个for…in 语句示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (variable in object) &#123;</div><div class="line">   statements</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>示例<br>如下的函数中传递了两个参数：一个对象和这个对象的名称，然后循环了这个对象的属性，最后得到一个列出了这个对象所有的属性名称和值的字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function dump_props(obj, obj_name) &#123;</div><div class="line">   var result = &quot;&quot;;</div><div class="line">   for (var i in obj) &#123;</div><div class="line">      result += obj_name + &quot;.&quot; + i + &quot; = &quot; + obj[i] + &quot;&lt;br&gt;&quot;;</div><div class="line">   &#125;</div><div class="line">   result += &quot;&lt;hr&gt;&quot;;</div><div class="line">   return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>比如一个car对象，有make和model属性，结果就是这样的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">car.make = Ford</div><div class="line">car.model = Mustang</div></pre></td></tr></table></figure>
+<h3 id="数组（Arrays）"><a href="#数组（Arrays）" class="headerlink" title="数组（Arrays）"></a>数组（Arrays）</h3><p>虽然大多趋向于用for…in作为一种遍历数组（Array）元素的方式，因为除了遍历数组元素，for…in语句也遍历了用户自定义属性。如果你修改了数组对象，比如添加了通用属性或者方法，for…in语句还会返回除了数字索引（index）外的自定义属性的名称（name）。因此还是用带有数字索引的传统for循环来遍历数组会比较好。</p>
+<h3 id="for-each…in-语句"><a href="#for-each…in-语句" class="headerlink" title="for each…in 语句"></a>for each…in 语句</h3><p>for each…in 是一种在 JavaScript 1.6介绍过的循环语句。它和for…in相似，但是让对象属性的值递回取得，而不是作用于它们的名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var sum = 0;</div><div class="line">var obj = &#123;prop1: 5, prop2: 13, prop3: 8&#125;;</div><div class="line">for each (var item in obj) &#123;</div><div class="line">  sum += item;</div><div class="line">&#125;</div><div class="line">print(sum); // prints &quot;26&quot;, which is 5+13+8</div></pre></td></tr></table></figure>
+<h2 id="注释-Comments-EDIT"><a href="#注释-Comments-EDIT" class="headerlink" title="注释(Comments)EDIT"></a>注释(Comments)EDIT</h2><p>注释是作者解释脚本的记号。注释会被解释器忽略。 JavaScript支持Java 和C++-式样的注释：</p>
+<p>使用//来做单行注释。<br>使用/<em>和</em>/来做多行注释。<br>例子：<br>以下两个示例显示了两种注释方式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 这是一个单行注释.</div><div class="line"></div><div class="line">/* 这是一个多行注释。它可以是任意长度，你可以在这里随便写什么。 */</div></pre></td></tr></table></figure>
+<h2 id="异常处理语句-Exception-Handling-Statements-EDIT"><a href="#异常处理语句-Exception-Handling-Statements-EDIT" class="headerlink" title="异常处理语句(Exception Handling Statements)EDIT"></a>异常处理语句(Exception Handling Statements)EDIT</h2><p>你可以用throw 语句抛出一个异常并且用try…catch 语句捕获处理它。</p>
+<p>你也可以使用try…catch语句来捕捉java异常（虽然这里有一个错误bug 391642）。详情请看Handling Java Exceptions in JavaScript and JavaScript to Java Communication</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">throw Statement</div><div class="line">try...catch Statement and DOMError</div></pre></td></tr></table></figure>
+<h3 id="异常类型（Exception-Types）"><a href="#异常类型（Exception-Types）" class="headerlink" title="异常类型（Exception Types）"></a>异常类型（Exception Types）</h3><p>JavaScript可以抛出任意对象。然而，不是所有对象能产生相同的结果。尽管抛出数值或者字母串作为错误信息十分常见，但是通常用下列其中一种异常类型来创建目标更为高效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ECMAScript exceptions</div><div class="line">DOMException</div><div class="line">nsIXPCException (XPConnect)</div><div class="line">抛出语句（throw Statement）</div></pre></td></tr></table></figure>
+<p>使用throw语句抛出一个异常。当你抛出异常，你规定一个含有值的表达式要被抛出。</p>
+<p>throw expression;<br>你可以抛出任意表达式而不是特定一种类型的表达式。下面的代码抛出了几个不同类型的表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">throw &quot;Error2&quot;;   // String type</div><div class="line">throw 42;         // Number type</div><div class="line">throw true;       // Boolean type</div><div class="line">throw &#123;toString: function() &#123; return &quot;I&apos;m an object!&quot;; &#125; &#125;;</div></pre></td></tr></table></figure>
+<p>笔记：你可以在抛出异常时声明一个对象。那你就可以在捕捉块中查询到对象的属性。下面的例子创建了一个UserException类型的对象myUserException用在抛出语句中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// Create an object type UserException</div><div class="line">function UserException (message)&#123;</div><div class="line">  this.message=message;</div><div class="line">  this.name=&quot;UserException&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Make the exception convert to a pretty string when used as</div><div class="line">// a string (e.g. by the error console)</div><div class="line">UserException.prototype.toString = function ()&#123;</div><div class="line">  return this.name + &apos;: &quot;&apos; + this.message + &apos;&quot;&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Create an instance of the object type and throw it</div><div class="line">throw new UserException(&quot;Value too high&quot;);</div></pre></td></tr></table></figure>
+<h3 id="try…catch-语句"><a href="#try…catch-语句" class="headerlink" title="try…catch 语句"></a>try…catch 语句</h3><p>try…catch 语句标记一块待尝试的语句，并规定一个以上的响应应该有一个异常被抛出。如果我们抛出一个异常，try…catch语句就捕获它。</p>
+<p>try…catch 语句有一个包含一条或者多条语句的try代码块，0个或多个的catch代码块，catch代码块中的语句会在try代码块中抛出异常时执行。 换句话说，如果你在try代码块中的代码如果没有执行成功，那么你希望将执行流程转入catch代码块。如果try代码块中的语句（或者try 代码块中调用的方法）一旦抛出了异常，那么执行流程会立即进入catch 代码块。如果try代码块没有抛出异常，catch代码块就会被跳过。finally 代码块总会紧跟在try和catch代码块之后执行，但会在try和catch代码块之后的其他代码之前执行。</p>
+<p>下面的例子使用了try…catch语句。示例调用了一个函数用于从一个数组中根据传递值来获取一个月份名称。如果该值与月份数值不相符，会抛出一个带有”InvalidMonthNo”值的异常，然后在捕捉块语句中设monthName变量为unknown。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function getMonthName(mo) &#123;</div><div class="line">  mo = mo - 1; // Adjust month number for array index (1 = Jan, 12 = Dec)</div><div class="line">  var months = [&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,</div><div class="line">                &quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;];</div><div class="line">  if (months[mo]) &#123;</div><div class="line">    return months[mo];</div><div class="line">  &#125; else &#123;</div><div class="line">    throw &quot;InvalidMonthNo&quot;; //throw keyword is used here</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">try &#123; // statements to try</div><div class="line">  monthName = getMonthName(myMonth); // function could throw exception</div><div class="line">&#125;</div><div class="line">catch (e) &#123;</div><div class="line">  monthName = &quot;unknown&quot;;</div><div class="line">  logMyErrors(e); // pass exception object to error handler -&gt; your own function</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="捕捉块（The-catch-Block）"><a href="#捕捉块（The-catch-Block）" class="headerlink" title="捕捉块（The catch Block）"></a>捕捉块（The catch Block）</h3><p>你可以使用捕捉块来处理所有可能在try代码块中产生的异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">catch (catchID) &#123;</div><div class="line">  statements</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>捕捉块指定了一个标识符 (上述语句中的catchID）来存放抛出语句指定的值；你可以用这个标识符来获取抛出的异常信息。在插入捕捉块时JavaScript创建这个标识符；标识符只存在于捕捉块的存续期间里；当捕捉块执行完成时，标识符不再可用。</p>
+<p>举个例子，下面代码抛出了一个异常。当异常出现时跳到捕捉块（the catch block）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">try &#123;</div><div class="line">   throw &quot;myException&quot; // generates an exception</div><div class="line">&#125;</div><div class="line">catch (e) &#123;</div><div class="line">// statements to handle any exceptions</div><div class="line">   logMyErrors(e) // pass exception object to error handler</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="终结块（The-finally-Block）"><a href="#终结块（The-finally-Block）" class="headerlink" title="终结块（The finally Block）"></a>终结块（The finally Block）</h3><p>终结块包含了在try和catch块完成后、下面接着的try…catch语句之前执行的语句。终结块无论是否抛出异常都会执行。如果抛出了一个异常，就算没有异常处理，终结块里的语句也会执行。</p>
+<p>你可以用终结块来令你的脚本在异常发生时优雅地退出；举个例子，你可能需要在绑定的脚本中释放资源。接下来的例子用文件处理语句打开了一个文件（服务端的JavaScript允许你进入文件）。如果在文件打开时一个异常抛出，终结块会在脚本错误之前关闭文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">openMyFile();</div><div class="line">try &#123;</div><div class="line">    writeMyFile(theData); //This may throw a error</div><div class="line">&#125;catch(e)&#123;</div><div class="line">    handleError(e); // If we got a error we handle it</div><div class="line">&#125;finally &#123;</div><div class="line">    closeMyFile(); // always close the resource</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果终结块返回一个值，该值会是整个try-catch-finally流程的返回值，不管在try和catch块中语句返回了什么：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function f() &#123;</div><div class="line">  try &#123;</div><div class="line">    console.log(0);</div><div class="line">    throw &quot;bogus&quot;;</div><div class="line">  &#125; catch(e) &#123;</div><div class="line">    console.log(1);</div><div class="line">    return true; // this return statement is suspended</div><div class="line">                 // until finally block has completed</div><div class="line">    console.log(2); // not reachable</div><div class="line">  &#125; finally &#123;</div><div class="line">    console.log(3);</div><div class="line">    return false; // overwrites the previous &quot;return&quot;</div><div class="line">    console.log(4); // not reachable</div><div class="line">  &#125;</div><div class="line">  // &quot;return false&quot; is executed now  </div><div class="line">  console.log(5); // not reachable</div><div class="line">&#125;</div><div class="line">f(); // console 0, 1, 3; returns false</div></pre></td></tr></table></figure>
+<h3 id="嵌套try…catch语句"><a href="#嵌套try…catch语句" class="headerlink" title="嵌套try…catch语句"></a>嵌套try…catch语句</h3><p>你可以嵌套一个或多个try…catch语句。如果一个内部的try…catch语句没有捕捉块（catch block），将会启动匹配外部的try…catch语句的捕捉块（catch block）。</p>
+<h3 id="错误匹配对象（Utilizing-Error-objects）"><a href="#错误匹配对象（Utilizing-Error-objects）" class="headerlink" title="错误匹配对象（Utilizing Error objects）"></a>错误匹配对象（Utilizing Error objects）</h3><p>根据错误类型，你也许可以用’name’和’message’获取更精炼的信息。’name’提供了常规的错误类(e.g., ‘DOMException’ or ‘Error’)，而’message’通常提供了一条从错误对象转换成字符串的简明信息。</p>
+<p>在抛出你个人所为的异常时，为了充分利用那些属性（比如你的catch块不能分辨是你个人所为的异常还是系统的异常时），你可以使用错误构造函数（the Error constructor）。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function doSomethingErrorProne () &#123;</div><div class="line">  if (ourCodeMakesAMistake()) &#123;</div><div class="line">    throw (new Error(&apos;The message&apos;));</div><div class="line">  &#125; else &#123;</div><div class="line">    doSomethingToGetAJavascriptError();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">....</div><div class="line">try &#123;</div><div class="line">  doSomethingErrorProne();</div><div class="line">&#125;</div><div class="line">catch (e) &#123;</div><div class="line">  console.log(e.name); // logs &apos;Error&apos;</div><div class="line">  console.log(e.message); // logs &apos;The message&apos; or a JavaScript error message)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><p>从 ECMAScript 6 开始，JavaScript 增加了对 Promise 对象的支持，它允许你对延时和异步操作流进行控制。</p>
+<p>Promise 对象有以下几种状态:</p>
+<ul>
+<li>pending (进行中): 初始的状态，即正在执行，不处于 fulfilled 或 rejected 状态。</li>
+<li>fulfilled (已完成): 成功的完成了操作。</li>
+<li>rejected (已失败): 失败，没有完成操作。</li>
+<li>settled (已解决): Promise 处于 fulfilled 或 rejected 二者中的任意一个状态, 不会是 pending。</li>
+</ul>
+<h2 id="通过-XHR-加载图片"><a href="#通过-XHR-加载图片" class="headerlink" title="通过 XHR 加载图片"></a>通过 XHR 加载图片</h2><p>你可以在 MDN GitHub promise-test 中找到这个简单的例子，它使用了 Promise 和 XMLHttpRequest 来加载一张图片，你也可以直接在这个页面查看他的效果。同时为了让你更清楚的了解 Promise 和 XHR 的结构，代码中每一个步骤后都附带了注释。</p>
+<p>这里有一个未注释的版本，展现了 Promise 的工作流，希望可以对你的理解有所帮助。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function imgLoad(url) &#123;</div><div class="line">  return new Promise(function(resolve, reject) &#123;</div><div class="line">    var request = new XMLHttpRequest();</div><div class="line">    request.open(&apos;GET&apos;, url);</div><div class="line">    request.responseType = &apos;blob&apos;;</div><div class="line">    request.onload = function() &#123;</div><div class="line">      if (request.status === 200) &#123;</div><div class="line">        resolve(request.response);</div><div class="line">      &#125; else &#123;</div><div class="line">        reject(Error(&apos;Image didn\&apos;t load successfully; error code:&apos; </div><div class="line">                     + request.statusText));</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">    request.onerror = function() &#123;</div><div class="line">      reject(Error(&apos;There was a network error.&apos;));</div><div class="line">    &#125;;</div><div class="line">    request.send();</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>若想了解更详细的信息，请参阅 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">Promise</a> 页面。</p>
+<p>注：本文内容转自 <a href="https://viewsourceconf.org" target="_blank" rel="external">MDN(mozilla developer network)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/18/jser-2/" data-id="cis0ach3y000750j3u44ywz2y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/17/css渲染效率/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css渲染效率</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具相关/">工具相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html-css/">Html,css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Html-css/" style="font-size: 20px;">Html,css</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/18/jser-2/">从零开始学习Javascript(二)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/css渲染效率/">css渲染效率</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/Repaint和Reflow/">Repaint和Reflow</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/jser-1/">从零开始学习Javascript(一)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/tips/">琐碎知识点</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Somnus13<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
