@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>事件委托(代理)与事件传递 | Somnus13</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="要了解事件委托和事件的传递，首先要了解
+什么是事件事件就是用户或者浏览器自身执行的某种动作，而响应某个事件的函就叫做事件处理程序（或事件侦听器）。JavaScript赋予了我们动态创建页面的能力，而事件就是可以被JavaScript侦测到的行为。网页中的每个元素都可以产生某些触发JavaScript函数的事件。事件通常配合函数使用，所以我们就可以通过事件触发函数来操作页面。
+介绍事件委托之前，先要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件委托(代理)与事件传递">
+<meta property="og:url" content="http://Somnus13.github.io/2016/08/25/event/index.html">
+<meta property="og:site_name" content="Somnus13">
+<meta property="og:description" content="要了解事件委托和事件的传递，首先要了解
+什么是事件事件就是用户或者浏览器自身执行的某种动作，而响应某个事件的函就叫做事件处理程序（或事件侦听器）。JavaScript赋予了我们动态创建页面的能力，而事件就是可以被JavaScript侦测到的行为。网页中的每个元素都可以产生某些触发JavaScript函数的事件。事件通常配合函数使用，所以我们就可以通过事件触发函数来操作页面。
+介绍事件委托之前，先要">
+<meta property="og:updated_time" content="2016-08-25T12:01:38.996Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="事件委托(代理)与事件传递">
+<meta name="twitter:description" content="要了解事件委托和事件的传递，首先要了解
+什么是事件事件就是用户或者浏览器自身执行的某种动作，而响应某个事件的函就叫做事件处理程序（或事件侦听器）。JavaScript赋予了我们动态创建页面的能力，而事件就是可以被JavaScript侦测到的行为。网页中的每个元素都可以产生某些触发JavaScript函数的事件。事件通常配合函数使用，所以我们就可以通过事件触发函数来操作页面。
+介绍事件委托之前，先要">
+  
+    <link rel="alternate" href="/atom.xml" title="Somnus13" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Somnus13</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">撸猫的时间用来撸代码</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://Somnus13.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-event" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/25/event/" class="article-date">
+  <time datetime="2016-08-25T11:41:42.000Z" itemprop="datePublished">2016-08-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术进阶/">技术进阶</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      事件委托(代理)与事件传递
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要了解事件委托和事件的传递，首先要了解</p>
+<h2 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h2><p>事件就是用户或者浏览器自身执行的某种动作，而响应某个事件的函就叫做事件处理程序（或事件侦听器）。<br>JavaScript赋予了我们动态创建页面的能力，而事件就是可以被JavaScript侦测到的行为。<br>网页中的每个元素都可以产生某些触发JavaScript函数的事件。<br>事件通常配合函数使用，所以我们就可以通过事件触发函数来操作页面。</p>
+<p>介绍事件委托之前，先要介绍下JavaScript的事件传递机制。<br><a id="more"></a></p>
+<h2 id="事件传递机制"><a href="#事件传递机制" class="headerlink" title="事件传递机制"></a>事件传递机制</h2><h3 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h3><p>页面中添加事件绑定有几种方式：</p>
+<h4 id="1-直接写在html代码中"><a href="#1-直接写在html代码中" class="headerlink" title="1. 直接写在html代码中"></a>1. 直接写在html代码中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div onclick=&quot;alert(&quot;click!&quot;)&quot;&gt;click&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>逻辑简单，但是代码看起来非常杂乱。如果是行数非常多的代码，那就根本不能用杂乱来讲了。</p>
+<h4 id="2-定义函数，并绑定到相应元素上"><a href="#2-定义函数，并绑定到相应元素上" class="headerlink" title="2.定义函数，并绑定到相应元素上"></a>2.定义函数，并绑定到相应元素上</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fuction hello()&#123;</div><div class="line">	alert(&apos;hello world&apos;)</div><div class="line">&#125;</div><div class="line">...</div><div class="line">&lt;p onclick=&quot;hello()&quot;&gt;click me&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-js中元素绑定"><a href="#3-js中元素绑定" class="headerlink" title="3.js中元素绑定"></a>3.js中元素绑定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">document.getElementById(&quot;sayhello&quot;).onclick = fuction()&#123;</div><div class="line">	alert(&apos;hello world&apos;)</div><div class="line">&#125;;</div><div class="line">...</div><div class="line">&lt;p id=&quot;sayhello&quot; &gt;click me&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p>JavaScript与html代码分离，文档结构清晰，便于管理开发。</p>
+<h4 id="4-通过事件监听函数绑定"><a href="#4-通过事件监听函数绑定" class="headerlink" title="4.通过事件监听函数绑定"></a>4.通过事件监听函数绑定</h4><p><strong> addEventListener() 和 removeEventListener() </strong><br>语法：elementObject.addEventListener(eventName,handle,usecapture);</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>elementObject</td>
+<td>事件监听对象</td>
+</tr>
+<tr>
+<td>eventName</td>
+<td>事件名称 如 click，mouseover</td>
+</tr>
+<tr>
+<td>handle</td>
+<td>事件处理函数(<strong>函数名，无小括号</strong>)</td>
+</tr>
+<tr>
+<td>useCapture</td>
+<td>事件捕获还是冒泡，默认是false 冒泡。布尔类型</td>
+</tr>
+<tr>
+<td>兼容</td>
+<td>Chrome FF  IE9+  √  IE6-8 ×</td>
+</tr>
+</tbody>
+</table>
+<p><strong>attachEvent() 和 detachEvent()</strong><br>语法：elementObject.attachEvent(eventName,handle);</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>elementObject</td>
+<td>事件监听对象</td>
+</tr>
+<tr>
+<td>eventName</td>
+<td>事件名称 如 onclick，onmouseover(注意区别 on)</td>
+</tr>
+<tr>
+<td>handle</td>
+<td>事件处理函数</td>
+</tr>
+<tr>
+<td>兼容</td>
+<td>Chrome FF  ×</td>
+</tr>
+</tbody>
+</table>
+<p>虽然两者均可，但是前者是W3C标准的事件监听函数<br>为了兼容，我们一般这么写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//事件绑定</div><div class="line">function addEvents(target, type, func) &#123;  </div><div class="line">    if (target.addEventListener)    //非ie 和ie9  </div><div class="line">        target.addEventListener(type, func, false);  </div><div class="line">    else if (target.attachEvent)   //ie6到ie8  </div><div class="line">        target.attachEvent(&quot;on&quot; + type, func);  </div><div class="line">    else target[&quot;on&quot; + type] = func;   //ie5  </div><div class="line">&#125;; </div><div class="line"></div><div class="line">//事件移除</div><div class="line">function removeEvents(target, type, func)&#123;  </div><div class="line">    if (target.removeEventListener)  </div><div class="line">        target.removeEventListener(type, func, false);  </div><div class="line">    else if (target.detachEvent)  </div><div class="line">        target.detachEvent(&quot;on&quot; + type, func);  </div><div class="line">    else target[&quot;on&quot; + type] = null;  </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="事件的传递与冒泡处理"><a href="#事件的传递与冒泡处理" class="headerlink" title="事件的传递与冒泡处理"></a>事件的传递与冒泡处理</h3><p>DOM事件定义了两种事件流：捕获和冒泡。在成为标准之前，网景(Netscape)和微软选择了不同的方式实现了它们，<br>网景公司选择了捕获事件流，而微软则实现了冒泡事件流。到后来W3C标准实现的时候选择了组合两者。<br>默认情况下，事件使用冒泡流，而非捕获流。但是在一些浏览器里你可以显示指定使用捕获事件流，修改useCapture参数为true即可。</p>
+<ul>
+<li>冒泡事件流<br>  当事件在某一DOM元素被触发时，事件将随着节点继承自的各个父节点冒泡穿过整个DOM节点，至根节点。说白了就是子节点向根节点冒泡的过程。<br>  当我们实际代码工作中，我们有时需要来组织冒泡的传播。<br>  阻止冒泡的几种方法：<ol>
+<li>return flase</li>
+<li>调用event.target进行判断</li>
+<li>event.stopPropagation() -IE下 需要设置事件的cancelBubble属性为false;</li>
+</ol>
+</li>
+<li>捕获事件流<br>  事件的处理将从DOM层次的根开始，而不是从触发事件的目标元素开始，事件被从目标元素的所有祖先元素依次往下传递。在这个过程中，事件会被从文档 根到事件目标元素之间各个继承派生的元素所捕获，如果事件监听器在被注册时设置了useCapture属性为true,那么它们可以被分派给这期间的任何 元素以对事件做出处理；否则，事件会被接着传递给派生元素路径上的下一元素，直至目标元素。事件到达目标元素后，它会接着通过DOM节点再进行冒泡。</li>
+</ul>
+<p>注解：attachEvent()事件处理函数内部中 this指向的是window对象，且同一事件处理函数只能绑定一次。</p>
+<h3 id="事件委托与代理"><a href="#事件委托与代理" class="headerlink" title="事件委托与代理"></a>事件委托与代理</h3><p>事件委托，通俗的将就是把当前元素需要处理的事件委托给别人来做，当然在html中这个别人不是随便的别人，而是当前元素的父级元素。原理呢就是利用之前所说的冒泡，来把事件添加到父级元素来触发执行。<br>优点：提高性能(简短的四个字里多少血泪QAQ)<br>举个栗子，经常和页面打交道，难免要操作li。例如什么划过变色啊，什么点击弹出相应索引值啊等等。一般呢我们采用的方法就是遍历li，然后每个添加事件，问题是li个数较少这没啥问题，如果数量级增加一位呢？<br>所以要通过事件委托来提高性能。<br>来看个例子：划过变色，移出恢复。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;ul&quot;&gt;</div><div class="line">	&lt;li&gt;我是Li1&lt;/li&gt;</div><div class="line">	&lt;li&gt;我是Li2&lt;/li&gt;</div><div class="line">	&lt;li&gt;我是Li3&lt;/li&gt;</div><div class="line">	&lt;li&gt;我是Li4&lt;/li&gt;</div><div class="line">	&lt;li&gt;我是Li5&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">window.onload = function()&#123;</div><div class="line">  var oUl = document.getElementById(&quot;ul&quot;);</div><div class="line">  var aLi = oUl.getElementsByTagName(&quot;li&quot;);</div><div class="line"></div><div class="line">  for(var i=0; i&lt;aLi.length; i++)&#123;</div><div class="line">    aLi[i].onmouseover = function()&#123;</div><div class="line">      this.style.background = &quot;red&quot;;</div><div class="line">    &#125;</div><div class="line">    aLi[i].onmouseout = function()&#123;</div><div class="line">      this.style.background = &quot;&quot;;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上，功能实现。如果我们js动态添加一个li呢？事实证明新增的li并未绑定事件。<br>如果我们通过委托来实现呢？说干就干：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//html代码不变</div><div class="line">window.onload = function()&#123;</div><div class="line">  var oUl = document.getElementById(&quot;ul&quot;);</div><div class="line">  var aLi = oUl.getElementsByTagName(&quot;li&quot;);</div><div class="line"></div><div class="line">  oUl.onmouseover = function(ev)&#123;</div><div class="line">    var ev = ev || window.event;</div><div class="line">    var target = ev.target || ev.srcElement;</div><div class="line">    if(target.nodeName.toLowerCase() == &quot;li&quot;)&#123;</div><div class="line">    target.style.background = &quot;red&quot;;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  oUl.onmouseout = function(ev)&#123;</div><div class="line">    var ev = ev || window.event;</div><div class="line">    var target = ev.target || ev.srcElement;</div><div class="line">    if(target.nodeName.toLowerCase() == &quot;li&quot;)&#123;</div><div class="line">    target.style.background = &quot;&quot;;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>实践证明，新增li是有绑定事件的(你问我你咋知道，自己写一遍就知道了)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://Somnus13.github.io/2016/08/25/event/" data-id="cisaaai1j000arkj3xtxlx5qh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/18/jser-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">从零开始学习Javascript(二)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具相关/">工具相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术进阶/">技术进阶</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html-css/">Html,css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制台/">控制台</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Html-css/" style="font-size: 20px;">Html,css</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/控制台/" style="font-size: 10px;">控制台</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/25/event/">事件委托(代理)与事件传递</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/18/jser-2/">从零开始学习Javascript(二)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/css渲染效率/">css渲染效率</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/Repaint和Reflow/">Repaint和Reflow</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/15/jser-1/">从零开始学习Javascript(一)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Somnus13<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
