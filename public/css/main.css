@@ -218,13 +218,6 @@ h6 {
   line-height: 1.5;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 20px 0 15px;
-}
 h1 {
   font-size: 22px;
 }
@@ -274,7 +267,7 @@ h6 {
   }
 }
 p {
-  margin: 0 0 25px 0;
+  margin: 5px 0 5px 0;
 }
 a {
   color: #555;
@@ -473,7 +466,7 @@ body {
 pre,
 .highlight {
   overflow: auto;
-  margin: 20px 0;
+  margin: 15px 0;
   padding: 0;
   font-size: 13px;
   color: #4d4d4c;
@@ -1505,7 +1498,7 @@ pre .javascript .function {
 }
 .posts-expand .post-eof {
   display: block;
-  margin: 80px auto 60px;
+  margin: 80px auto 50px;
   width: 8%;
   height: 1px;
   background: #ccc;
@@ -1695,7 +1688,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #82d9db;
+  background: #c7ff4f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1734,11 +1727,11 @@ pre .javascript .function {
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #fff;
+  border-bottom-color: #fff;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #87daff;
+  color: #fff;
 }
 .sidebar-panel {
   display: none;
@@ -1797,14 +1790,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #fff;
+  border-bottom-color: #fff;
 }
 .post-toc .nav .active-current > a {
-  color: #87daff;
+  color: #fff;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #87daff;
+  color: #fff;
 }
 .footer {
   font-size: 14px;
@@ -2465,7 +2458,7 @@ pre .javascript .function {
   }
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #87daff;
+  background: #fff;
 }
 .page-post-detail .comments {
   overflow: hidden;
@@ -2545,6 +2538,15 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
+.headband {
+  height: 1px;
+}
+.brand {
+  color: #333;
+  font-weight: bold;
+  background: transparent;
+  font-size: 16px;
+}
 #header {
   background: url("../images/background-header.jpg");
   background-size: cover;
@@ -2561,4 +2563,10 @@ embed {
 }
 .menu .menu-item a {
   font-size: 14px;
+}
+.sidebar-toggle {
+  background: #272822;
+}
+.site-author-image {
+  border-radius: 50%;
 }
