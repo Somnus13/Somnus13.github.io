@@ -78,3 +78,13 @@ search:
   field: post
   format: html
   limit: 10000
+
+google_site_verification: tWqjt0053F1uTTp157aGuJQmy27guN97vehcN4T9RqM
+
+baidu_site_verification: hSgGwyYDBV
+
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
