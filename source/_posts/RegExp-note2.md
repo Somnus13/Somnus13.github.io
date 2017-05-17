@@ -1,6 +1,8 @@
 ---
 title: 正则表达式笔记二
 date: 2017-05-15 22:07:04
+categories:
+    - javascript
 tags:
     - 正则表达式
 ---

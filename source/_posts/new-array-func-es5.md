@@ -1,8 +1,10 @@
 ---
 title: ES5新增数组方法
 date: 2017-05-06 14:47:09
+categories:
+    - javascript
 tags:
-  - javascript
+    - ES5
 ---
 ES5新增数组方法
 =========================
