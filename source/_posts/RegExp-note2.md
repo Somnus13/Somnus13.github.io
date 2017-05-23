@@ -10,8 +10,8 @@ tags:
 
 ## 正则对象创建
 ### 创建RegExp对象实例  
-1. 显示构造: **new RegExp("pattern"[, "flags"])** 或 **new RegExp(/pattern/[, "flags"])**
-2. 隐示构造: **/pattern/[flags]**
+1. 显式构造: **new RegExp("pattern"[, "flags"])** 或 **new RegExp(/pattern/[, "flags"])**
+2. 隐式构造: **/pattern/[flags]**
 
 ### 参数
 * **pattern** 正则表达式
