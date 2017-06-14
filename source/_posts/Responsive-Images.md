@@ -27,6 +27,8 @@ tags:
 		 src="images/gakki-360.jpg" alt="Responsive Images">
 </div>
 ```
+<!-- more -->
+
 图片固定宽度为 **300**，浏览器通过识别设备像素比来筛选并加载图片。如上像素设备比为 **2**（例如：iphone6）的时候加载 **gakki-720** 的图片，**3**（iphone6 plus等）的时候会加载实际尺寸为 **1080** 的备选图。如果不支持，则默认加载 **gakki-360**。
 
 [点此](http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive1.html) 查看示例(建议新版本谷歌浏览)
