@@ -315,6 +315,153 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/10/05/css-seletor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Somnus13">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些踩屎的经历">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/05/css-seletor/" itemprop="url">从Repaint/Reflow到css选择器</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T00:37:01+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是Repaint-Reflow"><a href="#什么是Repaint-Reflow" class="headerlink" title="什么是Repaint/Reflow?"></a>什么是Repaint/Reflow?</h3><p>先扒一张图，来解释下浏览器的工作流程  </p>
+<p><img src="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png" alt="浏览器工作原理">  </p>
+<p>上图可归纳为四步：  </p>
+<ol>
+<li>解析构建 DOM 树<br> 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树</li>
+<li>构建渲染树<br> 解析所有 CSS,并据此计算节点样式，创建渲染树</li>
+<li>布局渲染树<br> 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置</li>
+<li>绘制渲染树<br> 遍历渲染树，每个节点使用 UI 后端层绘制</li>
+</ol>
+<p>从以上不难看出，Repaint 和 Reflow 发生在了第三四步，故给出定义：<br>浏览器在解析页面时，根据 css 以及 js来计算并把相应的元素置于该出现的位置，这个过程就是 Reflow;<br>当元素的位置大小颜色确定后，浏览器会按照各自的属性进行绘制，这个过程就是 Repaint。故我们需要避免引发此类操作，<br>以此来提高渲染速度。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/05/css-seletor/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/09/19/bfc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1660,158 +1807,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/15/atom/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Somnus13">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那些踩屎的经历">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/15/atom/" itemprop="url">Atom使用心得以及插件推荐</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T21:45:42+08:00">
-                2017-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>公司移动化办公的原因，导致我不得不抛弃台式转战笔记本。而租来的笔记本4G的内存导致我在编辑器上的选择有些捉襟见肘。</p>
-</blockquote>
-<p>家中台式编辑器一般都是使用 <strong>webstorm</strong>，精神洁癖的我每天就是自定义，修修改改。鉴于公司的笔记本，<strong>IDE</strong> 我觉得还是算了吧，一个 <strong>python</strong> 服务和一个 <strong>IDE</strong>，再加上一向吃内存就和喝水一样的谷歌浏览器，我已然已经预见了后果，唯有长按关机键才能拯救我。<br>所以：</p>
-<ol>
-<li>抛弃 <strong>IDE</strong>，不是因为功能不够强大，只是过于庞大</li>
-<li>抛弃 <strong>sublime text</strong>，原因也有几点<ul>
-<li><strong>package control</strong> 简直捉鸡，每次重装 <strong>貌似</strong> 都要重新安装一遍插件</li>
-<li>某些插件有些捉鸡，例如常用插件 <strong>emmet</strong> 的 <strong>pyv8 error</strong></li>
-<li>不能自动识别当前编辑项目类型。我就编辑 <strong>Python</strong> 项目里的一个 <strong>js</strong> 文件，那些 <strong>angular</strong>、<strong>react</strong> 之类的插件你可以安分点嘛</li>
-<li>此外 <strong>sublime text3</strong> 的函数定位功能简直良心，虽然这会增加内存消耗</li>
-</ul>
-</li>
-<li>然后刨到了 <strong>Atom</strong>，<strong>github</strong> 出品想来应该不差</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/15/atom/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1861,7 +1856,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1883,7 +1878,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

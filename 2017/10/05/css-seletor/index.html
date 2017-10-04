@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="css," />
 
 
 
@@ -96,16 +96,20 @@
 
 
 
-<meta name="description" content="天天心态爆炸的前端狗">
-<meta property="og:type" content="website">
-<meta property="og:title" content="那些踩屎的经历">
-<meta property="og:url" content="https://somnus13.github.io/tags/初级下/index.html">
+<meta name="description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程      上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从Repaint&#x2F;Reflow到css选择器">
+<meta property="og:url" content="https://somnus13.github.io/2017/10/05/css-seletor/index.html">
 <meta property="og:site_name" content="那些踩屎的经历">
-<meta property="og:description" content="天天心态爆炸的前端狗">
+<meta property="og:description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程      上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png">
+<meta property="og:updated_time" content="2017-10-04T16:42:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那些踩屎的经历">
-<meta name="twitter:description" content="天天心态爆炸的前端狗">
+<meta name="twitter:title" content="从Repaint&#x2F;Reflow到css选择器">
+<meta name="twitter:description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程      上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲">
+<meta name="twitter:image" content="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png">
 
 
 
@@ -133,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="https://somnus13.github.io/tags/初级下/"/>
+  <link rel="canonical" href="https://somnus13.github.io/2017/10/05/css-seletor/"/>
 
 
 
 
 
-  <title>标签: 初级下 | 那些踩屎的经历</title>
+  <title>从Repaint/Reflow到css选择器 | 那些踩屎的经历</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -303,44 +307,281 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2>初级下<small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/10/05/css-seletor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Somnus13">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些踩屎的经历">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">从Repaint/Reflow到css选择器</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T00:37:01+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="什么是Repaint-Reflow"><a href="#什么是Repaint-Reflow" class="headerlink" title="什么是Repaint/Reflow?"></a>什么是Repaint/Reflow?</h3><p>先扒一张图，来解释下浏览器的工作流程  </p>
+<p><img src="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png" alt="浏览器工作原理">  </p>
+<p>上图可归纳为四步：  </p>
+<ol>
+<li>解析构建 DOM 树<br> 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树</li>
+<li>构建渲染树<br> 解析所有 CSS,并据此计算节点样式，创建渲染树</li>
+<li>布局渲染树<br> 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置</li>
+<li>绘制渲染树<br> 遍历渲染树，每个节点使用 UI 后端层绘制</li>
+</ol>
+<p>从以上不难看出，Repaint 和 Reflow 发生在了第三四步，故给出定义：<br>浏览器在解析页面时，根据 css 以及 js来计算并把相应的元素置于该出现的位置，这个过程就是 Reflow;<br>当元素的位置大小颜色确定后，浏览器会按照各自的属性进行绘制，这个过程就是 Repaint。故我们需要避免引发此类操作，<br>以此来提高渲染速度。</p>
+<a id="more"></a>
+<h3 id="引起Repaint-Reflow的一些操作"><a href="#引起Repaint-Reflow的一些操作" class="headerlink" title="引起Repaint/Reflow的一些操作"></a>引起Repaint/Reflow的一些操作</h3><p>Reflow 的成本比 Repaint 的成本高得多的多。DOM Tree 里的每个结点都会有 reflow 方法，一个结点的 reflow 很有可能导致子结点，甚至父点以及同级结点的 reflow。在一些高性能的电脑上也许还没什么，但是如果 reflow 发生在手机上，那么这个过程是非常痛苦和耗电的。 所以，下面这些动作有很大可能会是成本比较高的。</p>
+<ul>
+<li>当你增加、删除、修改 DOM 结点时，会导致 Reflow 或 Repaint。</li>
+<li>当你移动 DOM 的位置，或是搞个动画的时候。</li>
+<li>当你修改 CSS 样式的时候。</li>
+<li>当你 Resize 窗口的时候（移动端没有这个问题），或是滚动的时候。</li>
+<li>当你修改网页的默认字体时。<br>  注：display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发现位置变化。</li>
+</ul>
+<h3 id="如何优化"><a href="#如何优化" class="headerlink" title="如何优化"></a>如何优化</h3><p>Reflow是不可避免的，只能将Reflow对性能的影响减到最小,给出下面几条建议：</p>
+<ul>
+<li><p>不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 不推荐的写法</div><div class="line">var left = 10,</div><div class="line">top = 10;</div><div class="line">el.style.left = left + &quot;px&quot;;</div><div class="line">el.style.top  = top  + &quot;px&quot;;</div><div class="line">// 推荐写法</div><div class="line">el.className += &quot; theclassname&quot;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>把 DOM 离线后修改。如：<br>  a&gt; 使用 documentFragment 对象在内存里操作 DOM。<br>  b&gt; 先把 DOM 给 display:none (有一次 repaint)，然后你想怎么改就怎么改。比如修改 100 次，然后再把他显示出来。<br>  c&gt; clone 一个 DOM 节点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下。</p>
+</li>
+<li>不要把 DOM 节点的属性值放在一个循环里当成循环里的变量。不然这会导致大量地读写这个结点的属性。</li>
+<li>尽可能的修改层级比较低的 DOM节点。当然，改变层级比较底的 DOM节点有可能会造成大面积的 reflow，但是也可能影响范围很小。</li>
+<li>为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是会大大减小 reflow 。</li>
+<li>尽量不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。</li>
+</ul>
+<h3 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h3><blockquote>
+<p>上面提到了Repaint和Reflow，以及如何优化的问题。我们知道浏览器工作流程第三步就是解析css然后计算元素位置并放置，那么如何从这点上来提高效率呢？这就要提到css的渲染效率了，下面我们来探讨下。</p>
+</blockquote>
+<h3 id="浏览器如何识别你的选择器"><a href="#浏览器如何识别你的选择器" class="headerlink" title="浏览器如何识别你的选择器"></a>浏览器如何识别你的选择器</h3><p>浏览器读取你的选择器，遵循的原则是由右向左读取，换句话讲，读取选择器会由右向左进行。举个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">div.header &gt; ul li p</div></pre></td></tr></table></figure></p>
+<p>上述选择器，浏览器会尝试在你的 html 标签中寻找 p 元素,接着匹配 li 和 ul，最后再去匹配 div.header,所谓的由右到左就是这样。 选择器的最后一部分，也就是最右边的部分被称为 <strong>关键选择器</strong>，而它决定着你的选择器效率的高低。而关键选择器的作用就是提高选择器的效率，每少检查一个给定的规则，就会更有效的将样式匹配给对应的html元素。所以我们的方向就是让关键选择器更加有效性能化更高，那么如何实现呢？很简单，<strong>关键选择器越具体，性能化就越高</strong>。</p>
+<h3 id="选择器效率"><a href="#选择器效率" class="headerlink" title="选择器效率"></a>选择器效率</h3><p>如果你是个合格的前端开发者，对 css 选择器有一定了解的话，应该对那些选择器以及它的优先级不会太陌生。<br>来让我们看下 <a href="http://stevesouders.com/" target="_blank" rel="external">Steve Souders</a> 大神给的优先级排序：</p>
+<ol>
+<li>id选择器 (#id)</li>
+<li>类选择器 (.class)</li>
+<li>标签选择器 (h1,div,p..)</li>
+<li>相邻选择器 (h1+p)</li>
+<li>子选择器 (div &lt; span)</li>
+<li>后代选择器 (div span)</li>
+<li>通配符选择器 (*)</li>
+<li>属性选择器 (a[rel=’’])</li>
+<li>伪类选择器 (a:hover,li:nth-child(1))</li>
+</ol>
+<p>上述选择器优先级按照降序排列，当然还有上面你没提到的行内样式和 !important，建议还是少用为妙，毕竟对于维护来讲太恶心。</p>
+<h3 id="书写高效的css选择器"><a href="#书写高效的css选择器" class="headerlink" title="书写高效的css选择器"></a>书写高效的css选择器</h3><h4 id="来自Mozilla的几点建议（搬运工）"><a href="#来自Mozilla的几点建议（搬运工）" class="headerlink" title="来自Mozilla的几点建议（搬运工）"></a>来自Mozilla的几点建议（搬运工）</h4><p>David在<a href="http://code.google.com/speed/page-speed/docs/rendering.html" target="_blank" rel="external">《Use efficient CSS selectors》</a>中介绍了几种书写高效率的CSS选择器的方法:  </p>
+<ol>
+<li>避免普遍规则</li>
+<li>不要在 ID 选择器前加标签名或类名</li>
+<li>不要在类名选择器前加标签名</li>
+<li>尽可能使用具体的类别</li>
+<li>避免使用后代选择器</li>
+<li>标签分类规则中不应该包含一个子选择器</li>
+<li>子选择器的问题</li>
+<li>借助相关继承关系</li>
+<li>使用范围内的样式表</li>
+</ol>
+<h4 id="一些降低渲染资源消耗的实战经验"><a href="#一些降低渲染资源消耗的实战经验" class="headerlink" title="一些降低渲染资源消耗的实战经验"></a>一些降低渲染资源消耗的实战经验</h4><ol>
+<li><p><strong>十六进制颜色值对位数与大小写</strong><br> 默认标准是大写以及 6 位数标注，建议书写规范，虽然未有确实数据表明不采用写法会对渲染速率有影响。</p>
+</li>
+<li><p><strong>display 与 visibility 差异</strong><br> 两者均用于设置或检索是否显示对象。前者隐藏对象且不保留物理空间，而后者会保存物理空间。浏览器渲染被占据的物理空间时，会有所消耗。建议采用 display:none;</p>
+</li>
+<li><p><strong>border:none; 与 border:0;区别</strong><br> 区别同上, border:0; 把 border 设为 “0” 像素虽然在页面上看不见，但按 border 默认值理解，浏览器依然对 border-width/border-color 进行了渲染，即已经占用了内存值。<br> border:none; 把 border 设为 “none” 即没有，浏览器解析 “none” 时将不作出渲染动作，即不会消耗内存值。 建议使用border:none;</p>
+</li>
+<li><p><strong>不宜过小的图片平铺</strong><br>  一张宽高 1px 的背景图片，虽然文件体积非常之小，但渲染宽高500px的板块需要重复平铺 2500 次。提高背景图片渲染效率跟图片尺寸及体积有关，最大的图片文件体积保持约 70KB。建议采用衡量适中体积及尺寸的背景图片</p>
+</li>
+<li><p><strong>IE的滤镜</strong><br> IE的滤镜除了比较消耗资源外也有兼容性问题。当中有令 PNG 透明的滤镜，可采用 GIF 或 JPG 似透非透的办法来避免使用此滤镜。建议只在 IE6 应用 GIF 透明，因为 IE7 以上已经支持了 PNG 透明。</p>
+</li>
+<li><p><strong>通配符*{margin:0;padding:0;}</strong>   </p>
+<ul>
+<li>号通配符把所有标签都初始化一遍，浏览器的渲染消耗一定的资源。有部分在标签在不同浏览器上几乎无差异，或是某些已经不推荐使用的标签(因为你不会去用它)，它们不需通配符要重新初始化一遍这样做能节省一点资源。  </li>
+<li>推荐方案(代替 reset )：normalize.css(如果没听说过自行百度)</li>
+</ul>
+</li>
+<li><p><strong>不要添加额外的标签来描述 class 或 id</strong><br> 如果你有一个选择器是以 id 作为关键选择符，请不要添加多余标签名上去。因为 ID 是唯一的，你不要为了一个不存在的理由而降低了匹配的效率。</p>
+<ul>
+<li>不赞成 - button#backButton { }</li>
+<li>不赞成 - .menu-left #newMenuIcon { }</li>
+<li>建议用 - #backButton { }</li>
+<li>建议用 - #newMenuIcon { }</li>
+</ul>
+</li>
+<li><p><strong>尽量选择最特殊的类来存放选择器</strong><br> 降低系统效率的一个最大原因是我们在标签类中用了过多的选择符。通过添加 class 到元素，我们可以将类别进行再细分为 class 类，这样就不用为了一个标签浪费时间去匹配过多的选择符了。</p>
+<ul>
+<li>不赞成 - treeitem[mailfolder=”true”] &gt; treerow &gt; treecell { }</li>
+<li>建议用 - .treecell-mailfolder { }</li>
+</ul>
+</li>
+<li><p><strong>避免子孙选择符</strong><br> 子孙选择符是 CSS 中最耗资源的选择符。他真的是非常的耗资源，尤其是在选择器使用标签类或通用类的时候。很多情况中，我们真正想要的是子选择符。除非有明确说明，在 UI CSS 中是严禁使用子孙选择符的。</p>
+<ul>
+<li>不赞成 - treehead treerow treecell { }</li>
+<li>好一点，但还是不行(参照下一条) - treehead &gt; treerow &gt; treecell { }</li>
+</ul>
+</li>
+<li><p><strong>标签类中不要包含子选择符</strong><br>不要在标签类中使用子选择符。否则，每次元素的出现，都会额外地增加匹配时间。（特别是当选择器似乎多半会被匹配的情况下）</p>
+<ul>
+<li>不赞成 - treehead &gt; treerow &gt; treecell { }</li>
+<li>建议用 - .treecell-header { }</li>
+</ul>
+</li>
+<li><p><strong>留意所有子选择符的使用</strong><br>小心地使用子选择符。如果你能想出一个的不使用他的方法，那么就不要使用。特别是在 RDF 树和菜单会频繁地使用子选择符，像这样。</p>
+<ul>
+<li>不赞成 - treeitem[IsImapServer=”true”] &gt; treerow &gt; .tree-folderpane-icon { } 请记住 RDF 的属性是可以在模板中被复制的！利用这一点，我们可以复制那些想基于该属性改变的子 XUL 元素上的 RDF 属性。</li>
+<li>建议用 - .tree-folderpane-icon[IsImapServer=”true”] { }. </li>
+</ul>
+</li>
+</ol>
+<p>暂时就这么多了，国庆在家没网，更个东西也是费死个老劲。</p>
 
-      <h3 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/08/28/nihongo25-26/" itemprop="url">
-              
-                <span itemprop="name">日语初下复习（25-26）</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-28T19:33:51+08:00"
-              content="2017-08-28" >
-          08-28
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/19/bfc/" rel="next" title="BFC(Block Formatting Content)">
+                <i class="fa fa-chevron-left"></i> BFC(Block Formatting Content)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -348,6 +589,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -367,8 +612,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -466,6 +720,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Repaint-Reflow"><span class="nav-text">什么是Repaint/Reflow?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引起Repaint-Reflow的一些操作"><span class="nav-text">引起Repaint/Reflow的一些操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何优化"><span class="nav-text">如何优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css选择器"><span class="nav-text">css选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器如何识别你的选择器"><span class="nav-text">浏览器如何识别你的选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器效率"><span class="nav-text">选择器效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#书写高效的css选择器"><span class="nav-text">书写高效的css选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#来自Mozilla的几点建议（搬运工）"><span class="nav-text">来自Mozilla的几点建议（搬运工）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些降低渲染资源消耗的实战经验"><span class="nav-text">一些降低渲染资源消耗的实战经验</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -568,6 +838,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
