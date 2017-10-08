@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://somnus13.github.io/2017/10/08/windows-about/</loc>
+    <lastmod>2017-10-08T14:36:18.929Z</lastmod>
+    <data>
+        <display>
+        <title>windows 下面那些让人抓狂的东西</title>
+        <pubTime>2017-10-08T14:24:29.000Z</pubTime>
+        
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="OS" url="https://somnus13.github.io/categories/OS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://somnus13.github.io/2017/10/05/css-seletor/</loc>
     <lastmod>2017-10-04T16:42:49.000Z</lastmod>
     <data>
@@ -44,14 +64,34 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/05/06/new-array-func-es5/</loc>
+    <loc>https://somnus13.github.io/2017/05/23/ios-webapp-issues2/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>ES5新增数组方法</title>
-        <pubTime>2017-05-06T06:47:09.000Z</pubTime>
+        <title>IOS webapp 踩屎记（二）</title>
+        <pubTime>2017-05-23T13:20:56.000Z</pubTime>
         
-        <tag>ES5</tag>
+        <tag>ios</tag>
+         
+         
+           
+             
+              <breadCrumb title="移动端" url="https://somnus13.github.io/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式笔记一</title>
+        <pubTime>2017-05-15T13:57:21.000Z</pubTime>
+        
+        <tag>正则表达式</tag>
          
          
            
@@ -84,39 +124,19 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
+    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>正则表达式笔记二</title>
-        <pubTime>2017-05-15T14:07:04.000Z</pubTime>
+        <title>file对象什么的</title>
+        <pubTime>2017-07-24T13:38:44.000Z</pubTime>
         
-        <tag>正则表达式</tag>
+        <tag>file</tag>
          
          
            
              
-              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>正则表达式笔记一</title>
-        <pubTime>2017-05-15T13:57:21.000Z</pubTime>
-        
-        <tag>正则表达式</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
+              <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
           
         </display>
     </data>
@@ -144,6 +164,26 @@
 
     
   <url>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式笔记二</title>
+        <pubTime>2017-05-15T14:07:04.000Z</pubTime>
+        
+        <tag>正则表达式</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://somnus13.github.io/2017/05/22/ios-webapp-issues1/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
@@ -164,19 +204,19 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/05/15/atom/</loc>
+    <loc>https://somnus13.github.io/2017/05/06/new-array-func-es5/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>Atom使用心得以及插件推荐</title>
-        <pubTime>2017-05-15T13:45:42.000Z</pubTime>
+        <title>ES5新增数组方法</title>
+        <pubTime>2017-05-06T06:47:09.000Z</pubTime>
         
-        <tag>Atom</tag>
+        <tag>ES5</tag>
          
          
            
              
-              <breadCrumb title="tools" url="https://somnus13.github.io/categories/tools/"/>
+              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
           
         </display>
     </data>
@@ -195,26 +235,6 @@
            
              
               <breadCrumb title="杂记" url="https://somnus13.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>file对象什么的</title>
-        <pubTime>2017-07-24T13:38:44.000Z</pubTime>
-        
-        <tag>file</tag>
-         
-         
-           
-             
-              <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
           
         </display>
     </data>
@@ -242,19 +262,19 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/05/23/ios-webapp-issues2/</loc>
+    <loc>https://somnus13.github.io/2017/05/15/atom/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>IOS webapp 踩屎记（二）</title>
-        <pubTime>2017-05-23T13:20:56.000Z</pubTime>
+        <title>Atom使用心得以及插件推荐</title>
+        <pubTime>2017-05-15T13:45:42.000Z</pubTime>
         
-        <tag>ios</tag>
+        <tag>Atom</tag>
          
          
            
              
-              <breadCrumb title="移动端" url="https://somnus13.github.io/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+              <breadCrumb title="tools" url="https://somnus13.github.io/categories/tools/"/>
           
         </display>
     </data>
