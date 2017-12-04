@@ -182,6 +182,8 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
+    <a href="https://github.com/Somnus13"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -362,7 +364,7 @@
               <span class="post-meta-divider">|</span>
             
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="fa fa-tags"></i>
               </span>
               
                 <span class="post-meta-item-text">分类于</span>
@@ -387,6 +389,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
           
 
           
@@ -595,39 +602,9 @@
           
   <div class="comments" id="comments">
     
-      <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-      <div id="container" style="display:none"></div>
-      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-      <script>
-      const myTheme = {
-        render(state, instance) {
-          const container = document.createElement('div');
-          container.lang = "en-US";
-          container.className = 'gitment-container gitment-root-container';
-          container.appendChild(instance.renderHeader(state, instance));
-          container.appendChild(instance.renderEditor(state, instance));
-          container.appendChild(instance.renderComments(state, instance));
-          container.appendChild(instance.renderFooter(state, instance));
-          return container;
-        }
-      }
-      function showGitment() {
-        $("#gitment_title").attr("style", "display:none");
-        $("#container").attr("style", "").addClass("gitment_container");
-        var gitment = new Gitment({
-          id: window.location.pathname,
-          theme: myTheme,
-          owner: 'Somnus13',
-          repo: 'Somnus13.github.io',
-          oauth: {
-            client_id: '9f61826363c389dbcc6d',
-            client_secret: '0e92403e65a3d631d1c0df2e1537bd6e7cca941b'
-          }
-        });
-        gitment.render('container');
-      }
-      </script>
+       
+         <div id="gitment-container"></div>
+       
     
   </div>
 
@@ -768,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Repaint-Reflow"><span class="nav-text">什么是Repaint/Reflow?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引起Repaint-Reflow的一些操作"><span class="nav-text">引起Repaint/Reflow的一些操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何优化"><span class="nav-text">如何优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css选择器"><span class="nav-text">css选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器如何识别你的选择器"><span class="nav-text">浏览器如何识别你的选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器效率"><span class="nav-text">选择器效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#书写高效的css选择器"><span class="nav-text">书写高效的css选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#来自Mozilla的几点建议（搬运工）"><span class="nav-text">来自Mozilla的几点建议（搬运工）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些降低渲染资源消耗的实战经验"><span class="nav-text">一些降低渲染资源消耗的实战经验</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Repaint-Reflow"><span class="nav-number">1.</span> <span class="nav-text">什么是Repaint/Reflow?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引起Repaint-Reflow的一些操作"><span class="nav-number">2.</span> <span class="nav-text">引起Repaint/Reflow的一些操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何优化"><span class="nav-number">3.</span> <span class="nav-text">如何优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css选择器"><span class="nav-number">4.</span> <span class="nav-text">css选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器如何识别你的选择器"><span class="nav-number">5.</span> <span class="nav-text">浏览器如何识别你的选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器效率"><span class="nav-number">6.</span> <span class="nav-text">选择器效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#书写高效的css选择器"><span class="nav-number">7.</span> <span class="nav-text">书写高效的css选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#来自Mozilla的几点建议（搬运工）"><span class="nav-number">7.1.</span> <span class="nav-text">来自Mozilla的几点建议（搬运工）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些降低渲染资源消耗的实战经验"><span class="nav-number">7.2.</span> <span class="nav-text">一些降低渲染资源消耗的实战经验</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -801,6 +778,14 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
 
         
       </div>
@@ -919,6 +904,27 @@
 
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: '',
+               repo: 'Somnus13.github.io',
+               oauth: {
+                   client_id: '',
+                   client_secret: '',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
 
 
   

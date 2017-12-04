@@ -183,6 +183,8 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
+    <a href="https://github.com/Somnus13"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -363,7 +365,7 @@
               <span class="post-meta-divider">|</span>
             
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="fa fa-tags"></i>
               </span>
               
                 <span class="post-meta-item-text">分类于</span>
@@ -388,6 +390,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
           
 
           
@@ -515,39 +522,9 @@
           
   <div class="comments" id="comments">
     
-      <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-      <div id="container" style="display:none"></div>
-      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-      <script>
-      const myTheme = {
-        render(state, instance) {
-          const container = document.createElement('div');
-          container.lang = "en-US";
-          container.className = 'gitment-container gitment-root-container';
-          container.appendChild(instance.renderHeader(state, instance));
-          container.appendChild(instance.renderEditor(state, instance));
-          container.appendChild(instance.renderComments(state, instance));
-          container.appendChild(instance.renderFooter(state, instance));
-          return container;
-        }
-      }
-      function showGitment() {
-        $("#gitment_title").attr("style", "display:none");
-        $("#container").attr("style", "").addClass("gitment_container");
-        var gitment = new Gitment({
-          id: window.location.pathname,
-          theme: myTheme,
-          owner: 'Somnus13',
-          repo: 'Somnus13.github.io',
-          oauth: {
-            client_id: '9f61826363c389dbcc6d',
-            client_secret: '0e92403e65a3d631d1c0df2e1537bd6e7cca941b'
-          }
-        });
-        gitment.render('container');
-      }
-      </script>
+       
+         <div id="gitment-container"></div>
+       
     
   </div>
 
@@ -688,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fileList对象和file对象"><span class="nav-text">fileList对象和file对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多文件FileList"><span class="nav-text">多文件FileList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件预览"><span class="nav-text">文件预览</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blob对象"><span class="nav-text">Blob对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#适用类型数组和blob创建一个url"><span class="nav-text">适用类型数组和blob创建一个url</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Blob中提取数据"><span class="nav-text">Blob中提取数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过url下载文件"><span class="nav-text">通过url下载文件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fileList对象和file对象"><span class="nav-number">1.</span> <span class="nav-text">fileList对象和file对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">1.2.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多文件FileList"><span class="nav-number">1.2.1.</span> <span class="nav-text">多文件FileList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件预览"><span class="nav-number">1.2.2.</span> <span class="nav-text">文件预览</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blob对象"><span class="nav-number">2.</span> <span class="nav-text">Blob对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-number">2.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">2.4.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#适用类型数组和blob创建一个url"><span class="nav-number">2.4.1.</span> <span class="nav-text">适用类型数组和blob创建一个url</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Blob中提取数据"><span class="nav-number">2.4.2.</span> <span class="nav-text">Blob中提取数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过url下载文件"><span class="nav-number">2.4.3.</span> <span class="nav-text">通过url下载文件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -721,6 +698,14 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
 
         
       </div>
@@ -839,6 +824,27 @@
 
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: '',
+               repo: 'Somnus13.github.io',
+               oauth: {
+                   client_id: '',
+                   client_secret: '',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
 
 
   
