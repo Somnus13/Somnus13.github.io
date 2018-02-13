@@ -317,6 +317,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2018/02/13/iphone-x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Somnus13">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些踩屎的经历">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/13/iphone-x/" itemprop="url">iPhone X 适配</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T22:06:28+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-tags"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这篇文章迟到了很久，暂且记录一下自己遇到的坑</p>
+</blockquote>
+<h2 id="html5网页"><a href="#html5网页" class="headerlink" title="html5网页"></a>html5网页</h2><p>因为目前就职公司采用的H5响应式驱动的主体项目，app都是基于的webview开发，当iPhone X上市后，适配促成了新的兼容任务。</p>
+<h3 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h3><p>为了更好的适配iPhone X，iOS 11新增了几个特性用于处理那诡异的刘海屏。苹果公司还对iPhone X的屏幕内容作了安全距离限定，美其名曰为了更好的用户体验，其实就是为了填自己的坑。。</p>
+<h4 id="viewport-fit"><a href="#viewport-fit" class="headerlink" title="viewport-fit"></a>viewport-fit</h4><p>iOS11新增特性，为了适应iPhone X对现有的viewport meta标签的一个扩展，定义网页在可视窗口的布局方式。safari浏览器中开发模式可勾选支持调试。<br>属性：  </p>
+<ul>
+<li>contain：可视窗口包含网页内容，即内容会在安全区域显示</li>
+<li>cover：网页内容覆盖可视窗口</li>
+<li>auto： 默认值，同contain表现是一致的</li>
+</ul>
+<p>详情见<a href="https://www.w3.org/TR/css-round-display-1/#viewport-fit-descriptor" target="_blank" rel="external">文档</a></p>
+<h4 id="constant"><a href="#constant" class="headerlink" title="constant"></a>constant</h4><p>iOS11新增特性，webkit的css函数，用于设定安全区域与边界的距离，有四个预定义变量。</p>
+<ul>
+<li>safe-area-inset-left：安全区域距离左边边界距离</li>
+<li>safe-area-inset-right：安全区域距离右边边界距离</li>
+<li>safe-area-inset-top：安全区域距离顶部边界距离</li>
+<li>safe-area-inset-bottom：安全区域距离底部边界距离</li>
+</ul>
+<p>我们需要关注的就是safe-area-inset-bottom，对应也就是底部小黑条的处理<br>同时需要注意的就是，<strong>viewport-fit 为contain时，constant函数是不起作用的，需要配合cover使用</strong>，不支持constant 的浏览器会被忽略此属性  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/13/iphone-x/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/10/08/windows-about/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1635,154 +1792,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/15/RegExp-note2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Somnus13">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那些踩屎的经历">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/15/RegExp-note2/" itemprop="url">正则表达式笔记二</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T22:07:04+08:00">
-                2017-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-tags"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>抽风的电脑，字怎么变成繁体了。主要为正则对象函数的应用。</p>
-</blockquote>
-<h2 id="正则对象创建"><a href="#正则对象创建" class="headerlink" title="正则对象创建"></a>正则对象创建</h2><h3 id="创建RegExp对象实例"><a href="#创建RegExp对象实例" class="headerlink" title="创建RegExp对象实例"></a>创建RegExp对象实例</h3><ol>
-<li>显式构造: <strong>new RegExp(“pattern”[, “flags”])</strong> 或 <strong>new RegExp(/pattern/[, “flags”])</strong></li>
-<li>隐式构造: <strong>/pattern/[flags]</strong></li>
-</ol>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li><strong>pattern</strong> 正则表达式</li>
-<li><strong>flags</strong><br>  标志匹配规则。例如 “g” 全局匹配，”i” 不区分大小写，”m” 多行匹配等，常用的为 “g” 和 “i”。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/15/RegExp-note2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1832,7 +1841,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1932,7 +1941,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

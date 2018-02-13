@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[iPhone X 适配]]></title>
+    <url>%2F2018%2F02%2F13%2Fiphone-x%2F</url>
+    <content type="text"><![CDATA[这篇文章迟到了很久，暂且记录一下自己遇到的坑 html5网页因为目前就职公司采用的H5响应式驱动的主体项目，app都是基于的webview开发，当iPhone X上市后，适配促成了新的兼容任务。 新属性为了更好的适配iPhone X，iOS 11新增了几个特性用于处理那诡异的刘海屏。苹果公司还对iPhone X的屏幕内容作了安全距离限定，美其名曰为了更好的用户体验，其实就是为了填自己的坑。。 viewport-fitiOS11新增特性，为了适应iPhone X对现有的viewport meta标签的一个扩展，定义网页在可视窗口的布局方式。safari浏览器中开发模式可勾选支持调试。属性： contain：可视窗口包含网页内容，即内容会在安全区域显示 cover：网页内容覆盖可视窗口 auto： 默认值，同contain表现是一致的 详情见文档 constantiOS11新增特性，webkit的css函数，用于设定安全区域与边界的距离，有四个预定义变量。 safe-area-inset-left：安全区域距离左边边界距离 safe-area-inset-right：安全区域距离右边边界距离 safe-area-inset-top：安全区域距离顶部边界距离 safe-area-inset-bottom：安全区域距离底部边界距离 我们需要关注的就是safe-area-inset-bottom，对应也就是底部小黑条的处理同时需要注意的就是，viewport-fit 为contain时，constant函数是不起作用的，需要配合cover使用，不支持constant 的浏览器会被忽略此属性 其实有些人会有些疑惑，很明显设计稿下面空出的距离就是68像素（2倍设计稿），但是网页适配你要兼容旋转屏幕，所以乖乖用人家的不要闹。 env（iOS 11.2后支持，兼容处理）这是当初比较坑的一点，同事的突然一波更新，整个人陷入绝望，窝草！说好的适配呢，都不生效了！！后来又查了查，哦，11.2以后支持这个属性了，constant废除了。。可定义的值并无任何变化，只是函数名变了，略。 适配方案官方给的建议就是，列表或者内容建议通底显示，黑条压了就压了，反正可以滑动内容，至于底部有悬浮固定操作的交互时候，建议做兼容处理。 设置网页窗口的布局方式 viewport meta标签添加 viewport-fit=cover属性 1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, viewport-fit=cover&quot;&gt; 页面内容主体限定安全区域 为了避免列表尾项或者主体内容受到小黑条遮挡，我们需要对body做一些处理 123456body &#123; /* iOS 11.0 */ padding-bottom: constant(safe-area-inset-bottom); /* 11.2+ */ padding-bottom: env(safe-area-inset-bottom);&#125; 底部悬浮交互按钮 一般大多数需要做兼容处理的就是这种，web应用的底部导航菜单。 我们需要对吸底按钮做内边距处理，增加扩展高度，注意吸底元素最好设置个背景色，不然会镂空网站主体背景色 123456&#123; /* iOS 11.0 */ padding-bottom: constant(safe-area-inset-bottom); /* 11.2+ */ padding-bottom: env(safe-area-inset-bottom);&#125; 或者通过css的计算函数calc来增加高度 1234&#123; height: calc(50px(预设值) + constant(safe-area-inset-bottom)); height: calc(50px(预设值) + env(safe-area-inset-bottom));&#125; 除此之外，有些悬浮按钮也需要处理，例如返回顶部之类，同样的通过计算函数增加定位元素的bottom值 1234&#123; bottom: calc(50px(预设值) + constant(safe-area-inset-bottom)); bottom: calc(50px(预设值) + env(safe-area-inset-bottom));&#125; 需要注意的是：calc 属性计算中间的空格不可忽略，代码压缩会有点坑此处 属性兼容处理support 我们只希望 iPhoneX 才需要新增适配样式，我们可以配合 @supports 实现： 123456@supports (bottom: constant(safe-area-inset-bottom)) or (bottom: env(safe-area-inset-bottom)) &#123; fixedDiv &#123; margin-bottom: constant(safe-area-inset-bottom); margin-bottom: env(safe-area-inset-bottom); &#125;&#125; 小程序小程序的处理相对就比较无脑，通过或许手机信息接口拿到是否为iPhone X,然后做相应的样式处理123456789// 获取手机信息wx.getSystemInfo(&#123; success: function (res) &#123; let model = res.model.substring(0, res.model.indexOf(&quot;X&quot;)) + &quot;X&quot;; if (model == &apos;iPhone X&apos;) &#123; that.globalData.isIpx = true &#125; &#125;&#125;) 注意：小程序webview中的适配采用h5的网页适配属性不生效，需要通过参数传递然后动态添加class做样式处理 app如果业务逻辑是由app驱动，直接甩好webview距离就好，如果是web驱动，建议移交web来做底部兼容 后话大过年的在家懒了好几天终于开始用笔记本干正事系列。。(碎碎念，讲道理浏览量这么少的东西，我就没必要定性自己写的是技术博客了)]]></content>
+      <categories>
+        <category>移动端</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[windows 下面那些让人抓狂的东西]]></title>
     <url>%2F2017%2F10%2F08%2Fwindows-about%2F</url>
     <content type="text"><![CDATA[作为一个混迹windows的程序员，没事重装一下电脑简直和吃饭一样简单，但是每次装完都会被有些东东恶心到。。 系统重装开机的无效索引装完系统，如果是u盘安装之类的话，大都会多出一个无效索引，也就是旧系统的索引，不能忍！ Win + R 键入 msconfig，打开系统配置 点击 “引导” 菜单进行管理，删除无效项即可 window.old文件夹删除“Windows.old” 文件夹包含升级win10前系统的 “Windows”、“Program Files”、“Users”这三个目录中的文件，将之前的系统文件和安装的程序文件都做了备份。这是微软出于人性化的考虑，让没有来得及备份重要文件的用户可以再次选择备份。对不起，我不打算考虑！ 系统盘右键 - 属性 - 磁盘清理 扫描完成 - 清理系统文件 列表中勾选”以前的Windows安装”，确定，待完成退出 dll库errorMSVCR10.dll曾经困扰我多次的东东，每次都要百度一下，捉急！安装对应版本的VC库 vcredist_x64.exe 和vcredist_x86.exe下载地址：vcredist.exe 软件errorchrome熟悉的提示：“Google Chrome 未响应。是否立即重新启动”，选项给你的选择并不能解救你。 Win + R 输入 cmd 打开命令行 输入 taskkill /f /im chrome.exe ,回车执行 重新打开Google Chrome Wampserver经常本地 demo 手机测试都会暂时用它架一个静态服务器，之前 php 学习用的工具，但 php 早忘光了。安装完成不做一点配置的话就会出现手机访问 403，做个备份省的再查。 关闭防火墙 修改 apache 目录下的 httpd.conf文件 12//path: apache\apache2.4.17\conf\httpd.conf 291行左右修改 Require local =&gt; Require all granted 修改 httpd-vhosts.conf 文件 12//path: 目录下搜索 httpd-vhosts.conf 找到 &lt;VirtualHost *:80&gt;节点上的所有虚拟站点修改 Require local =&gt; Require all granted 重启服务 注：此方法仅支持2.4以后的版本 百度云说不上是错误，但是着实恶心，安装完百度云自动帮你在我的电脑添加一个“百度云管家”的盘符快捷方式，真心逼死强迫症。打开百度云，设置 - 基本 - 在我的电脑中显示百度云管家，默认是勾选状态，去除勾选 - 应用 - 确定。如果成功，下面的可以无视。 Win + R 键入 regedit 进入注册表编辑 依次展开 HKEY_LOCAL_MACHINE \ SOFTWARE \ Microsoft \ Windows \ CurrentVersion \ Explorer \ MyComputer \ NameSpace，删除 NameSpace 下面的 {679F137C-3162-45da-BE3C-2F9C3D093F64} 项 若无，跳至第4步。 在 NameSpace 项上点右键 - 权限，依次操作 - 高级 - Administrators - 编辑 - 创建子项 - 拒绝 依次展开 HKEY_CURRENT_USER \ Software \ Microsoft \ Windows \ CurrentVersion \ Explorer \ MyComputer \ NameSpace ，删除 {679F137C-3162-45da-BE3C-2F9C3D093F64} 项 退出刷新。]]></content>
@@ -85,7 +96,7 @@
         <category>移动端</category>
       </categories>
       <tags>
-        <tag>ios</tag>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -96,7 +107,7 @@
         <category>webapp</category>
       </categories>
       <tags>
-        <tag>ios</tag>
+        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
