@@ -409,23 +409,23 @@
           <blockquote>
 <p>这篇文章迟到了很久，暂且记录一下自己遇到的坑</p>
 </blockquote>
-<h2 id="html5网页"><a href="#html5网页" class="headerlink" title="html5网页"></a>html5网页</h2><p>因为目前就职公司采用的H5响应式驱动的主体项目，app都是基于的webview开发，当iPhone X上市后，适配促成了新的兼容任务。</p>
-<h3 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h3><p>为了更好的适配iPhone X，iOS 11新增了几个特性用于处理那诡异的刘海屏。苹果公司还对iPhone X的屏幕内容作了安全距离限定，美其名曰为了更好的用户体验，其实就是为了填自己的坑。。</p>
-<h4 id="viewport-fit"><a href="#viewport-fit" class="headerlink" title="viewport-fit"></a>viewport-fit</h4><p>iOS11新增特性，为了适应iPhone X对现有的viewport meta标签的一个扩展，定义网页在可视窗口的布局方式。safari浏览器中开发模式可勾选支持调试。<br>属性：  </p>
+<h2 id="html5网页"><a href="#html5网页" class="headerlink" title="html5网页"></a>html5网页</h2><p>因为目前就职公司采用的H5响应式驱动的主体项目，app 都是基于的 webview 开发，当 iPhone X 上市后，适配促成了新的兼容任务。</p>
+<h3 id="新属性"><a href="#新属性" class="headerlink" title="新属性"></a>新属性</h3><p>为了更好的适配 iPhone X，iOS 11 新增了几个特性用于处理那诡异的刘海屏。苹果公司还对 iPhone X 的屏幕内容作了安全距离限定，美其名曰为了更好的用户体验，其实就是为了填自己的坑。。</p>
+<h4 id="viewport-fit"><a href="#viewport-fit" class="headerlink" title="viewport-fit"></a>viewport-fit</h4><p>iOS11 新增特性，为了适应 iPhone X 对现有的 viewport meta 标签的一个扩展，定义网页在可视窗口的布局方式。safari 浏览器中开发模式可勾选支持调试。<br>属性：  </p>
 <ul>
 <li>contain：可视窗口包含网页内容，即内容会在安全区域显示</li>
 <li>cover：网页内容覆盖可视窗口</li>
 <li>auto： 默认值，同contain表现是一致的</li>
 </ul>
 <p>详情见<a href="https://www.w3.org/TR/css-round-display-1/#viewport-fit-descriptor" target="_blank" rel="external">文档</a></p>
-<h4 id="constant"><a href="#constant" class="headerlink" title="constant"></a>constant</h4><p>iOS11新增特性，webkit的css函数，用于设定安全区域与边界的距离，有四个预定义变量。</p>
+<h4 id="constant"><a href="#constant" class="headerlink" title="constant"></a>constant</h4><p>iOS11 新增特性，webkit 的 css 函数，用于设定安全区域与边界的距离，有四个预定义变量。</p>
 <ul>
 <li>safe-area-inset-left：安全区域距离左边边界距离</li>
 <li>safe-area-inset-right：安全区域距离右边边界距离</li>
 <li>safe-area-inset-top：安全区域距离顶部边界距离</li>
 <li>safe-area-inset-bottom：安全区域距离底部边界距离</li>
 </ul>
-<p>我们需要关注的就是safe-area-inset-bottom，对应也就是底部小黑条的处理<br>同时需要注意的就是，<strong>viewport-fit 为contain时，constant函数是不起作用的，需要配合cover使用</strong>，不支持constant 的浏览器会被忽略此属性  </p>
+<p>我们需要关注的就是 safe-area-inset-bottom，对应也就是底部小黑条的处理<br>同时需要注意的就是，<strong>viewport-fit 为 contain 时，constant 函数是不起作用的，需要配合 cover 使用</strong>，不支持 constant 的浏览器会被忽略此属性  </p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/13/iphone-x/#more" rel="contents">
