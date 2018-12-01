@@ -997,7 +997,8 @@ pre .javascript .function {
 .site-subtitle {
   margin-top: 10px;
   font-size: 13px;
-  color: #999;
+  color: #444;
+  font-weight: normal;
 }
 .use-motion .brand {
   opacity: 0;
@@ -1049,6 +1050,11 @@ pre .javascript .function {
   margin-top: 20px;
   padding-left: 0;
   text-align: center;
+  background: rgba(255,255,255,0.65);
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+  border-radius: initial;
 }
 .menu .menu-item {
   display: inline-block;
@@ -1062,7 +1068,7 @@ pre .javascript .function {
 }
 .menu .menu-item a {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1113,8 +1119,14 @@ pre .javascript .function {
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
 }
+.posts-expand .post {
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
 .posts-expand {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 @media (max-width: 767px) {
   .posts-expand {
@@ -1688,7 +1700,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #772bff;
+  background: #ff7c4a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2230,12 +2242,18 @@ pre .javascript .function {
 .page-pv .busuanzi-value {
   margin: 0 5px;
 }
-.site-uv {
-  margin-right: 10px;
+#gitment-display-button {
+  display: inline-block;
+  padding: 0 15px;
+  color: #0a9caf;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #0a9caf;
+  border-radius: 4px;
 }
-.site-uv::after {
-  content: "|";
-  padding-left: 10px;
+#gitment-display-button:hover {
+  color: #fff;
+  background: #0a9caf;
 }
 .use-motion .post {
   opacity: 0;
@@ -2550,19 +2568,6 @@ embed {
 #header {
   background: url("../images/background-header.jpg");
   background-size: cover;
-}
-.menu {
-  margin-top: 20px;
-  padding-left: 0;
-  text-align: center;
-  background: rgba(255,255,255,0.65);
-  margin-left: auto;
-  margin-right: auto;
-  width: 450px;
-  border-radius: initial;
-}
-.menu .menu-item a {
-  font-size: 14px;
 }
 .sidebar-toggle {
   background: #272822;
