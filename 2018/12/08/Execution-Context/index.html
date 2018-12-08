@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端, Somnus13,somnus13.github.io" />
+  <meta name="keywords" content="基础," />
 
 
 
@@ -96,16 +96,20 @@
 
 
 
-<meta name="description" content="天天心态爆炸的前端狗">
-<meta property="og:type" content="website">
-<meta property="og:title" content="那些踩屎的经历">
-<meta property="og:url" content="https://somnus13.github.io/archives/2017/page/2/index.html">
+<meta name="description" content="又来过基础  执行上下文什么是执行上下文Execution Context（执行上下文）就是定义变量或函数有权访问的其他数据，并决定了他们的行为。根据所在环境的不同一共有三种类型：  全局执行上下文  默认、最基础的执行上下文，且一个程序只能存在一个全局上下文 函数执行上下文  每次 调用 都会创建一个新的执行上下文 Eval 函数执行上下文  运行在 eval 函数内的代码有着自己的执行上下文">
+<meta name="keywords" content="基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="执行上下文和执行栈">
+<meta property="og:url" content="https://somnus13.github.io/2018/12/08/Execution-Context/index.html">
 <meta property="og:site_name" content="那些踩屎的经历">
-<meta property="og:description" content="天天心态爆炸的前端狗">
+<meta property="og:description" content="又来过基础  执行上下文什么是执行上下文Execution Context（执行上下文）就是定义变量或函数有权访问的其他数据，并决定了他们的行为。根据所在环境的不同一共有三种类型：  全局执行上下文  默认、最基础的执行上下文，且一个程序只能存在一个全局上下文 函数执行上下文  每次 调用 都会创建一个新的执行上下文 Eval 函数执行上下文  运行在 eval 函数内的代码有着自己的执行上下文">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://pjewxcfqt.bkt.gdipper.com/QQ20181208-174019@2x.png">
+<meta property="og:updated_time" content="2018-12-08T09:47:01.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那些踩屎的经历">
-<meta name="twitter:description" content="天天心态爆炸的前端狗">
+<meta name="twitter:title" content="执行上下文和执行栈">
+<meta name="twitter:description" content="又来过基础  执行上下文什么是执行上下文Execution Context（执行上下文）就是定义变量或函数有权访问的其他数据，并决定了他们的行为。根据所在环境的不同一共有三种类型：  全局执行上下文  默认、最基础的执行上下文，且一个程序只能存在一个全局上下文 函数执行上下文  每次 调用 都会创建一个新的执行上下文 Eval 函数执行上下文  运行在 eval 函数内的代码有着自己的执行上下文">
+<meta name="twitter:image" content="http://pjewxcfqt.bkt.gdipper.com/QQ20181208-174019@2x.png">
 
 
 
@@ -133,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="https://somnus13.github.io/archives/2017/page/2/"/>
+  <link rel="canonical" href="https://somnus13.github.io/2018/12/08/Execution-Context/"/>
 
 
 
 
 
-  <title>归档 | 那些踩屎的经历</title>
+  <title>执行上下文和执行栈 | 那些踩屎的经历</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <a href="https://github.com/Somnus13"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
@@ -305,181 +309,199 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 17 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2018/12/08/Execution-Context/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Somnus13">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些踩屎的经历">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">执行上下文和执行栈</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T16:12:53+08:00">
+                2018-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-tags"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <blockquote>
+<p>又来过基础</p>
+</blockquote>
+<h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><h3 id="什么是执行上下文"><a href="#什么是执行上下文" class="headerlink" title="什么是执行上下文"></a>什么是执行上下文</h3><p>Execution Context（执行上下文）就是定义变量或函数有权访问的其他数据，并决定了他们的行为。<br>根据所在环境的不同一共有三种类型：</p>
+<ul>
+<li>全局执行上下文<br>  默认、最基础的执行上下文，且一个程序只能存在一个全局上下文</li>
+<li>函数执行上下文<br>  每次 <strong>调用</strong> 都会创建一个新的执行上下文</li>
+<li>Eval 函数执行上下文<br>  运行在 eval 函数内的代码有着自己的执行上下文</li>
+</ul>
+<h2 id="执行栈"><a href="#执行栈" class="headerlink" title="执行栈"></a>执行栈</h2><p>先进后出的结构，用于存储代码执行期间创建的所有执行上下文<br>JavaScript 引擎开始读取脚本时，先默认创建一个全局执行上下文并将其推入栈底，每发生一个函数调用，引擎就会为该函数创建一个新的执行上下文并压入栈。引擎会运行处于执行栈栈顶的函数，运行完后，其对应的上下文从栈中弹出，交还控制权给当前执行上下文的下一个执行上下文<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = foo1(y) + <span class="number">1</span></div><div class="line">  <span class="built_in">console</span>.log(sum)</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x+<span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">foo(<span class="number">5</span>)</div></pre></td></tr></table></figure></p>
+<p>执行栈简图如下：<br><img src="http://pjewxcfqt.bkt.gdipper.com/QQ20181208-174019@2x.png" alt=""><br>注：每次函数调用都会创建新的 执行上下文，哪怕是递归调用</p>
+<h2 id="执行上下文的创建"><a href="#执行上下文的创建" class="headerlink" title="执行上下文的创建"></a>执行上下文的创建</h2><p>执行上下文分两个阶段创建： 1）创建阶段 2）执行阶段</p>
+<h3 id="创建阶段（函数被调用，代码未执行）"><a href="#创建阶段（函数被调用，代码未执行）" class="headerlink" title="创建阶段（函数被调用，代码未执行）"></a>创建阶段（函数被调用，代码未执行）</h3><pre><code>1. 初始化作用域链
+2. 创建变量对象
+3. 创建参数对象，检查参数上下文，初始化其名称和值并创建一个引用拷贝
+4. 扫描函数声明，对于未发现的函数在变量对象中创建一个同名属性，如果已经存在的发生**覆盖**
+5. 扫描变量声明，未被发现的在变量对象中创建一个同名属性并初始化为 undefined，如果已存在，**跳过**
+6. 确定上下文中的 this
+</code></pre><p>注：如果 let 以及 const 声明创建阶段会跳过初始化</p>
+<h3 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h3><p>赋值、寻找函数引用以及解释/执行代码</p>
+<p>所以执行上下文类似结构为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">executionContextObj = &#123;</div><div class="line">    <span class="string">'scopeChain'</span>: &#123; <span class="comment">/* 变量对象 + 所有父级执行上下文的变量对象*/</span> &#125;，</div><div class="line">    <span class="string">'variableObject'</span>: &#123; <span class="comment">/* 函数参数、 参数，内部变量以及函数声明 */</span> &#125;，</div><div class="line">    <span class="string">'this'</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="变量对象（VO）和活动对象（AO）"><a href="#变量对象（VO）和活动对象（AO）" class="headerlink" title="变量对象（VO）和活动对象（AO）"></a>变量对象（VO）和活动对象（AO）</h2><p>当当前上下文执行时，变量对象变成活动对象，所以区别只是同一对象在执行上下文的不同阶段而已</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">funtion foo(i) &#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="string">'hello'</span></div><div class="line">    <span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">&#125;</div><div class="line">foo(<span class="number">10</span>)</div><div class="line"></div><div class="line">函数调用的创建阶段：</div><div class="line"></div><div class="line">fooExecutionContext = &#123;</div><div class="line">    scopeChain: &#123; ... &#125;,</div><div class="line">    variableObject: &#123;</div><div class="line">        <span class="built_in">arguments</span>: &#123;</div><div class="line">            <span class="number">0</span>: <span class="number">22</span>,</div><div class="line">            length: <span class="number">1</span></div><div class="line">        &#125;,</div><div class="line">        i: <span class="number">22</span>,</div><div class="line">        c: pointer to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">        <span class="title">a</span>: <span class="title">undefined</span>,</span></div><div class="line"><span class="function">        <span class="title">b</span>: <span class="title">undefined</span></span></div><div class="line"><span class="function">    &#125;,</span></div><div class="line"><span class="function">    <span class="title">this</span>: </span>&#123; ... &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">执行阶段：</div><div class="line"></div><div class="line">fooExecutionContext = &#123;</div><div class="line">    scopeChain: &#123; ... &#125;,</div><div class="line">    variableObject: &#123;</div><div class="line">        <span class="built_in">arguments</span>: &#123;</div><div class="line">            <span class="number">0</span>: <span class="number">22</span>,</div><div class="line">            length: <span class="number">1</span></div><div class="line">        &#125;,</div><div class="line">        i: <span class="number">22</span>,</div><div class="line">        c: pointer to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">        <span class="title">a</span>: '<span class="title">hello</span>',</span></div><div class="line"><span class="function">        <span class="title">b</span>: <span class="title">pointer</span> <span class="title">to</span> <span class="title">function</span> <span class="title">privateB</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    &#125;,</span></div><div class="line"><span class="function">    <span class="title">this</span>: </span>&#123; ... &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h2><p>变量以及函数声明的提升，原理就在于解析器创建变量对象的过程，不啰嗦。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>知其然，知其所以然，想必是极好的</p>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/基础/" rel="tag"># 基础</a>
+          
         </div>
       
+
+      
+        
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/01/js-types/" rel="next" title="JavaScript 变量与内存">
+                <i class="fa fa-chevron-left"></i> JavaScript 变量与内存
+              </a>
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/15/RegExp-note1/" itemprop="url">
-              
-                <span itemprop="name">正则表达式笔记一</span>
-              
-            </a>
-        
-      </h3>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-15T21:57:21+08:00"
-              content="2017-05-15" >
-          05-15
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/15/atom/" itemprop="url">
-              
-                <span itemprop="name">Atom使用心得以及插件推荐</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-15T21:45:42+08:00"
-              content="2017-05-15" >
-          05-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/new-start/" itemprop="url">
-              
-                <span itemprop="name">新的开始</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T15:48:47+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/new-array-func-es5/" itemprop="url">
-              
-                <span itemprop="name">ES5新增数组方法</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T14:47:09+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -487,6 +509,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+       
+         <div id="gitment-container"></div>
+       
+    
+  </div>
+
 
         </div>
         
@@ -506,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -605,6 +644,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文"><span class="nav-number">1.</span> <span class="nav-text">执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是执行上下文"><span class="nav-number">1.1.</span> <span class="nav-text">什么是执行上下文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行栈"><span class="nav-number">2.</span> <span class="nav-text">执行栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文的创建"><span class="nav-number">3.</span> <span class="nav-text">执行上下文的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建阶段（函数被调用，代码未执行）"><span class="nav-number">3.1.</span> <span class="nav-text">创建阶段（函数被调用，代码未执行）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行阶段"><span class="nav-number">3.2.</span> <span class="nav-text">执行阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量对象（VO）和活动对象（AO）"><span class="nav-number">4.</span> <span class="nav-text">变量对象（VO）和活动对象（AO）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提升"><span class="nav-number">5.</span> <span class="nav-text">提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -715,11 +770,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

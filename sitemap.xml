@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://somnus13.github.io/2018/12/08/Execution-Context/</loc>
+    
+    <lastmod>2018-12-08T09:47:01.510Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://somnus13.github.io/2018/12/01/js-types/</loc>
     
     <lastmod>2018-12-01T08:06:03.746Z</lastmod>
@@ -58,14 +65,7 @@
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/2017/05/15/atom/</loc>
-    
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
+    <loc>https://somnus13.github.io/2017/07/18/img-fail/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
@@ -73,6 +73,13 @@
   
   <url>
     <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
+    
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://somnus13.github.io/2017/05/15/atom/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
@@ -107,7 +114,7 @@
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/2017/07/18/img-fail/</loc>
+    <loc>https://somnus13.github.io/tags/index.html</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
@@ -128,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/tags/index.html</loc>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
