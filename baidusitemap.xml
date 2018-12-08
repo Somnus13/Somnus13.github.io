@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://somnus13.github.io/2018/12/08/Execution-Context/</loc>
-    <lastmod>2018-12-08T09:47:01.510Z</lastmod>
+    <lastmod>2018-12-08T09:55:15.395Z</lastmod>
     <data>
         <display>
         <title>执行上下文和执行栈</title>
@@ -183,25 +183,6 @@
     </url>
 
     
-  <url>
-    <loc>https://somnus13.github.io/2017/07/18/img-fail/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>img fail那点事</title>
-        <pubTime>2017-07-18T13:56:10.000Z</pubTime>
-        
-        <tag>图片</tag>
-         
-         
-           
-             
-              <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
@@ -321,6 +302,25 @@
     </url>
 
     
+  <url>
+    <loc>https://somnus13.github.io/2017/07/18/img-fail/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>img fail那点事</title>
+        <pubTime>2017-07-18T13:56:10.000Z</pubTime>
+        
+        <tag>图片</tag>
+         
+         
+           
+             
+              <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
     
     
