@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://somnus13.github.io/2018/12/19/react-webpack-babel7-1/</loc>
+    <lastmod>2018-12-19T09:11:01.715Z</lastmod>
+    <data>
+        <display>
+        <title>React+webpack4+Babel7 脚手架搭建过程（一）</title>
+        <pubTime>2018-12-19T08:41:28.000Z</pubTime>
+        
+        <tag>webpack babel</tag>
+         
+         
+           
+             
+              <breadCrumb title="react" url="https://somnus13.github.io/categories/react/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://somnus13.github.io/2018/12/08/Execution-Context/</loc>
     <lastmod>2018-12-08T09:55:15.395Z</lastmod>
     <data>
@@ -183,6 +203,25 @@
     </url>
 
     
+  <url>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式笔记二</title>
+        <pubTime>2017-05-15T14:07:04.000Z</pubTime>
+        
+        <tag>正则表达式</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
@@ -225,77 +264,19 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
+    <loc>https://somnus13.github.io/2017/06/14/Responsive-Images/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>file对象什么的</title>
-        <pubTime>2017-07-24T13:38:44.000Z</pubTime>
+        <title>响应式图片处理</title>
+        <pubTime>2017-06-14T11:27:49.000Z</pubTime>
         
-        <tag>file</tag>
+        <tag>响应式</tag>
          
          
            
              
               <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>正则表达式笔记二</title>
-        <pubTime>2017-05-15T14:07:04.000Z</pubTime>
-        
-        <tag>正则表达式</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://somnus13.github.io/2017/05/06/new-start/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>新的开始</title>
-        <pubTime>2017-05-06T07:48:47.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂记" url="https://somnus13.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://somnus13.github.io/2017/08/28/nihongo25-26/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>日语初下复习（25-26）</title>
-        <pubTime>2017-08-28T11:33:51.000Z</pubTime>
-        
-        <tag>初级下</tag>
-         
-         
-           
-             
-              <breadCrumb title="日语" url="https://somnus13.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
           
         </display>
     </data>
@@ -322,17 +303,33 @@
     </url>
 
     
-    
-    
   <url>
-    <loc>https://somnus13.github.io/2017/06/14/Responsive-Images/</loc>
+    <loc>https://somnus13.github.io/2017/05/06/new-start/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>响应式图片处理</title>
-        <pubTime>2017-06-14T11:27:49.000Z</pubTime>
+        <title>新的开始</title>
+        <pubTime>2017-05-06T07:48:47.000Z</pubTime>
         
-        <tag>响应式</tag>
+         
+           
+             
+              <breadCrumb title="杂记" url="https://somnus13.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>file对象什么的</title>
+        <pubTime>2017-07-24T13:38:44.000Z</pubTime>
+        
+        <tag>file</tag>
          
          
            
@@ -343,4 +340,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://somnus13.github.io/2017/08/28/nihongo25-26/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>日语初下复习（25-26）</title>
+        <pubTime>2017-08-28T11:33:51.000Z</pubTime>
+        
+        <tag>初级下</tag>
+         
+         
+           
+             
+              <breadCrumb title="日语" url="https://somnus13.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
 </urlset>
