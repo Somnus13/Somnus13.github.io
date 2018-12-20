@@ -60,7 +60,7 @@ npm i -D webpack webpack-cli
 ```sh
 mkdir dist src && touch src/index.js src/index.html
 ```
-
+<!-- more -->
 webpack 4 之后打包默认会寻找 src/index.js 作为默认入口，可以直接终端输入 webpack 来查看打包
 
 {% asset_img C62FDD0D043AF76EA53BBEC441315EA4.jpg %}
