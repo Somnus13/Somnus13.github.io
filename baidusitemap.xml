@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/</loc>
+    <lastmod>2018-12-20T08:58:39.655Z</lastmod>
+    <data>
+        <display>
+        <title>React+webpack4+Babel7 脚手架搭建过程（二）</title>
+        <pubTime>2018-12-20T08:44:52.000Z</pubTime>
+        
+        <tag>webpack babel</tag>
+         
+         
+           
+             
+              <breadCrumb title="react" url="https://somnus13.github.io/categories/react/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://somnus13.github.io/2018/12/19/react-webpack-babel7-1/</loc>
-    <lastmod>2018-12-19T09:11:01.715Z</lastmod>
+    <lastmod>2018-12-20T08:45:34.846Z</lastmod>
     <data>
         <display>
         <title>React+webpack4+Babel7 脚手架搭建过程（一）</title>
@@ -204,26 +224,6 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>正则表达式笔记二</title>
-        <pubTime>2017-05-15T14:07:04.000Z</pubTime>
-        
-        <tag>正则表达式</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
@@ -237,6 +237,45 @@
            
              
               <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://somnus13.github.io/2017/05/06/new-start/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>新的开始</title>
+        <pubTime>2017-05-06T07:48:47.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="杂记" url="https://somnus13.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>file对象什么的</title>
+        <pubTime>2017-07-24T13:38:44.000Z</pubTime>
+        
+        <tag>file</tag>
+         
+         
+           
+             
+              <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
           
         </display>
     </data>
@@ -304,42 +343,26 @@
 
     
   <url>
-    <loc>https://somnus13.github.io/2017/05/06/new-start/</loc>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     <data>
         <display>
-        <title>新的开始</title>
-        <pubTime>2017-05-06T07:48:47.000Z</pubTime>
+        <title>正则表达式笔记二</title>
+        <pubTime>2017-05-15T14:07:04.000Z</pubTime>
         
+        <tag>正则表达式</tag>
+         
          
            
              
-              <breadCrumb title="杂记" url="https://somnus13.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+              <breadCrumb title="javascript" url="https://somnus13.github.io/categories/javascript/"/>
           
         </display>
     </data>
     </url>
 
     
-  <url>
-    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>file对象什么的</title>
-        <pubTime>2017-07-24T13:38:44.000Z</pubTime>
-        
-        <tag>file</tag>
-         
-         
-           
-             
-              <breadCrumb title="html" url="https://somnus13.github.io/categories/html/"/>
-          
-        </display>
-    </data>
-    </url>
-
+    
     
   <url>
     <loc>https://somnus13.github.io/2017/08/28/nihongo25-26/</loc>
@@ -360,7 +383,4 @@
     </data>
     </url>
 
-    
-    
-    
 </urlset>

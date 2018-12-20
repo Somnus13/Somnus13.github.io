@@ -1,0 +1,1204 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="tWqjt0053F1uTTp157aGuJQmy27guN97vehcN4T9RqM" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="hSgGwyYDBV" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="webpack babel," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="那些踩屎的经历" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="第二篇主要是 react react-router react-redux  React12## 安装 react &amp;amp;&amp;amp; react-domnpm i -s react react-dom 1234567891011import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;;if (module.hot) &amp;#123;">
+<meta name="keywords" content="webpack babel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React+webpack4+Babel7 脚手架搭建过程（二）">
+<meta property="og:url" content="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/index.html">
+<meta property="og:site_name" content="那些踩屎的经历">
+<meta property="og:description" content="第二篇主要是 react react-router react-redux  React12## 安装 react &amp;amp;&amp;amp; react-domnpm i -s react react-dom 1234567891011import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;;if (module.hot) &amp;#123;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/779087A16BEE88AA3496E55669A940F3.jpg">
+<meta property="og:image" content="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/19ED65FA174593DC5897E1CC9A045AF6.jpg">
+<meta property="og:image" content="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/43DE8E1521D5F265590ABE2E62C126FB.png">
+<meta property="og:updated_time" content="2018-12-20T08:58:39.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React+webpack4+Babel7 脚手架搭建过程（二）">
+<meta name="twitter:description" content="第二篇主要是 react react-router react-redux  React12## 安装 react &amp;amp;&amp;amp; react-domnpm i -s react react-dom 1234567891011import React from &apos;react&apos;;import ReactDOM from &apos;react-dom&apos;;if (module.hot) &amp;#123;">
+<meta name="twitter:image" content="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/779087A16BEE88AA3496E55669A940F3.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/"/>
+
+
+
+
+
+  <title>React+webpack4+Babel7 脚手架搭建过程（二） | 那些踩屎的经历</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3c906ebbb52b2ee671435116dea2481e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a href="https://github.com/Somnus13"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">那些踩屎的经历</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">修煉中..</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Somnus13">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些踩屎的经历">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">React+webpack4+Babel7 脚手架搭建过程（二）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-20T16:44:52+08:00">
+                2018-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-tags"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>第二篇主要是 react react-router react-redux</p>
+</blockquote>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 安装 react &amp;&amp; react-dom</span></div><div class="line">npm i -s react react-dom</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="built_in">module</span>.hot) &#123;</div><div class="line">  <span class="built_in">module</span>.hot.accept();</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  &lt;div&gt;Hello React!&lt;/div&gt;,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>),</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>运行可见 <code>Hello React！</code></p>
+<h2 id="React-router"><a href="#React-router" class="headerlink" title="React-router"></a>React-router</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">// install react-router-dom</div><div class="line">npm i -s react-router-dom</div><div class="line"></div><div class="line">`cd src`</div><div class="line">`mkdir router &amp;&amp; touch router/router.js`</div><div class="line"></div><div class="line">// router.js</div><div class="line">import React from &apos;react&apos;;</div><div class="line">import &#123;BrowserRouter as Router, Route, Switch, Link&#125; from &apos;react-router-dom&apos;;</div><div class="line"></div><div class="line">import Home from &apos;../containers/Home&apos;;</div><div class="line">import Page1 from &apos;../containers/Counter&apos;;</div><div class="line"></div><div class="line"></div><div class="line">const getRouter = () =&gt; (</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;ul&gt;</div><div class="line">        &lt;li&gt;&lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;Link to=&quot;/Counter&quot;&gt;counter&lt;/Link&gt;&lt;/li&gt;</div><div class="line">      &lt;/ul&gt;</div><div class="line">      &lt;Switch&gt;</div><div class="line">        &lt;Route exact path=&quot;/&quot; component=&#123;Home&#125; /&gt;</div><div class="line">        &lt;Route path=&quot;/Counter&quot; component=&#123;Counter&#125; /&gt;</div><div class="line">      &lt;/Switch&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">);</div><div class="line">export default getRouter;</div><div class="line"></div><div class="line">// 修改src/index.js</div><div class="line">import React from &apos;react&apos;;</div><div class="line">import ReactDom from &apos;react-dom&apos;;</div><div class="line"></div><div class="line">import getRouter from &apos;./router/router&apos;;</div><div class="line"></div><div class="line">ReactDom.render(</div><div class="line">  &#123;getRouter()&#125;, document.getElementById(&apos;root&apos;));</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Home 组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// src/containers/Home/index.js</div><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">const Home = () =&gt; (</div><div class="line">  &lt;div&gt;this is Home page&lt;/div&gt;</div><div class="line">);</div><div class="line">export default Home;</div><div class="line"></div><div class="line">// src/containers/Counter/index.js</div><div class="line">// 略.</div></pre></td></tr></table></figure>
+<h2 id="React-redux"><a href="#React-redux" class="headerlink" title="React-redux"></a>React-redux</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// install redux and react-redux</div><div class="line">cnpm i --save redux react-redux</div></pre></td></tr></table></figure>
+<p>src 文件夹下新建 store 文件夹，并创建 index.js 以及 reducer.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">mkdir src/store &amp;&amp; touch src/store/index.js src/store/reducer.js</div><div class="line"></div><div class="line">// src/store/index.js</div><div class="line">import &#123;</div><div class="line">  createStore,</div><div class="line">  applyMiddleware,</div><div class="line">  compose,</div><div class="line">&#125; from &apos;redux&apos;;</div><div class="line">import reduxThunk from &apos;redux-thunk&apos;;</div><div class="line">import reducer from &apos;./reducer&apos;;</div><div class="line"></div><div class="line">const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;</div><div class="line">const store = createStore(</div><div class="line">  reducer,</div><div class="line">  composeEnhancers(</div><div class="line">    applyMiddleware(reduxThunk),</div><div class="line">  ),</div><div class="line">);</div><div class="line">export default store;</div><div class="line"></div><div class="line">// src/store/reducer.js</div><div class="line">import &#123; combineReducers &#125; from &apos;redux&apos;;</div><div class="line">import &#123; reducer as countReducer &#125; from &apos;../containers/Counter/store&apos;;</div><div class="line"></div><div class="line">export default combineReducers(&#123;</div><div class="line">  counter: countReducer,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>修改入口文件 index.js 以及 app.js(分离出了一个app.js,看上去河蟹一些)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">// src/index.js</div><div class="line">import App from &apos;./app&apos;;</div><div class="line">...</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;App /&gt;,</div><div class="line">  document.getElementById(&apos;root&apos;),</div><div class="line">);</div><div class="line"></div><div class="line">// src/app.js</div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123; Provider &#125; from &apos;react-redux&apos;;</div><div class="line">import store from &apos;./store&apos;;</div><div class="line">import getRouter from &apos;./router/router&apos;;</div><div class="line"></div><div class="line">const App = () =&gt; (</div><div class="line">  &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">    &#123;getRouter()&#125;</div><div class="line">  &lt;/Provider&gt;</div><div class="line">);</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<p>通过 Provider 的 store 属性把状态暴露给各个组件方便集中管理使用</p>
+<p>接下来实现 Counter 组件</p>
+<p>src 目录下的 container 文件夹下 新建 Counter 文件夹，并在文件下下建立如下文件：</p>
+<img src="/2018/12/20/react-webpack-babel7-2/779087A16BEE88AA3496E55669A940F3.jpg" alt="779087A16BEE88AA3496E55669A940F3.jpg" title="">
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mkdir src/container/Counter</div><div class="line">touch src/container/Counter/index.js</div><div class="line">mkdir src/container/Counter/store</div><div class="line"><span class="built_in">cd</span> src/container/Counter/store</div><div class="line">touch constants.js index.js action.js reducer.js</div></pre></td></tr></table></figure>
+<p>然后编写代码：</p>
+<p>定义行为变量 constants ，包含三态：自增、自减以及重置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// src/container/Counter/store/constants.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> INCREMENT = <span class="string">'INCREMENT'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> DECREMENT = <span class="string">'DECREMENT'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> RESET = <span class="string">'RESET'</span>;</div></pre></td></tr></table></figure>
+<p>定义 reducer ，即我们触发 action 会改变 store 里的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">// src/container/Counter/store/reducer.js</div><div class="line">import &#123; INCREMENT, DECREMENT, RESET &#125; from &apos;./constants&apos;;</div><div class="line"></div><div class="line">const reducer = (state = &#123; count: 0 &#125;, action) =&gt; &#123;</div><div class="line">  switch (action.type) &#123;</div><div class="line">    case INCREMENT:</div><div class="line">      return &#123;</div><div class="line">        count: state.count + 1,</div><div class="line">      &#125;;</div><div class="line">    case DECREMENT:</div><div class="line">      return &#123;</div><div class="line">        count: state.count - 1,</div><div class="line">      &#125;;</div><div class="line">    case RESET:</div><div class="line">      return &#123; count: 0 &#125;;</div><div class="line">    default:</div><div class="line">      return state;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">export default reducer;</div></pre></td></tr></table></figure>
+<p>定义我们的 action</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// src/container/Counter/store/action.js</span></div><div class="line"><span class="keyword">import</span> &#123; INCREMENT, DECREMENT, RESET &#125; <span class="keyword">from</span> <span class="string">'./constants'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> incrementAction = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</div><div class="line">  type: INCREMENT,</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> decrementAction = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</div><div class="line">  type: DECREMENT,</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> resetAction = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</div><div class="line">  type: RESET,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>集体导出统一管理：(供根目录的combineReducers消费)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// src/container/Counter/store/index.js</span></div><div class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducer'</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> actionCreator <span class="keyword">from</span> <span class="string">'./action'</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> constants <span class="keyword">from</span> <span class="string">'./constants'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> &#123; reducer, actionCreator, constants &#125;;</div></pre></td></tr></table></figure>
+<p>接下来修改 Counter 组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">// src/container/Counter/index.js</div><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import PropTypes from &apos;prop-types&apos;;</div><div class="line">import &#123; connect &#125; from &apos;react-redux&apos;;</div><div class="line">import &#123; incrementAction, decrementAction, resetAction &#125; from &apos;./store/action&apos;;</div><div class="line"></div><div class="line"></div><div class="line">const Counter = (props) =&gt; &#123;</div><div class="line">  const &#123;</div><div class="line">    count,</div><div class="line">    increment,</div><div class="line">    decrement,</div><div class="line">    reset,</div><div class="line">  &#125; = props;</div><div class="line">  return (</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;div&gt;</div><div class="line">      当前计数：</div><div class="line">        &#123;count&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">      &lt;button</div><div class="line">        type=&quot;button&quot;</div><div class="line">        onClick=&#123;() =&gt; increment()&#125;</div><div class="line">      &gt;</div><div class="line">        自增</div><div class="line">      &lt;/button&gt;</div><div class="line">      &lt;button</div><div class="line">        type=&quot;button&quot;</div><div class="line">        onClick=&#123;() =&gt; decrement()&#125;</div><div class="line">      &gt;</div><div class="line">      自减</div><div class="line">      &lt;/button&gt;</div><div class="line">      &lt;button</div><div class="line">        type=&quot;button&quot;</div><div class="line">        onClick=&#123;() =&gt; reset()&#125;</div><div class="line">      &gt;</div><div class="line">      重置</div><div class="line">      &lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  );</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Counter.propTypes = &#123;</div><div class="line">  count: PropTypes.number.isRequired,</div><div class="line">  increment: PropTypes.func.isRequired,</div><div class="line">  decrement: PropTypes.func.isRequired,</div><div class="line">  reset: PropTypes.func.isRequired,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const mapStateToProps = state =&gt; (&#123;</div><div class="line">  count: state.counter.count,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">const mapDispatchToProps = dispatch =&gt; (&#123;</div><div class="line">  increment: () =&gt; &#123;</div><div class="line">    dispatch(incrementAction());</div><div class="line">  &#125;,</div><div class="line">  decrement: () =&gt; &#123;</div><div class="line">    dispatch(decrementAction());</div><div class="line">  &#125;,</div><div class="line">  reset: () =&gt; &#123;</div><div class="line">    dispatch(resetAction());</div><div class="line">  &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">export default connect(mapStateToProps, mapDispatchToProps)(Counter);</div></pre></td></tr></table></figure>
+<h2 id="Redux-thunk"><a href="#Redux-thunk" class="headerlink" title="Redux-thunk"></a>Redux-thunk</h2><p>redux-thunk 使得 action 可以返回一个函数组为返回值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一个json 作api请求结果</span></div><div class="line">mkdir api &amp;&amp; touch api/user.json</div><div class="line"></div><div class="line"><span class="comment">// user.json</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"somnus"</span>,</div><div class="line">  <span class="string">"intro"</span>: <span class="string">"silly b"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同理，在 container 文件夹下创建如下目录结构：</p>
+<img src="/2018/12/20/react-webpack-babel7-2/19ED65FA174593DC5897E1CC9A045AF6.jpg" alt="19ED65FA174593DC5897E1CC9A045AF6.jpg" title="">
+<p>接下来是类似的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div></pre></td><td class="code"><pre><div class="line">// UserInfo/store/index.js</div><div class="line">import reducer from &apos;./reducer&apos;;</div><div class="line">import * as constants from &apos;./constants&apos;;</div><div class="line">import * as action from &apos;./action&apos;;</div><div class="line"></div><div class="line">export &#123;</div><div class="line">  reducer,</div><div class="line">  constants,</div><div class="line">  action,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// UserInfo/store/constants.js</div><div class="line">export const GET_USER_INFO_REQUEST = &apos;GET_USER_INFO_REQUEST&apos;;</div><div class="line">export const GET_USER_INFO_SUCCESS = &apos;GET_USER_INFO_SUCCESS&apos;;</div><div class="line">export const GET_USER_INFO_FAIL = &apos;GET_USER_INFO_FAIL&apos;;</div><div class="line"></div><div class="line">// UserInfo/store/action.js</div><div class="line">import &#123;</div><div class="line">  GET_USER_INFO_REQUEST,</div><div class="line">  GET_USER_INFO_SUCCESS,</div><div class="line">  GET_USER_INFO_FAIL,</div><div class="line">&#125; from &apos;./constants&apos;;</div><div class="line"></div><div class="line">const getUserInfoRequest = () =&gt; (&#123; type: GET_USER_INFO_REQUEST &#125;);</div><div class="line"></div><div class="line">const getUserInfoSuccess = userInfo =&gt; (&#123;</div><div class="line">  type: GET_USER_INFO_SUCCESS,</div><div class="line">  userInfo,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">const getUserInfoFail = () =&gt; (&#123; type: GET_USER_INFO_FAIL &#125;);</div><div class="line"></div><div class="line">const getUserInfo = () =&gt; (dispatch) =&gt; &#123;</div><div class="line">  dispatch(getUserInfoRequest());</div><div class="line">  return fetch(&apos;/api/user.json&apos;)</div><div class="line">    .then(res =&gt; res.json())</div><div class="line">    .then(json =&gt; dispatch(getUserInfoSuccess(json)))</div><div class="line">    .catch(() =&gt; dispatch(getUserInfoFail()));</div><div class="line">&#125;;</div><div class="line"></div><div class="line">export default getUserInfo;</div><div class="line"></div><div class="line">// UserInfo/store/reducer.js</div><div class="line">import &#123; GET_USER_INFO_REQUEST, GET_USER_INFO_SUCCESS, GET_USER_INFO_FAIL &#125; from &apos;./constants&apos;;</div><div class="line"></div><div class="line">const initState = &#123;</div><div class="line">  isLoading: false,</div><div class="line">  userInfo: &#123;&#125;,</div><div class="line">  errorMsg: &apos;&apos;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const reducer = (state = initState, action) =&gt; &#123;</div><div class="line">  switch (action.type) &#123;</div><div class="line">    case GET_USER_INFO_REQUEST:</div><div class="line">      return &#123;</div><div class="line">        ...state,</div><div class="line">        isLoading: true,</div><div class="line">      &#125;;</div><div class="line">    case GET_USER_INFO_SUCCESS:</div><div class="line">      return &#123;</div><div class="line">        ...state,</div><div class="line">        isLoading: false,</div><div class="line">        userInfo: action.userInfo,</div><div class="line">      &#125;;</div><div class="line">    case GET_USER_INFO_FAIL:</div><div class="line">      return &#123;</div><div class="line">        isLoading: false,</div><div class="line">        errorMsg: &apos;request error&apos;,</div><div class="line">      &#125;;</div><div class="line">    default:</div><div class="line">      return state;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">export default reducer;</div><div class="line"></div><div class="line">// UserInfo/index.js</div><div class="line">import React from &apos;react&apos;;</div><div class="line">import PropTypes from &apos;prop-types&apos;;</div><div class="line">import &#123; connect &#125; from &apos;react-redux&apos;;</div><div class="line">import getUserInfoAction from &apos;./store/action&apos;;</div><div class="line"></div><div class="line">const UserInfo = (props) =&gt; &#123;</div><div class="line">  const &#123;</div><div class="line">    userinfo: &#123; userInfo, isLoading, errorMsg &#125;,</div><div class="line">    getUserInfo,</div><div class="line">  &#125; = props;</div><div class="line">  return (</div><div class="line">    &lt;div&gt;</div><div class="line">      &#123;isLoading</div><div class="line">        ? &apos;请求信息中...&apos;</div><div class="line">        : errorMsg || (</div><div class="line">        &lt;div&gt;</div><div class="line">          &lt;p&gt;用户信息&lt;/p&gt;</div><div class="line">          &lt;p&gt;</div><div class="line">            用户名：</div><div class="line">            &#123;userInfo.name&#125;</div><div class="line">          &lt;/p&gt;</div><div class="line">          &lt;p&gt;</div><div class="line">            介绍：</div><div class="line">            &#123;userInfo.intro&#125;</div><div class="line">          &lt;/p&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        )&#125;</div><div class="line">      &lt;button</div><div class="line">        type=&quot;button&quot;</div><div class="line">        onClick=&#123;() =&gt; getUserInfo()&#125;</div><div class="line">      &gt;</div><div class="line">        请求用户信息</div><div class="line">      &lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  );</div><div class="line">&#125;;</div><div class="line"></div><div class="line">UserInfo.propTypes = &#123;</div><div class="line">  userinfo: PropTypes.shape(&#123;</div><div class="line">    isLoading: PropTypes.bool.isRequired,</div><div class="line">    userInfo: PropTypes.objectOf(PropTypes.string).isRequired,</div><div class="line">    errorMsg: PropTypes.string.isRequired,</div><div class="line">  &#125;).isRequired,</div><div class="line">  getUserInfo: PropTypes.func.isRequired,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const mapStateToProps = state =&gt; (&#123;</div><div class="line">  userinfo: state.userinfo,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">export default connect(</div><div class="line">  mapStateToProps,</div><div class="line">  dispatch =&gt; (&#123;</div><div class="line">    getUserInfo: () =&gt; &#123;</div><div class="line">      dispatch(getUserInfoAction());</div><div class="line">    &#125;,</div><div class="line">  &#125;),</div><div class="line">)(UserInfo);</div><div class="line"></div><div class="line"></div><div class="line">// 不要忘了 在根目录下 reducer 引入</div><div class="line">// src/store/reducer.js</div><div class="line">import &#123; reducer as userInfoReducer &#125; from &apos;../containers/UserInfo/store&apos;;</div><div class="line"></div><div class="line">export default combineReducers(&#123;</div><div class="line">  counter: countReducer,</div><div class="line">  userinfo: userInfoReducer,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>最后偷个图：<br><img src="/2018/12/20/react-webpack-babel7-2/43DE8E1521D5F265590ABE2E62C126FB.png" alt="43DE8E1521D5F265590ABE2E62C126FB.png" title=""></p>
+<p>自己连抄带查，搞定了一个脚手架，记录一下。<br>学习就是不断做一件事1000遍以上的过程，加油。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webpack-babel/" rel="tag"># webpack babel</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/19/react-webpack-babel7-1/" rel="next" title="React+webpack4+Babel7 脚手架搭建过程（一）">
+                <i class="fa fa-chevron-left"></i> React+webpack4+Babel7 脚手架搭建过程（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+       
+         <div id="gitment-container"></div>
+       
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Somnus13" />
+          <p class="site-author-name" itemprop="name">Somnus13</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Somnus13" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Somnus_Yao" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/p/1005053220682873" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React"><span class="nav-number">1.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-router"><span class="nav-number">2.</span> <span class="nav-text">React-router</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-redux"><span class="nav-number">3.</span> <span class="nav-text">React-redux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux-thunk"><span class="nav-number">4.</span> <span class="nav-text">Redux-thunk</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Somnus13</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'Somnus13',
+               repo: 'Somnus13.github.io',
+               oauth: {
+                   client_id: '9f61826363c389dbcc6d',
+                   client_secret: '0e92403e65a3d631d1c0df2e1537bd6e7cca941b',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

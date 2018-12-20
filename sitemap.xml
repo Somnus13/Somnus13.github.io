@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://somnus13.github.io/2018/12/20/react-webpack-babel7-2/</loc>
+    
+    <lastmod>2018-12-20T08:58:39.655Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://somnus13.github.io/2018/12/19/react-webpack-babel7-1/</loc>
     
-    <lastmod>2018-12-19T09:11:01.715Z</lastmod>
+    <lastmod>2018-12-20T08:45:34.846Z</lastmod>
     
   </url>
   
@@ -72,14 +79,28 @@
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/2017/05/15/RegExp-note1/</loc>
+    <loc>https://somnus13.github.io/tags/index.html</loc>
+    
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://somnus13.github.io/2017/05/06/new-start/</loc>
+    
+    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
@@ -107,21 +128,7 @@
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/2017/05/06/new-start/</loc>
-    
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://somnus13.github.io/2017/07/24/file/</loc>
-    
-    <lastmod>2017-09-14T16:37:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://somnus13.github.io/2017/08/28/nihongo25-26/</loc>
+    <loc>https://somnus13.github.io/2017/05/15/RegExp-note2/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
@@ -135,14 +142,14 @@
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/tags/index.html</loc>
+    <loc>https://somnus13.github.io/categories/index.html</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://somnus13.github.io/categories/index.html</loc>
+    <loc>https://somnus13.github.io/2017/08/28/nihongo25-26/</loc>
     
     <lastmod>2017-09-14T16:37:06.000Z</lastmod>
     
