@@ -308,9 +308,7 @@ function isOdd(ele){
 {% codeblock lang:javascript %}
 if (!Array.prototype.filter)
 {
-  Array.prototype.filter = function(fun /*, thisArg */)
-  {
-    "use strict";
+  Array.prototype.filter = function(fun){
 
     if (this === void 0 || this === null)
       throw new TypeError();
