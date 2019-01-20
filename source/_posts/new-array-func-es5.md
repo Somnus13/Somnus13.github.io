@@ -48,7 +48,7 @@ d
 {% endcodeblock %}
 区别就在于forEach回调返回了三个参数，如图
 
-![chrome console](http://oh1bdpr59.bkt.clouddn.com/blog/forEach.png)
+{% asset_img forEach.png [forEach] %} 
 
 而array.forEach(callback[, thisArg])方法中thisArg参数是可选的，如果指定则在执行回调时用作this的值，否则默认传入undefine。
 ### 兼容polyfill
@@ -241,7 +241,7 @@ arr.reduce(function(newObj ,key){
 
 //{Alice: 3, Bob: 1, Ciel: 2, Dianel: 1}
 {% endcodeblock %}
-![reduce](http://oh1bdpr59.bkt.clouddn.com/blog/reduce.png)
+{% asset_img reduce.png [reduce] %} 
 ### 兼容polyfill
 一如既往地代码来自MDN
 {% codeblock lang:javascript %}

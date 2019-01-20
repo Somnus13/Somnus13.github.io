@@ -96,7 +96,7 @@ tags:
     如果指定了 **"g"** ,返回结果为所有匹配结果字符串的数组对象，而不是RegExp对象，且捕获结果不可获得。
 * 示例
 
-    ![match](http://oh1bdpr59.bkt.clouddn.com/2017-5-15%20/match.png)
+
 
 #### *search()*
 * 描述
@@ -144,7 +144,6 @@ tags:
     //["hello world", "!", "let's rock it."]
     {% endcodeblock %}
 
-    ![正则对象带子表达式返回](http://oh1bdpr59.bkt.clouddn.com/2017-5-16%20/split.png)
 
 #### *replace()*
 * 描述
@@ -175,20 +174,16 @@ tags:
 
     //引号的替换
     var testStr = '"Tom" and "jerry"';
-    testStr.replace(/"([^"]*)"/g, "'$1'") //依次匹配并替换
-
-    //'Tom' and 'jerry'
-
+    testStr.replace(/"([^"]*)"/g, "'$1'") //依次匹配并替换    
+    //'Tom' and 'jerry'    
     //首字母大写转换
     var myName = 'yao, somnus';
     myName.replace(/\b(\w+)\b/g, function(name){
         return name.substring(0,1).toUpperCase()+name.substring(1); //通过生成替换文本函数完成文本替换
     })
-
     //Yao, Somnus
     {% endcodeblock %}
 
-    ![replace](http://oh1bdpr59.bkt.clouddn.com/2017-5-16%20/replace.png)
 
 附：replace() 中 $ 的使用
 

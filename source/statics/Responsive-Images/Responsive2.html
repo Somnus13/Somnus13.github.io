@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>picture tag</title>
+	<link rel="stylesheet" href="./base.css">
+</head>
+<body>
+	<p class="">Device Info: </p>
+	<div class="device_msg"></div>
+	<!--可变宽度的图像：基于viewport选择-->
+	<!--
+	-- 对于内容相关响应式可变宽度图像的处理
+	-- srcset搭配w描述符以及sizes属性
+	-- sizes 一个包含两个值得逗号分隔的列表，如果secset中使用了w描述符，则必须设置sizes属性
+	-- 第一个值为媒体查询条件，第二个为原图尺寸值，vw来描述，不可用百分比。（vw存在兼容问题）
+	-->
+	<div class="img-box2 ">
+		<img srcset="./gakki-360.jpg 360w, 
+		             ./gakki-540.jpg 540w, 
+		             ./gakki-720.jpg 720w,
+		             ./gakki-1080.jpg 1080w" 
+		     sizes="(max-width: 400px) 100vw, 
+		            (max-width: 960px) 75vw, 
+		            1080px" 
+		     src="./gakki-1080.jpg" alt="Responsive Images">
+	</div>
+
+</body>
+<script type="text/javascript" src="./base.js"></script>
+</html>

@@ -21,7 +21,7 @@ tags:
 然后就会出现所谓的“裂图”,而这时 **img** 标签的 **alt** 属性就会发挥作用，提示用户当前加载失败图像的信息。
 如图：
 
-![fail-img1](http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail1.png)  
+{% asset_img img-fail1.png [fail-img1] %}  
 
 然后从运行下面代码可以在控制台看到图片加载几个事件相应的输出。
 
@@ -82,7 +82,7 @@ function loadAbort() {
 }
 ```
 然后图片加载失败就会显示成如下：  
-![fail-img2](http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail2.png)
+{% asset_img img-fail2.png [fail-img2] %} 
 ## 优化一下(算是)
 虽然上例已经展示了比较优雅的错误提示，和相应的图片源地址，保证用户能接受且能通过源地址来进行更加合理的访问。  
 但是，裂图依旧在！来让我们弄点东西遮起来吧。  
@@ -109,9 +109,7 @@ function loadAbort() {
 }
 ```
 图示如下：  
-![fail-img3](http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail3.png)
+{% asset_img img-fail3.png [fail-img3] %} 
 
 ## 总结
 基本网站开发框架都会集成默认图片，而且过大的图片对于网站加载速度不友好，所以这个的应用场景大概也就是寄存图床之类图片过期的博客或者论坛了。
-
-ps:实例中加载失败的后两张图片只需要在链接后面添加一个字母 **n** 就可以访问了，送一波图，顺便安利一下这是我老婆！

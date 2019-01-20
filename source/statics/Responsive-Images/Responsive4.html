@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>picture tag</title>
+	<link rel="stylesheet" href="./base.css">
+</head>
+<body>
+	<p class="">Device Info: </p>
+	<div class="device_msg"></div>
+	<!--source：基于格式选择-->
+	<!--
+	-- 不同格式的图片在文件大小和图片质量表现不一 
+	-- 新格式表现良好 webp chrome和opera jpeg-xr微软专有格式IE支持
+	-- source的type属性用来指定每个图像的MIME类型，浏览器会选择第一个含有其支持的MIME类型的源。源的顺序是至关重要的，如果浏览器无法识别所有的图象类型，它会回退至原来的img元素。
+
+	-->
+	<picture>
+	  <source type="image/vnd.ms-photo" src="./gakki-875.jxr">
+	  <source type="image/jp2" src="./gakki-875.jp2">
+	  <source type="image/webp" src="./gakki-875.webp">
+	  <img src="./gakki-875.jpg" class="picture-img" alt="Responsive Images">
+	</picture>
+
+</body>
+<script type="text/javascript" src="./base.js"></script>
+</html>

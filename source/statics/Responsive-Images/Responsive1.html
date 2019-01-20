@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>picture tag</title>
+	<link rel="stylesheet" href="./base.css">
+</head>
+<body>
+	<p class="">Device Info: </p>
+	<div class="device_msg"></div>
+	<!--固定宽度图像：基于设备像素比选择-->
+	<!--
+	-- 浏览器会根据设备像素比来选择加载哪张图片
+	-- srcset属性列出当前可加载的图像池，逗号分隔。x表示图像的设备像素比。
+	-- 不识别srcset的浏览器会直接加载src属性声明的图像。
+	-- 用途：网站logo，宽度固定，不随着vp变化
+	-->
+	<div class="img-box1">
+		<img srcset="./gakki-540.jpg 1.5x, ./gakki-720.jpg 2x, ./gakki-1080.jpg 3x" src="./gakki-360.jpg" alt="Responsive Images" />
+	</div>
+</body>
+<script type="text/javascript" src="./base.js"></script>
+</html>

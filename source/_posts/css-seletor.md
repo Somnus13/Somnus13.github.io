@@ -9,7 +9,7 @@ tags:
 ### 什么是Repaint/Reflow?
 先扒一张图，来解释下浏览器的工作流程  
 
-![浏览器工作原理](http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png)  
+{% asset_img Repaint-Reflow.png %} 
 
 上图可归纳为四步：  
 1. 解析构建 DOM 树
@@ -115,8 +115,7 @@ David在[《Use efficient CSS selectors》](http://code.google.com/speed/page-sp
 
 6. **通配符*{margin:0;padding:0;}**   
     * 号通配符把所有标签都初始化一遍，浏览器的渲染消耗一定的资源。有部分在标签在不同浏览器上几乎无差异，或是某些已经不推荐使用的标签(因为你不会去用它)，它们不需通配符要重新初始化一遍这样做能节省一点资源。  
-    *  推荐方案(代替 reset )：normalize.css(如果没听说过自行百度)
-
+    *  推荐方案(代替 reset )：normalize.css(如果没听说过自行百度)  
 7. **不要添加额外的标签来描述 class 或 id**   
     如果你有一个选择器是以 id 作为关键选择符，请不要添加多余标签名上去。因为 ID 是唯一的，你不要为了一个不存在的理由而降低了匹配的效率。
     * 不赞成 - button#backButton { }

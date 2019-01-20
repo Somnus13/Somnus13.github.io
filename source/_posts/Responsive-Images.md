@@ -31,7 +31,9 @@ tags:
 
 图片固定宽度为 **300**，浏览器通过识别设备像素比来筛选并加载图片。如上像素设备比为 **2**（例如：iphone6）的时候加载 **gakki-720** 的图片，**3**（iphone6 plus等）的时候会加载实际尺寸为 **1080** 的备选图。如果不支持，则默认加载 **gakki-360**。
 
-[点此](http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive1.html) 查看示例(建议新版本谷歌浏览)
+[点此](/statics/Responsive-Images/Responsive1.html)查看示例 (建议新版本谷歌浏览)
+
+
 
 ## 可变宽度的图像
 
@@ -62,7 +64,7 @@ tags:
 ```
 浏览器会根据 **sizes** 定义的媒体查询条件来选择加载图片。例如网页宽度 **600px** 时，按照查询条件小于 **960px**,所以会按照 **75%** 加载，而 **600*0.75 = 450** ,取最接近即 **gakki-540** 的图片。
 
-[点此](http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive2.html) 查看示例(建议新版本谷歌浏览)  
+[点此](/statics/Responsive-Images/Responsive2.html)查看示例 (建议新版本谷歌浏览)
 
 ## 不同的图像
 
@@ -84,7 +86,8 @@ tags:
 </picture>
 ```
 
-[点此](http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive2.html) 查看示例(建议新版本谷歌浏览)
+[点此](/statics/Responsive-Images/Responsive3.html)查看示例 (建议新版本谷歌浏览)
+
 浏览器窗口的变化可见，图片在小屏下显示裁剪版的细节图。
 
 ## 不同类型的图像
@@ -108,7 +111,7 @@ tags:
 </picture>
 ```
 
-[点此](http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive2.html) 查看示例(建议新版本谷歌浏览)
+{% asset_link Responsive4.html [点此] %}  查看示例(建议新版本谷歌浏览)
 ps：亲测，并没看到预料的结果，感觉被骗了..
 
 本文参考自 [Using Responsive Images (Now)](https://alistapart.com/article/using-responsive-images-now).

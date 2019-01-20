@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+        <style>
+            *{margin: 0;padding: 0;}
+            body{
+                font-size: 14px;
+                line-height: 2;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                padding-bottom: 50px;
+            }
+            #footer{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 50px;
+                background-color: #f5f5f5;
+                box-sizing: border-box;
+                padding:5px 5px;
+            }
+            #input_test{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: 0 3px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+    	<div id="wrapper">
+	        <h2>IOS 输入框遮挡</h2>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <p>这是一个占位的段落.</p>
+	        <div id="footer"><input type="text" id="input_test" placeholder="input here"></div>
+	    </div>
+    </body>
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script>
+        var container = document.getElementById("wrapper"); //最外部滚动容器
+		var ele = document.getElementById("input_test");
+		var eleDIv = document.getElementById("footer");
+
+		var u = navigator.userAgent;
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		var isUc = u.indexOf("UCBro") > -1;
+
+		if(isiOS && ele && eleDIv){
+			ele.onfocus = function(){
+				setTimeout(function(){
+		            scrollDiv();
+		        },isUc ? 350 : 200);
+			}  
+		}
+
+		function scrollDiv(){
+		    var isChrome = u.indexOf("CriOS") > -1;
+		    if(isChrome){
+		        document.body.scrollTop = container.clientHeight; //chrome 特殊处理
+		    }else if(Element.prototype.scrollIntoViewIfNeeded){
+		    	eleDIv.scrollIntoViewIfNeeded(false);
+		    	container.scrollTop = 1000; //切换输入法，首次等特殊情况补救
+		    }else if(Element.prototype.scrollIntoView){
+		        eleDIv.scrollIntoView(false);  
+		    }else{
+		        document.body.scrollTop = container.clientHeight; //防止漏网之鱼
+		    }
+		}
+    </script>
+</html>

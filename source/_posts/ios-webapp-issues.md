@@ -1,5 +1,5 @@
 ---
-title: IOS webapp 踩屎记（二）
+title: IOS webapp 踩屎记
 date: 2017-05-23 21:20:56
 categories:
     - 移动端
@@ -18,10 +18,10 @@ tags:
     而别的浏览器，或多或少会复现这个问题（第一次触发）
 <!--more-->
     **理论上的表现为**：  
-    ![normal](http://oh1bdpr59.bkt.clouddn.com/2017-5-23/normal.png)
+    {% asset_img normal.png [normal] %} 
 
     **实际表现为**：  
-    ![error](http://oh1bdpr59.bkt.clouddn.com/2017-5-23/error.png)
+    {% asset_img error.png [error] %} 
 
 ## 分析
 输入框聚焦后，**ios** 和安卓对此作了不同的处理。  
@@ -104,4 +104,4 @@ function scrollDiv(){
 2. **chrome** 也成功沦落到一个另类的表现，虽然自己公司 **webapp** 和谷歌表现一致
 3. **ios** 原生 **safari** 浏览器的 **UA** 简直没法区分
 
-Ps：这个方法可能不是最完美的解决方案，仅供参考，毕竟只是做个笔记。完整代码[请点击](http://oh1bdpr59.bkt.clouddn.com/2017-5-23/demo.html)。
+Ps：这个方法可能不是最完美的解决方案，仅供参考，毕竟只是做个笔记。完整代码 **[请点击](/statics/ios-webapp-issues/demo.html)** 。

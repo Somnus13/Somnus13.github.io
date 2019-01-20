@@ -21,7 +21,7 @@ tags:
 ### 应用
 
 #### 多文件FileList
-链接请戳  **[多文件FileList](http://oh1bdpr59.bkt.clouddn.com/file/file1.html)**
+链接请戳  **[多文件fileList](/statics/file/file1.html)**
 
 ```html
 <input type="file" id="files" accept="image/gif,image/jpeg,image/jpg,image/png" multiple>
@@ -38,10 +38,11 @@ tags:
     }
 </script>
 ```
-![多文件FileList](http://oh1bdpr59.bkt.clouddn.com/file/file1.png)
+
+{% asset_img file1.png %} 
 
 #### 文件预览
-链接请戳 **[文件预览](http://oh1bdpr59.bkt.clouddn.com/file/file2.html)**
+链接请戳 **[文件预览](/statics/file/file2.html)**
 ```
 
 <input type="file" id="files" accept="image/jpeg,image/jpg,image/png">
@@ -63,7 +64,7 @@ tags:
 
 ```
 
-![文件预览](http://oh1bdpr59.bkt.clouddn.com/file/file2.png)
+{% asset_img file1.png %} 
 
 ## Blob对象
 

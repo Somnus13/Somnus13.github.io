@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+        <input type="file" id="files" multiple accept="image/gif,image/jpeg,image/jpg,image/png">
+        <script>
+            var elem = document.getElementById('files');
+            elem.onchange = function (event) {
+                var files = event.target.files;
+                for (var i = 0; i < files.length; i++) {
+                    // 文件类型为 image 并且文件大小小于 200kb
+                    if(files[i].type.indexOf('image/') > -1 && files[i].size < 204800){
+                        console.log(files[i].name +' == type: '+files[i].type);
+                    }
+                }
+            }
+        </script>
+
+    </body>
+</html>

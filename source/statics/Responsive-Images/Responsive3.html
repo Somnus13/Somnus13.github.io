@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>picture tag</title>
+	<link rel="stylesheet" href="./base.css">
+</head>
+<body>
+	<p class="">Device Info: </p>
+	<div class="device_msg"></div>
+	<!--前两者都是运用srcset属性以不同质量显示相同的图像，而老旧的浏览器会将其识别为普通的图像并加载src属性。如需在不同宽度显示稍微不同的图像，则需要借用picture元素。-->
+
+	<!--picture：基于Art direction（美术设计）选择-->
+	<!--
+	-- picture元素提供了一个图像及其源文件的容器，仍需要img元素来做渲染
+	-- 提供要显示图片的供选择的版本
+	-- 一个特定的breakpoint需要显示一个特定的图像，且不会发生歧义。
+	-- 
+	-->
+	<picture>
+		<source media="(min-width: 960px)" srcset="./gakki-large-1080.jpg">
+		<source media="(min-width: 575px)" srcset="./gakki-mid-630.jpg">
+		<img src="./gakki-small-360.jpg" class="picture-img" alt="Responsive Images">
+	</picture>
+
+
+</body>
+<script type="text/javascript" src="./base.js"></script>
+</html>

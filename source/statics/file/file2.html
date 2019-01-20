@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <input type="file" id="files" accept="image/jpeg,image/jpg,image/png"><br>
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" id="preview">
+        <script>
+            var elem = document.getElementById('files'),
+                img = document.getElementById('preview');
+            elem.onchange = function () {
+                var files = elem.files,
+                    reader = new FileReader();
+                if(files && files[0]){
+                    reader.onload = function (ev) {
+                        img.src = ev.target.result;
+                    }
+                    reader.readAsDataURL(files[0]);
+                }
+            }
+        </script>
+    </body>
+</html>
