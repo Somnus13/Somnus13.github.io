@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端, Somnus13,somnus13.github.io" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -96,16 +96,18 @@
 
 
 
-<meta name="description" content="天天心态爆炸的前端狗">
-<meta property="og:type" content="website">
-<meta property="og:title" content="那些踩屎的经历">
-<meta property="og:url" content="https://somnus13.github.io/categories/webapp/index.html">
+<meta name="description" content="ios底部输入框遮挡 接上节，因为fixed元素的变现不友好，底部固定元素多采用了absolute定位。但底部固定元素内包含输入控件时，聚焦会发生输入框被键盘遮挡。  背景 场景  为了实现类 IM 即时通讯页面，输入框聚焦并紧贴键盘顶部浮起。 表现  某些浏览器会发生输入框遮挡被键盘遮挡。  qq内置以及微信内置浏览器估计对此作了些处理，基本没发现这种情况。  而别的浏览器，或多或少会复现这个问">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IOS webapp 踩屎记">
+<meta property="og:url" content="https://somnus13.github.io/2017/05/23/ios-webapp-issues/index.html">
 <meta property="og:site_name" content="那些踩屎的经历">
-<meta property="og:description" content="天天心态爆炸的前端狗">
+<meta property="og:description" content="ios底部输入框遮挡 接上节，因为fixed元素的变现不友好，底部固定元素多采用了absolute定位。但底部固定元素内包含输入控件时，聚焦会发生输入框被键盘遮挡。  背景 场景  为了实现类 IM 即时通讯页面，输入框聚焦并紧贴键盘顶部浮起。 表现  某些浏览器会发生输入框遮挡被键盘遮挡。  qq内置以及微信内置浏览器估计对此作了些处理，基本没发现这种情况。  而别的浏览器，或多或少会复现这个问">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-20T14:49:28.985Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那些踩屎的经历">
-<meta name="twitter:description" content="天天心态爆炸的前端狗">
+<meta name="twitter:title" content="IOS webapp 踩屎记">
+<meta name="twitter:description" content="ios底部输入框遮挡 接上节，因为fixed元素的变现不友好，底部固定元素多采用了absolute定位。但底部固定元素内包含输入控件时，聚焦会发生输入框被键盘遮挡。  背景 场景  为了实现类 IM 即时通讯页面，输入框聚焦并紧贴键盘顶部浮起。 表现  某些浏览器会发生输入框遮挡被键盘遮挡。  qq内置以及微信内置浏览器估计对此作了些处理，基本没发现这种情况。  而别的浏览器，或多或少会复现这个问">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://somnus13.github.io/categories/webapp/"/>
+  <link rel="canonical" href="https://somnus13.github.io/2017/05/23/ios-webapp-issues/"/>
 
 
 
 
 
-  <title>分类: webapp | 那些踩屎的经历</title>
+  <title>IOS webapp 踩屎记 | 那些踩屎的经历</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -175,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <a href="https://github.com/Somnus13"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
@@ -305,45 +307,231 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2>webapp<small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/22/ios-webapp-issues1/" itemprop="url">
-              
-                <span itemprop="name">IOS webapp 踩屎记（一）</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-22T19:34:49+08:00"
-              content="2017-05-22" >
-          05-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/23/ios-webapp-issues/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Somnus13">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些踩屎的经历">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">IOS webapp 踩屎记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T21:20:56+08:00">
+                2017-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-tags"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ios底部输入框遮挡"><a href="#ios底部输入框遮挡" class="headerlink" title="ios底部输入框遮挡"></a>ios底部输入框遮挡</h1><blockquote>
+<p>接上节，因为fixed元素的变现不友好，底部固定元素多采用了absolute定位。但底部固定元素内包含输入控件时，聚焦会发生输入框被键盘遮挡。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>场景<br>  为了实现类 <strong>IM</strong> 即时通讯页面，输入框聚焦并紧贴键盘顶部浮起。</li>
+<li><p>表现<br>  某些浏览器会发生输入框遮挡被键盘遮挡。<br>  qq内置以及微信内置浏览器估计对此作了些处理，基本没发现这种情况。<br>  而别的浏览器，或多或少会复现这个问题（第一次触发）</p>
+<a id="more"></a>
+<p>  <strong>理论上的表现为</strong>：  </p>
+   
+<p>  <strong>实际表现为</strong>：  </p>
+   
+</li>
+</ul>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>输入框聚焦后，<strong>ios</strong> 和安卓对此作了不同的处理。<br>安卓会对页面进行压缩，页面的 <strong>innerHeight</strong> 会发生变化，而ios会直接把页面向上推键盘的高度，页面的 <strong>innerHeight</strong> 并没发生变化（除了 <strong>UC</strong> 浏览器，真心不知道为什么这么另类）。<br>查阅一些资料，发现了 <strong>Element</strong> 对象两个兼容性有待考量的方法 <strong>scrollIntoView()</strong> 和 <strong>scrollIntoViewIfNeeded()</strong>。</p>
+<ul>
+<li><p><strong>scrollIntoView()</strong> 让当前的元素滚动到浏览器窗口的可视区域内</p>
+<ul>
+<li><p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">element.scrollIntoView(); // 等同于element.scrollIntoView(true)</div><div class="line">element.scrollIntoView(alignToTop); // Boolean型参数</div><div class="line">element.scrollIntoView(scrollIntoViewOptions); // Object型参数</div></pre></td></tr></table></figure>
+</li>
+<li><p>参数</p>
+<ul>
+<li><strong>alignToTop</strong> 一个 <strong>Boolean</strong> 值：<br>  如果为 <strong>true</strong>，元素的顶端将和其所在滚动区的可视区域的顶端对齐。<br>  如果为 <strong>false</strong>，元素的底端将和其所在滚动区的可视区域的底端对齐。</li>
+<li><p><strong>scrollIntoViewOptions</strong>   一个 <strong>boolean</strong> 或一个带有选项的 <strong>object</strong>：  </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    behavior: &quot;auto&quot;  | &quot;instant&quot; | &quot;smooth&quot;,</div><div class="line">    block:    &quot;start&quot; | &quot;end&quot;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  如果是一个 <strong>boolean</strong>, <strong>true</strong> 相当于 <strong>{block: “start”}</strong>，<strong>false</strong> 相当于 <strong>{block: “end”}</strong></p>
+</li>
+</ul>
+</li>
+<li>兼容<br>  详情点击 <a href="http://docs.w3cub.com/browser_support_tables/scrollintoview/" target="_blank" rel="external">here.</a></li>
+</ul>
+</li>
+<li><p><strong>scrollIntoViewIfNeeded()</strong> 让当前的元素滚动到浏览器窗口的可视区域内</p>
+<ul>
+<li><p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scrollIntoViewIfNeeded(); // 等同于element.scrollIntoView(true)</div><div class="line">element.scrollIntoView(alignToTop); // Boolean型参数</div></pre></td></tr></table></figure>
+</li>
+<li><p>参数</p>
+</li>
+<li><strong>alignToTop</strong> 一个 <strong>Boolean</strong> 值：<br>  如果为 <strong>true</strong>，元素的顶端将和其所在滚动区的可视区域的顶端对齐。<br>  如果为 <strong>false</strong>，元素的底端将和其所在滚动区的可视区域的底端对齐。</li>
+<li>兼容<br>  详情点击 <a href="http://docs.w3cub.com/browser_support_tables/scrollintoviewifneeded/" target="_blank" rel="external">here.</a></li>
+</ul>
+</li>
+</ul>
+<p>然后，开始动刀，测试。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>输入框聚焦，添加键盘呼起延迟，并对呼出键盘后的页面做输入框位置调整。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var container = document.getElementById(&quot;wrapper&quot;); //最外部滚动容器</div><div class="line">var ele = document.getElementById(&quot;input_test&quot;);</div><div class="line">var eleDIv = document.getElementById(&quot;footer&quot;);</div><div class="line"></div><div class="line">var u = navigator.userAgent;</div><div class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</div><div class="line">var isUc = u.indexOf(&quot;UCBro&quot;) &gt; -1;</div><div class="line"></div><div class="line">if(isiOS &amp;&amp; ele &amp;&amp; eleDIv)&#123;</div><div class="line">    ele.onfocus = function()&#123;</div><div class="line">		setTimeout(function()&#123;</div><div class="line">            scrollDiv();</div><div class="line">        &#125;,isUc ? 350 : 200);</div><div class="line">    &#125;  </div><div class="line">&#125;</div><div class="line"></div><div class="line">function scrollDiv()&#123;</div><div class="line">    var isChrome = u.indexOf(&quot;CriOS&quot;) &gt; -1;</div><div class="line">    if(isChrome)&#123;</div><div class="line">        document.body.scrollTop = container.clientHeight; //chrome 特殊处理</div><div class="line">    &#125;else if(Element.prototype.scrollIntoViewIfNeeded)&#123;</div><div class="line">    	eleDIv.scrollIntoViewIfNeeded(false);</div><div class="line">    	container.scrollTop = 1000; //切换输入法，首次等特殊情况补救</div><div class="line">    &#125;else if(Element.prototype.scrollIntoView)&#123;</div><div class="line">        eleDIv.scrollIntoView(false);  </div><div class="line">    &#125;else&#123;</div><div class="line">        document.body.scrollTop = container.clientHeight; //防止漏网之鱼</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="吐槽："><a href="#吐槽：" class="headerlink" title="吐槽："></a>吐槽：</h2><ol>
+<li><strong>UC</strong> 两个方法都生效，不过呼出处理时间需要更久一点</li>
+<li><strong>chrome</strong> 也成功沦落到一个另类的表现，虽然自己公司 <strong>webapp</strong> 和谷歌表现一致</li>
+<li><strong>ios</strong> 原生 <strong>safari</strong> 浏览器的 <strong>UA</strong> 简直没法区分</li>
+</ol>
+<p>Ps：这个方法可能不是最完美的解决方案，仅供参考，毕竟只是做个笔记。完整代码 <strong><a href="/statics/ios-webapp-issues/demo.html">请点击</a></strong> 。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/15/RegExp-note2/" rel="next" title="正则表达式笔记二">
+                <i class="fa fa-chevron-left"></i> 正则表达式笔记二
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/14/Responsive-Images/" rel="prev" title="响应式图片处理">
+                响应式图片处理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -351,6 +539,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+       
+         <div id="gitment-container"></div>
+       
+    
+  </div>
+
 
         </div>
         
@@ -370,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -386,7 +591,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -397,7 +602,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -408,7 +613,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -470,6 +675,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ios底部输入框遮挡"><span class="nav-number">1.</span> <span class="nav-text">ios底部输入框遮挡</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">1.3.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#吐槽："><span class="nav-number">1.4.</span> <span class="nav-text">吐槽：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -486,7 +707,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -579,6 +800,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 

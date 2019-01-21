@@ -104,14 +104,14 @@
 <meta property="og:site_name" content="那些踩屎的经历">
 <meta property="og:description" content="img fail前言：据说，一个公司的网速决定着一个程序员的心情与产出，而网速决定着一篇文章裂图的程度。 告别裂图html 中的 img 标签预设了几个关于自身加载的事件：  onError  图片加载出现错误，多数的处理是将图片路径指向默认图片 onLoad  图片加载完成之后触发事件 onAbort  图片加载过程中，用户手动停止加载（浏览器停止按钮）触发事件  前面也讲过，图片加载缓慢乃至加">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail1.png">
-<meta property="og:image" content="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail2.png">
-<meta property="og:image" content="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail3.png">
-<meta property="og:updated_time" content="2017-09-14T16:37:06.000Z">
+<meta property="og:image" content="https://somnus13.github.io/2017/07/18/img-fail/img-fail1.png">
+<meta property="og:image" content="https://somnus13.github.io/2017/07/18/img-fail/img-fail2.png">
+<meta property="og:image" content="https://somnus13.github.io/2017/07/18/img-fail/img-fail3.png">
+<meta property="og:updated_time" content="2019-01-17T09:16:22.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="img fail那点事">
 <meta name="twitter:description" content="img fail前言：据说，一个公司的网速决定着一个程序员的心情与产出，而网速决定着一篇文章裂图的程度。 告别裂图html 中的 img 标签预设了几个关于自身加载的事件：  onError  图片加载出现错误，多数的处理是将图片路径指向默认图片 onLoad  图片加载完成之后触发事件 onAbort  图片加载过程中，用户手动停止加载（浏览器停止按钮）触发事件  前面也讲过，图片加载缓慢乃至加">
-<meta name="twitter:image" content="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail1.png">
+<meta name="twitter:image" content="https://somnus13.github.io/2017/07/18/img-fail/img-fail1.png">
 
 
 
@@ -420,19 +420,18 @@
 <li><strong>onAbort</strong><br>  图片加载过程中，用户手动停止加载（浏览器停止按钮）触发事件</li>
 </ul>
 <p>前面也讲过，图片加载缓慢乃至加载失败并不全因为是网速问题，还有可能是图片服务器延迟，或者图片过期请求失效等。<br>然后就会出现所谓的“裂图”,而这时 <strong>img</strong> 标签的 <strong>alt</strong> 属性就会发挥作用，提示用户当前加载失败图像的信息。<br>如图：</p>
-<p><img src="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail1.png" alt="fail-img1">  </p>
+<img src="/2017/07/18/img-fail/img-fail1.png" alt="[fail-img1]" title="[fail-img1]">  
 <p>然后从运行下面代码可以在控制台看到图片加载几个事件相应的输出。</p>
 <a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loadSuccess</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">'image load success!'</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loadError</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">'image load error!'</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loadAbort</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  <span class="built_in">console</span>.log(<span class="string">'image abort!'</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img-container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://1234.com/1.jpg"</span> <span class="attr">onload</span>=<span class="string">"loadSuccess()"</span> <span class="attr">onerror</span>=<span class="string">"loadError()"</span> <span class="attr">onabort</span>=<span class="string">"loadAbort()"</span> <span class="attr">alt</span>=<span class="string">"this is a fail img"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>显然这样的表现形式，在用户看来是非常不优雅的。身为一个程序员，如果所有异常分支没有做相应处理，就相当于一辆急速行驶的汽车，保不齐啥时候刹车会失灵一下下。</p>
 <h2 id="动手吧"><a href="#动手吧" class="headerlink" title="动手吧"></a>动手吧</h2><p>利用加载失败时的标签和伪类 <strong>:before :after</strong> 来做点事<br>我们可以通过 <strong>:before :after</strong> 来定义加载失败的提示信息，例如在图片上方提示加载失败提示，下方提示图片的源地址。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://oi2fsv5ls.bkt.clouddn.com/twitter/Cwc6jkVUcAExIOI.jpg-orgi"</span> <span class="attr">alt</span>=<span class="string">"gakki-twitter"</span> <span class="attr">class</span>=<span class="string">"img_load img_load1"</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.img_load</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: auto;</div><div class="line">    <span class="attribute">font-family</span>: <span class="string">'Helvetica'</span>;</div><div class="line">    <span class="attribute">font-weight</span>: <span class="number">300</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.img_load1</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"image load error !"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.img_load1</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">    <span class="attribute">white-space</span>:nowrap;</div><div class="line">    <span class="attribute">overflow</span>:hidden;</div><div class="line">    <span class="attribute">text-overflow</span>: ellipsis;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"[url: "</span> <span class="built_in">attr</span>(src) <span class="string">"]"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后图片加载失败就会显示成如下：<br><img src="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail2.png" alt="fail-img2"></p>
+<p>然后图片加载失败就会显示成如下：<br><img src="/2017/07/18/img-fail/img-fail2.png" alt="[fail-img2]" title="[fail-img2]"> </p>
 <h2 id="优化一下-算是"><a href="#优化一下-算是" class="headerlink" title="优化一下(算是)"></a>优化一下(算是)</h2><p>虽然上例已经展示了比较优雅的错误提示，和相应的图片源地址，保证用户能接受且能通过源地址来进行更加合理的访问。<br>但是，裂图依旧在！来让我们弄点东西遮起来吧。<br>本例采用了 <strong>font-awesome</strong> 库来实现小图标展示,所以需要先引进css库<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://oi2fsv5ls.bkt.clouddn.com/twitter/CwvqJsEUkAAyeiG.jpg-orgi"</span> <span class="attr">alt</span>=<span class="string">"gakki-twitter"</span> <span class="attr">class</span>=<span class="string">"img_load img_load2"</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.img_load2</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">z-index</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">top</span>: -<span class="number">1px</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">    <span class="attribute">font-family</span>: FontAwesome;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(100, 100, 100);</div><div class="line">    <span class="attribute">content</span>: <span class="string">"\f1c5"</span> <span class="string">" "</span> <span class="built_in">attr</span>(alt);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>图示如下：<br><img src="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail3.png" alt="fail-img3"></p>
+<p>图示如下：<br><img src="/2017/07/18/img-fail/img-fail3.png" alt="[fail-img3]" title="[fail-img3]"> </p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>基本网站开发框架都会集成默认图片，而且过大的图片对于网站加载速度不友好，所以这个的应用场景大概也就是寄存图床之类图片过期的博客或者论坛了。</p>
-<p>ps:实例中加载失败的后两张图片只需要在链接后面添加一个字母 <strong>n</strong> 就可以访问了，送一波图，顺便安利一下这是我老婆！</p>
 
       
     </div>
@@ -563,7 +562,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -574,7 +573,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -585,7 +584,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -679,7 +678,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

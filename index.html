@@ -860,7 +860,7 @@
 <li>Eval 函数执行上下文<br>  运行在 eval 函数内的代码有着自己的执行上下文</li>
 </ul>
 <h2 id="执行栈"><a href="#执行栈" class="headerlink" title="执行栈"></a>执行栈</h2><p>先进后出的结构，用于存储代码执行期间创建的所有执行上下文<br>JavaScript 引擎开始读取脚本时，先默认创建一个全局执行上下文并将其推入栈底，每发生一个函数调用，引擎就会为该函数创建一个新的执行上下文并压入栈。引擎会运行处于执行栈栈顶的函数，运行完后，其对应的上下文从栈中弹出，交还控制权给当前执行上下文的下一个执行上下文<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = foo1(y) + <span class="number">1</span></div><div class="line">  <span class="built_in">console</span>.log(sum)</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x+<span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">foo(<span class="number">5</span>)</div></pre></td></tr></table></figure></p>
-<p>执行栈简图如下：<br><img src="http://pjewxcfqt.bkt.gdipper.com/QQ20181208-174019@2x.png" alt=""><br>注：每次函数调用都会创建新的 执行上下文，哪怕是递归调用</p>
+<p>执行栈简图如下：<br><img src="/2018/12/08/Execution-Context/QQ20181208-174019@2x.png" alt="QQ20181208-174019@2x.png" title=""><br>注：每次函数调用都会创建新的 执行上下文，哪怕是递归调用</p>
 <h2 id="执行上下文的创建"><a href="#执行上下文的创建" class="headerlink" title="执行上下文的创建"></a>执行上下文的创建</h2><p>执行上下文分两个阶段创建： 1）创建阶段 2）执行阶段</p>
 <h3 id="创建阶段（函数被调用，代码未执行）"><a href="#创建阶段（函数被调用，代码未执行）" class="headerlink" title="创建阶段（函数被调用，代码未执行）"></a>创建阶段（函数被调用，代码未执行）</h3><pre><code>1. 初始化作用域链
 2. 创建变量对象
@@ -1460,7 +1460,7 @@
       
         
           <h3 id="什么是Repaint-Reflow"><a href="#什么是Repaint-Reflow" class="headerlink" title="什么是Repaint/Reflow?"></a>什么是Repaint/Reflow?</h3><p>先扒一张图，来解释下浏览器的工作流程  </p>
-<p><img src="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png" alt="浏览器工作原理">  </p>
+<img src="/2017/10/05/css-seletor/Repaint-Reflow.png" alt="Repaint-Reflow.png" title=""> 
 <p>上图可归纳为四步：  </p>
 <ol>
 <li>解析构建 DOM 树<br> 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树</li>
@@ -1843,7 +1843,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1854,7 +1854,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1865,7 +1865,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1943,7 +1943,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

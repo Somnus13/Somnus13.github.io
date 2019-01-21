@@ -414,14 +414,14 @@
 <li><strong>lastModified</strong> ：文件最后修改时间</li>
 </ul>
 <p><strong>input:file</strong> 对象中还存在一个 <strong>accept</strong> 属性，可以用来规定能够通过文件上传进行提交的文件类型。<br> <strong>accept=”image/*”</strong> 可以用来限制只允许上传图像格式。但是在 <strong>Webkit</strong> 浏览器下却出现了响应滞慢的问题，要等上好几秒才弹出文件选择框。<br>解决方法就是将 ‘<em>‘ 通配符改为指定的 <em>*MIME</em></em> 类型。</p>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="多文件FileList"><a href="#多文件FileList" class="headerlink" title="多文件FileList"></a>多文件FileList</h4><p>链接请戳  <strong><a href="http://oh1bdpr59.bkt.clouddn.com/file/file1.html" target="_blank" rel="external">多文件FileList</a></strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"files"</span> <span class="attr">accept</span>=<span class="string">"image/gif,image/jpeg,image/jpg,image/png"</span> <span class="attr">multiple</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">'files'</span>);</span></div><div class="line"><span class="javascript">    elem.onchange = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">var</span> files = event.target.files;</span></div><div class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</span></div><div class="line"><span class="javascript">            <span class="comment">// 文件类型为 image 并且文件大小小于 200kb</span></span></div><div class="line"><span class="javascript">            <span class="keyword">if</span>(files[i].type.indexOf(<span class="string">'image/'</span>) &gt; <span class="number">-1</span> &amp;&amp; files[i].size &lt; <span class="number">204800</span>)&#123;</span></div><div class="line"><span class="javascript">                <span class="built_in">console</span>.log(files[i].name + files[i].type);</span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="http://oh1bdpr59.bkt.clouddn.com/file/file1.png" alt="多文件FileList"></p>
-<h4 id="文件预览"><a href="#文件预览" class="headerlink" title="文件预览"></a>文件预览</h4><p>链接请戳 <strong><a href="http://oh1bdpr59.bkt.clouddn.com/file/file2.html" target="_blank" rel="external">文件预览</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;input type=&quot;file&quot; id=&quot;files&quot; accept=&quot;image/jpeg,image/jpg,image/png&quot;&gt;</div><div class="line">&lt;img src=&quot;blank.gif&quot; id=&quot;preview&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var elem = document.getElementById(&apos;files&apos;),</div><div class="line">        img = document.getElementById(&apos;preview&apos;);</div><div class="line">    elem.onchange = function () &#123;</div><div class="line">        var files = elem.files,</div><div class="line">            reader = new FileReader();</div><div class="line">        if(files &amp;&amp; files[0])&#123;</div><div class="line">            reader.onload = function (ev) &#123;</div><div class="line">                img.src = ev.target.result;</div><div class="line">            &#125;</div><div class="line">            reader.readAsDataURL(files[0]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://oh1bdpr59.bkt.clouddn.com/file/file2.png" alt="文件预览"></p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="多文件FileList"><a href="#多文件FileList" class="headerlink" title="多文件FileList"></a>多文件FileList</h4><p>链接请戳  <strong><a href="/statics/file/file1.html">多文件fileList</a></strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"files"</span> <span class="attr">accept</span>=<span class="string">"image/gif,image/jpeg,image/jpg,image/png"</span> <span class="attr">multiple</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    var elem = document.getElementById('files');</span></div><div class="line"><span class="undefined">    elem.onchange = function (event) &#123;</span></div><div class="line"><span class="undefined">        var files = event.target.files;</span></div><div class="line"><span class="undefined">        for (var i = 0; i &lt; files.length; i++) &#123;</span></div><div class="line"><span class="undefined">            // 文件类型为 image 并且文件大小小于 200kb</span></div><div class="line"><span class="undefined">            if(files[i].type.indexOf('image/') &gt; -1 &amp;&amp; files[i].size &lt; 204800)&#123;</span></div><div class="line"><span class="undefined">                console.log(files[i].name + files[i].type);</span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+ 
+<h4 id="文件预览"><a href="#文件预览" class="headerlink" title="文件预览"></a>文件预览</h4><p>链接请戳 <strong><a href="/statics/file/file2.html">文件预览</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;input type=&quot;file&quot; id=&quot;files&quot; accept=&quot;image/jpeg,image/jpg,image/png&quot;&gt;</div><div class="line">&lt;img src=&quot;blank.gif&quot; id=&quot;preview&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var elem = document.getElementById(&apos;files&apos;),</div><div class="line">        img = document.getElementById(&apos;preview&apos;);</div><div class="line">    elem.onchange = function () &#123;</div><div class="line">        var files = elem.files,</div><div class="line">            reader = new FileReader();</div><div class="line">        if(files &amp;&amp; files[0])&#123;</div><div class="line">            reader.onload = function (ev) &#123;</div><div class="line">                img.src = ev.target.result;</div><div class="line">            &#125;</div><div class="line">            reader.readAsDataURL(files[0]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+ 
 <h2 id="Blob对象"><a href="#Blob对象" class="headerlink" title="Blob对象"></a>Blob对象</h2><p>表示一个不可变，原始数据的类似文件对象。区别于 <strong>mysql</strong> 的 <strong>blob</strong> 类型（二进制容器），<strong>html5</strong> 中的 <strong>blob</strong> 对象除了可以存储二进制数据之外，还可设置数据的 <strong>mime</strong> 类型，从某种程度讲，实现了文件的存储。<br>而 <strong>html5</strong> 中的 <strong>file</strong> 对象则是基于 <strong>blob</strong> 对象继承扩展而来。</p>
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Blob(blobparts[,options])</div></pre></td></tr></table></figure>
-<p>所以需要关键字 <strong>new</strong> 来声明，旧式的 <strong>BlobBuilder</strong> 方法已经过时，不在讨论。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">var</span> blob = <span class="keyword">new</span> Blob([<span class="string">"Hello World!"</span>],&#123;<span class="attr">type</span>:<span class="string">"text/plain"</span>&#125;);</span></div><div class="line"><span class="javascript"><span class="built_in">console</span>.log(blob)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>所以需要关键字 <strong>new</strong> 来声明，旧式的 <strong>BlobBuilder</strong> 方法已经过时，不在讨论。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">var blob = new Blob(["Hello World!"],&#123;type:"text/plain"&#125;);</span></div><div class="line"><span class="undefined">console.log(blob)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><ul>
 <li><strong>isClosed：bool</strong> 是否为关闭状态，关闭状态的 <strong>blob</strong> 对象不可读</li>
 <li><strong>size</strong>：数据大小</li>
@@ -572,7 +572,7 @@
 <li><strong>onAbort</strong><br>  图片加载过程中，用户手动停止加载（浏览器停止按钮）触发事件</li>
 </ul>
 <p>前面也讲过，图片加载缓慢乃至加载失败并不全因为是网速问题，还有可能是图片服务器延迟，或者图片过期请求失效等。<br>然后就会出现所谓的“裂图”,而这时 <strong>img</strong> 标签的 <strong>alt</strong> 属性就会发挥作用，提示用户当前加载失败图像的信息。<br>如图：</p>
-<p><img src="http://oh1bdpr59.bkt.clouddn.com/fail_img/img-fail1.png" alt="fail-img1">  </p>
+<img src="/2017/07/18/img-fail/img-fail1.png" alt="[fail-img1]" title="[fail-img1]">  
 <p>然后从运行下面代码可以在控制台看到图片加载几个事件相应的输出。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -769,7 +769,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/23/ios-webapp-issues2/">
+    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/23/ios-webapp-issues/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Somnus13">
@@ -788,7 +788,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/23/ios-webapp-issues2/" itemprop="url">IOS webapp 踩屎记（二）</a></h2>
+                <a class="post-title-link" href="/2017/05/23/ios-webapp-issues/" itemprop="url">IOS webapp 踩屎记</a></h2>
         
 
         <div class="post-meta">
@@ -866,157 +866,7 @@
 <li><p>表现<br>  某些浏览器会发生输入框遮挡被键盘遮挡。<br>  qq内置以及微信内置浏览器估计对此作了些处理，基本没发现这种情况。<br>  而别的浏览器，或多或少会复现这个问题（第一次触发）</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/23/ios-webapp-issues2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/22/ios-webapp-issues1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Somnus13">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那些踩屎的经历">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/22/ios-webapp-issues1/" itemprop="url">IOS webapp 踩屎记（一）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T19:34:49+08:00">
-                2017-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-tags"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webapp/" itemprop="url" rel="index">
-                    <span itemprop="name">webapp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>底部 fixed 元素与输入控件的碰撞..</p>
-</blockquote>
-<h2 id="移动端fixed元素"><a href="#移动端fixed元素" class="headerlink" title="移动端fixed元素"></a>移动端fixed元素</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>过长的移动端网页需要底部固定一个按钮来方便引导用户操作</p>
-<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>fixed 属性在 IOS 5版本开始支持，但是不如安卓表现良好。<br>页面中同时存在输入控件（<strong>input、textarea</strong>）和 <strong>fixed</strong> 元素时，输入控件获取焦点呼出键盘，<strong>fixed</strong> 元素会错位。</p>
-<ul>
-<li>安卓表现良好，输入控件聚焦，滚动页面fixed元素固定输入法顶部</li>
-<li><strong>IOS</strong>（仅以 <strong>safari</strong>、谷歌、<strong>UC</strong> 浏览器、微信 <strong>webview</strong> 作参考）<ul>
-<li><strong>safari</strong>、谷歌、微信，聚焦时 <strong>fixed</strong> 元素 <strong>fixed</strong> 属性失效，归于文档流底部</li>
-<li><strong>UC</strong> 浏览器聚焦，滚动页面 <strong>fixed</strong> 元素异位</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/22/ios-webapp-issues1/#more" rel="contents">
+            <a class="btn" href="/2017/05/23/ios-webapp-issues/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1340,158 +1190,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/15/RegExp-note1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://somnus13.github.io/2017/05/15/atom/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Somnus13">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="那些踩屎的经历">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/15/atom/" itemprop="url">Atom使用心得以及插件推荐</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T21:45:42+08:00">
-                2017-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-tags"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>公司移动化办公的原因，导致我不得不抛弃台式转战笔记本。而租来的笔记本4G的内存导致我在编辑器上的选择有些捉襟见肘。</p>
-</blockquote>
-<p>家中台式编辑器一般都是使用 <strong>webstorm</strong>，精神洁癖的我每天就是自定义，修修改改。鉴于公司的笔记本，<strong>IDE</strong> 我觉得还是算了吧，一个 <strong>python</strong> 服务和一个 <strong>IDE</strong>，再加上一向吃内存就和喝水一样的谷歌浏览器，我已然已经预见了后果，唯有长按关机键才能拯救我。<br>所以：</p>
-<ol>
-<li>抛弃 <strong>IDE</strong>，不是因为功能不够强大，只是过于庞大</li>
-<li>抛弃 <strong>sublime text</strong>，原因也有几点<ul>
-<li><strong>package control</strong> 简直捉鸡，每次重装 <strong>貌似</strong> 都要重新安装一遍插件</li>
-<li>某些插件有些捉鸡，例如常用插件 <strong>emmet</strong> 的 <strong>pyv8 error</strong></li>
-<li>不能自动识别当前编辑项目类型。我就编辑 <strong>Python</strong> 项目里的一个 <strong>js</strong> 文件，那些 <strong>angular</strong>、<strong>react</strong> 之类的插件你可以安分点嘛</li>
-<li>此外 <strong>sublime text3</strong> 的函数定位功能简直良心，虽然这会增加内存消耗</li>
-</ul>
-</li>
-<li>然后刨到了 <strong>Atom</strong>，<strong>github</strong> 出品想来应该不差</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/15/atom/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1868,7 +1566,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1879,7 +1577,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1890,7 +1588,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1968,7 +1666,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

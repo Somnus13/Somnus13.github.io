@@ -96,20 +96,20 @@
 
 
 
-<meta name="description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程      上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲">
+<meta name="description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程     上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲染">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从Repaint&#x2F;Reflow到css选择器">
 <meta property="og:url" content="https://somnus13.github.io/2017/10/05/css-seletor/index.html">
 <meta property="og:site_name" content="那些踩屎的经历">
-<meta property="og:description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程      上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲">
+<meta property="og:description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程     上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲染">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png">
-<meta property="og:updated_time" content="2017-10-04T16:42:49.000Z">
+<meta property="og:image" content="https://somnus13.github.io/2017/10/05/css-seletor/Repaint-Reflow.png">
+<meta property="og:updated_time" content="2019-01-17T08:58:41.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从Repaint&#x2F;Reflow到css选择器">
-<meta name="twitter:description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程      上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲">
-<meta name="twitter:image" content="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png">
+<meta name="twitter:description" content="什么是Repaint/Reflow?先扒一张图，来解释下浏览器的工作流程     上图可归纳为四步：    解析构建 DOM 树 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树 构建渲染树 解析所有 CSS,并据此计算节点样式，创建渲染树 布局渲染树 从根节点递归调用，计算元素的大小位置，并把每个节点放在该出现的精准坐标位置 绘制渲染树 遍历渲染">
+<meta name="twitter:image" content="https://somnus13.github.io/2017/10/05/css-seletor/Repaint-Reflow.png">
 
 
 
@@ -411,7 +411,7 @@
 
       
         <h3 id="什么是Repaint-Reflow"><a href="#什么是Repaint-Reflow" class="headerlink" title="什么是Repaint/Reflow?"></a>什么是Repaint/Reflow?</h3><p>先扒一张图，来解释下浏览器的工作流程  </p>
-<p><img src="http://oh1bdpr59.bkt.clouddn.com/2017-9-18/Repaint-Reflow.png" alt="浏览器工作原理">  </p>
+<img src="/2017/10/05/css-seletor/Repaint-Reflow.png" alt="Repaint-Reflow.png" title=""> 
 <p>上图可归纳为四步：  </p>
 <ol>
 <li>解析构建 DOM 树<br> 渲染引擎开始解析 html 文档，转换树中的标签或者生成的标签到 DOM 节点，这时的它称为内容树</li>
@@ -485,7 +485,7 @@
 <li><p><strong>通配符*{margin:0;padding:0;}</strong>   </p>
 <ul>
 <li>号通配符把所有标签都初始化一遍，浏览器的渲染消耗一定的资源。有部分在标签在不同浏览器上几乎无差异，或是某些已经不推荐使用的标签(因为你不会去用它)，它们不需通配符要重新初始化一遍这样做能节省一点资源。  </li>
-<li>推荐方案(代替 reset )：normalize.css(如果没听说过自行百度)</li>
+<li>推荐方案(代替 reset )：normalize.css(如果没听说过自行百度)  </li>
 </ul>
 </li>
 <li><p><strong>不要添加额外的标签来描述 class 或 id</strong><br> 如果你有一个选择器是以 id 作为关键选择符，请不要添加多余标签名上去。因为 ID 是唯一的，你不要为了一个不存在的理由而降低了匹配的效率。</p>
@@ -652,7 +652,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -663,7 +663,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -674,7 +674,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -768,7 +768,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

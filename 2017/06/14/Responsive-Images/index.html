@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="那些踩屎的经历">
 <meta property="og:description" content="响应式图片处理 just note  固定宽度图像浏览器会根据设备像素比来选择加载图片 参数 srcset  srcset 属性会罗列出当前可加载的备选图片，用逗号分隔。  不识别此属性的浏览器会直接加载 src 属性声明的图像。 x  x 表示图像的设备像素比。  场景网站 logo 等宽度固定，大小不随着 viewport 的变化而变化 示例1234&amp;lt;div class=&quot;img-box">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-14T16:37:06.000Z">
+<meta property="og:updated_time" content="2019-01-20T14:41:40.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="响应式图片处理">
 <meta name="twitter:description" content="响应式图片处理 just note  固定宽度图像浏览器会根据设备像素比来选择加载图片 参数 srcset  srcset 属性会罗列出当前可加载的备选图片，用逗号分隔。  不识别此属性的浏览器会直接加载 src 属性声明的图像。 x  x 表示图像的设备像素比。  场景网站 logo 等宽度固定，大小不随着 viewport 的变化而变化 示例1234&amp;lt;div class=&quot;img-box">
@@ -420,7 +420,7 @@
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img-box1"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">srcset</span>=<span class="string">"images/gakki-540.jpg 1.5x,images/gakki-720.jpg 2x,images/gakki-1080.jpg 3x"</span></span></div><div class="line"><span class="tag">		 <span class="attr">src</span>=<span class="string">"images/gakki-360.jpg"</span> <span class="attr">alt</span>=<span class="string">"Responsive Images"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>图片固定宽度为 <strong>300</strong>，浏览器通过识别设备像素比来筛选并加载图片。如上像素设备比为 <strong>2</strong>（例如：iphone6）的时候加载 <strong>gakki-720</strong> 的图片，<strong>3</strong>（iphone6 plus等）的时候会加载实际尺寸为 <strong>1080</strong> 的备选图。如果不支持，则默认加载 <strong>gakki-360</strong>。</p>
-<p><a href="http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive1.html" target="_blank" rel="external">点此</a> 查看示例(建议新版本谷歌浏览)</p>
+<p><a href="/statics/Responsive-Images/Responsive1.html">点此</a>查看示例 (建议新版本谷歌浏览)</p>
 <h2 id="可变宽度的图像"><a href="#可变宽度的图像" class="headerlink" title="可变宽度的图像"></a>可变宽度的图像</h2><p>浏览器会根据设备视窗大小( <strong>viewport</strong> )来选择加载图片</p>
 <h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><ul>
 <li><strong>srcset</strong><br>  备选图片列表，逗号分隔  </li>
@@ -429,7 +429,7 @@
 <h3 id="场景-1"><a href="#场景-1" class="headerlink" title="场景"></a>场景</h3><p>内容响应式图片处理</p>
 <h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;img-box2 &quot;&gt;</div><div class="line">	&lt;img srcset=&quot;images/gakki-360.jpg 360w,</div><div class="line">	             images/gakki-540.jpg 540w,</div><div class="line">	             images/gakki-720.jpg 720w,</div><div class="line">	             images/gakki-1080.jpg 1080w&quot;</div><div class="line">	     sizes=&quot;(max-width: 400px) 100vw,</div><div class="line">	            (max-width: 960px) 75vw,</div><div class="line">	            1080px&quot; src=&quot;images/gakki-1080.jpg&quot; alt=&quot;Responsive Images&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>浏览器会根据 <strong>sizes</strong> 定义的媒体查询条件来选择加载图片。例如网页宽度 <strong>600px</strong> 时，按照查询条件小于 <strong>960px</strong>,所以会按照 <strong>75%</strong> 加载，而 <strong>600*0.75 = 450</strong> ,取最接近即 <strong>gakki-540</strong> 的图片。</p>
-<p><a href="http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive2.html" target="_blank" rel="external">点此</a> 查看示例(建议新版本谷歌浏览)  </p>
+<p><a href="/statics/Responsive-Images/Responsive2.html">点此</a>查看示例 (建议新版本谷歌浏览)</p>
 <h2 id="不同的图像"><a href="#不同的图像" class="headerlink" title="不同的图像"></a>不同的图像</h2><p>前两者都是通过 <strong>srcset</strong> 属性来实现同一图像不同质量的展示，而不支持此属性的浏览器会识别为普通的图像并加载 <strong>src</strong> 属性。</p>
 <p>如果需要在不同的场景显示稍微不同的图片呢？例如大屏下显示全图，而小屏 or 移动端则仅需要展示细节，这样的场景需求则需要借用 <strong>picture</strong> 元素。</p>
 <h3 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h3><ul>
@@ -437,14 +437,15 @@
 </ul>
 <h3 id="场景-2"><a href="#场景-2" class="headerlink" title="场景"></a>场景</h3><p>不同场景展示不同图片(全局细节之类的)</p>
 <h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">media</span>=<span class="string">"(min-width: 960px)"</span> <span class="attr">srcset</span>=<span class="string">"images/gakki-large-1080.jpg"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">media</span>=<span class="string">"(min-width: 575px)"</span> <span class="attr">srcset</span>=<span class="string">"images/gakki-mid-630.jpg"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/gakki-small-360.jpg"</span> <span class="attr">class</span>=<span class="string">"picture-img"</span> <span class="attr">alt</span>=<span class="string">"Responsive Images"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive2.html" target="_blank" rel="external">点此</a> 查看示例(建议新版本谷歌浏览)<br>浏览器窗口的变化可见，图片在小屏下显示裁剪版的细节图。</p>
+<p><a href="/statics/Responsive-Images/Responsive3.html">点此</a>查看示例 (建议新版本谷歌浏览)</p>
+<p>浏览器窗口的变化可见，图片在小屏下显示裁剪版的细节图。</p>
 <h2 id="不同类型的图像"><a href="#不同类型的图像" class="headerlink" title="不同类型的图像"></a>不同类型的图像</h2><p>针对不同浏览器支持类型，渲染相应的格式的图片。新格式的图像在图片质量以及图片大小方面表现良好，但是目前来讲，兼容性待考验。</p>
 <h3 id="参数-3"><a href="#参数-3" class="headerlink" title="参数"></a>参数</h3><ul>
 <li><strong>source</strong><br>  指定每个图像的MIME类型，浏览器会选择第一个含有其支持的MIME类型的源<br>  源的顺序是至关重要的，如果浏览器无法识别所有的图象类型，它会回退至原来的 <strong>img</strong> 元素。</li>
 </ul>
 <h3 id="场景-3"><a href="#场景-3" class="headerlink" title="场景"></a>场景</h3><p>不同格式的图片在文件大小和图片质量表现不一 ，不少新格式表现良好。<br><strong>chrome</strong> 和 <strong>opera</strong> 浏览器支持 <strong>webp</strong> 格式图像，而 <strong>jpeg-xr</strong> 格式则是微软专有格式，仅 <strong>ie</strong> 支持。</p>
 <h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">type</span>=<span class="string">"image/vnd.ms-photo"</span> <span class="attr">src</span>=<span class="string">"images/gakki-875.jxr"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">type</span>=<span class="string">"image/jp2"</span> <span class="attr">src</span>=<span class="string">"images/gakki-875.jp2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">type</span>=<span class="string">"image/webp"</span> <span class="attr">src</span>=<span class="string">"images/gakki-875.webp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/gakki-875.jpg"</span> <span class="attr">class</span>=<span class="string">"picture-img"</span> <span class="attr">alt</span>=<span class="string">"Responsive Images"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://oh1bdpr59.bkt.clouddn.com/Responsive-Images/Responsive2.html" target="_blank" rel="external">点此</a> 查看示例(建议新版本谷歌浏览)<br>ps：亲测，并没看到预料的结果，感觉被骗了..</p>
+<p>  查看示例(建议新版本谷歌浏览)<br>ps：亲测，并没看到预料的结果，感觉被骗了..</p>
 <p>本文参考自 <a href="https://alistapart.com/article/using-responsive-images-now" target="_blank" rel="external">Using Responsive Images (Now)</a>.</p>
 
       
@@ -488,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/23/ios-webapp-issues2/" rel="next" title="IOS webapp 踩屎记（二）">
-                <i class="fa fa-chevron-left"></i> IOS webapp 踩屎记（二）
+              <a href="/2017/05/23/ios-webapp-issues/" rel="next" title="IOS webapp 踩屎记">
+                <i class="fa fa-chevron-left"></i> IOS webapp 踩屎记
               </a>
             
           </div>
@@ -576,7 +577,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -587,7 +588,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -598,7 +599,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -692,7 +693,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
