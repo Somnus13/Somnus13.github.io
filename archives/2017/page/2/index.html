@@ -696,15 +696,19 @@
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           var gitment = new Gitment({
-               id: window.location.pathname, 
-               owner: 'Somnus13',
-               repo: 'Somnus13.github.io',
-               oauth: {
-                   client_id: '9f61826363c389dbcc6d',
-                   client_secret: '0e92403e65a3d631d1c0df2e1537bd6e7cca941b',
-               }});
-           gitment.render('gitment-container');
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href, 
+                   owner: 'Somnus13',
+                   repo: 'Somnus13.github.io',
+                   oauth: {
+                       client_id: '9f61826363c389dbcc6d',
+                       client_secret: '0e92403e65a3d631d1c0df2e1537bd6e7cca941b',
+                   }});
+               gitment.render('gitment-container');
+           }
        </script>
    
 
