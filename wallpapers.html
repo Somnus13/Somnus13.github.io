@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>壁纸 · 小纸 Pico</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="wallpapers">
+  <header class="top"><div class="wrap top-inner">
+    <a class="brand" href="index.html">Aura Reader<small>小纸 Pico</small></a>
+    <nav>
+      <a href="index.html" data-page="home">概览</a>
+      <a href="flash.html" data-page="flash">刷写</a>
+      <a href="fonts.html" data-page="fonts">字体</a>
+      <a href="wallpapers.html" data-page="wallpapers">壁纸</a>
+      <a href="books.html" data-page="books">书籍</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">wallpaper.md · 684 × 1216</p>
+      <h1>睡眠壁纸</h1>
+      <p class="lead">目录在 <a href="wallpaper.md">wallpaper.md</a>：名称、预览和下载地址。锁屏时从 TF 卡 <code>/sdcard/Aura/lock/</code> 随机选一张直属 JPG / JPEG / PNG，按屏幕比例居中裁切。单张不超过 2 MiB。目录为空则回退内置锁屏。</p>
+      <p id="wallpaperStatus" class="status hint">正在读取 wallpaper.md…</p>
+      <div class="actions">
+        <a class="dark" id="downloadAll" href="assets/wallpapers/aura-lock-wallpapers.zip">打包下载六张</a>
+      </div>
+    </section>
+    <section class="wallpaper-grid" id="wallpaperGrid"></section>
+    <section class="section">
+      <div class="panel">
+        <h2>设备上会怎样</h2>
+        <p>这些图是纸白底加浅灰辅字。墨水屏 4bpp 后浅灰会贴白，固件绘制时会按纸白压暗辅字，大标题保持近黑。</p>
+        <p>自己做壁纸时同样放进 <code>Aura/lock</code>，不要套子目录。</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">原图来自 ui-design/wallpapers，未改像素，仅供本机锁屏使用。</div></footer>
+  <script src="js/site.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/wallpapers.js"></script>
+</body>
+</html>

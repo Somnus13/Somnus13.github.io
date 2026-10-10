@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>字体 · 小纸 Pico</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="fonts">
+  <header class="top"><div class="wrap top-inner">
+    <a class="brand" href="index.html">Aura Reader<small>小纸 Pico</small></a>
+    <nav>
+      <a href="index.html" data-page="home">概览</a>
+      <a href="flash.html" data-page="flash">刷写</a>
+      <a href="fonts.html" data-page="fonts">字体</a>
+      <a href="wallpapers.html" data-page="wallpapers">壁纸</a>
+      <a href="books.html" data-page="books">书籍</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">fonts.md · TTF</p>
+      <h1>字体资源</h1>
+      <p class="lead">目录在 <a href="fonts.md">fonts.md</a>：名称、预览子集和完整 TTF 地址。下载后放进 TF 卡 <code>/sdcard/Aura/fonts/</code>。设备只收 TTF，单文件不超过 32 MiB，不要套子目录。</p>
+      <label class="hint" for="previewText">预览文案</label>
+      <input class="preview-field" id="previewText" value="余白 · 回归阅读本质  此刻，留给自己。">
+      <p id="fontStatus" class="status hint">正在读取 fonts.md…</p>
+    </section>
+    <section class="stack" id="fontList"></section>
+    <section class="section">
+      <div class="panel">
+        <h2>放到哪里</h2>
+        <pre>/sdcard/Aura/fonts/你的字体.ttf</pre>
+        <p>系统界面仍用固件内置的 Aura UI Serif。阅读字体在设备字体页切换。公开发布本站前，请确认每款字体允许再分发。</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">新增字体或壁纸后运行 python3 tools/build_font_catalog.py，会重写 fonts.md 和 wallpaper.md。</div></footer>
+  <script src="js/site.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/fonts.js"></script>
+</body>
+</html>

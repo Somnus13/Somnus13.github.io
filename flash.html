@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>刷写 · 小纸 Pico</title>
+  <link rel="stylesheet" href="css/site.css">
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body data-page="flash">
+  <header class="top"><div class="wrap top-inner">
+    <a class="brand" href="index.html">Aura Reader<small>小纸 Pico</small></a>
+    <nav>
+      <a href="index.html" data-page="home">概览</a>
+      <a href="flash.html" data-page="flash">刷写</a>
+      <a href="fonts.html" data-page="fonts">字体</a>
+      <a href="wallpapers.html" data-page="wallpapers">壁纸</a>
+      <a href="books.html" data-page="books">书籍</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">ESP32-S3 · USB Serial/JTAG</p>
+      <h1>浏览器刷固件</h1>
+      <p class="lead">用 Chrome 或 Edge，把板子的 USB 口插上即可。板上没有 BOOT / RESET 键，下载模式由串口复位自动进入。一次写入 bootloader、分区表、应用和 6 MiB 内置字体。</p>
+      <div class="actions">
+        <esp-web-install-button manifest="firmware/manifest.json"></esp-web-install-button>
+        <a class="outlined" href="firmware/Read_Pico.bin">下载应用固件</a>
+      </div>
+      <p id="flashHint" class="hint">如果按钮不可用：当前浏览器没有 Web Serial，或固件文件还没放进本站 <code>firmware/</code>。</p>
+    </section>
+    <section class="section stack">
+      <div class="panel">
+        <h2>写入内容</h2>
+        <div class="row"><strong>0x0</strong><span>bootloader.bin</span></div>
+        <div class="row"><strong>0x8000</strong><span>partition-table.bin</span></div>
+        <div class="row"><strong>0x10000</strong><span>Read_Pico.bin（应用）</span></div>
+        <div class="row"><strong>0x910000</strong><span>builtin.ttf（Aura UI Serif）</span></div>
+      </div>
+      <div class="panel">
+        <h2>注意</h2>
+        <p>首次安装建议擦除。擦除会清掉 ESP 里的 NVS（字体选择、睡眠设置），不会改 PMU 里的 VCOM。</p>
+        <p>VID 303A / PID 1001。不要用手写地址乱烧；应用必须落在 0x10000。</p>
+        <p>命令行等价：</p>
+        <pre>python -m esptool --chip esp32s3 -p COMx -b 460800 \
+  --before default-reset --after hard-reset write-flash \
+  --flash-mode dio --flash-freq 80m --flash-size 16MB \
+  0x0 bootloader.bin \
+  0x8000 partition-table.bin \
+  0x10000 Read_Pico.bin \
+  0x910000 builtin.ttf</pre>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">刷写完成后看串口：出现 Loaded app from partition at offset 0x10000 才算启动成功。</div></footer>
+  <script src="js/site.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const hint = document.getElementById("flashHint");
+      try {
+        const res = await fetch("firmware/Read_Pico.bin", { method: "HEAD" });
+        if (!res.ok) hint.textContent = "应用固件还没放到 firmware/Read_Pico.bin。先从 pico-reader 的 build 拷过来，或运行打包脚本。";
+      } catch {
+        hint.textContent = "无法读取固件文件。用本地静态服务器打开本站，不要直接双击 HTML。";
+      }
+    });
+  </script>
+</body>
+</html>

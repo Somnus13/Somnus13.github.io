@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小纸 Pico · Aura</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="home">
+  <header class="top"><div class="wrap top-inner">
+    <a class="brand" href="index.html">Aura Reader<small>小纸 Pico</small></a>
+    <nav>
+      <a href="index.html" data-page="home">概览</a>
+      <a href="flash.html" data-page="flash">刷写</a>
+      <a href="fonts.html" data-page="fonts">字体</a>
+      <a href="wallpapers.html" data-page="wallpapers">壁纸</a>
+      <a href="books.html" data-page="books">书籍</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">Read Pico · RDP-G01-W</p>
+      <h1>固件、字体、<br>壁纸和书。</h1>
+      <p class="lead">给小纸 Pico 用的静态资源站。浏览器里刷固件，下载字体和锁屏壁纸，上传 TXT / EPUB 看设备会怎么解析。</p>
+    </section>
+    <section class="grid">
+      <a class="card" href="flash.html"><div><h2>刷写固件</h2><p class="muted">Chrome / Edge 用 USB 直刷 ESP32-S3。也会写入内置宋体分区。</p></div><span>打开刷写页 →</span></a>
+      <a class="card" href="fonts.html"><div><h2>字体</h2><p class="muted">目录见 fonts.md。预览子集可直接拉取，完整 TTF 放进 Aura/fonts。</p></div><span>查看字体 →</span></a>
+      <a class="card" href="wallpapers.html"><div><h2>壁纸</h2><p class="muted">目录见 wallpaper.md。预览即原图，拷到 Aura/lock 后随机使用。</p></div><span>下载壁纸 →</span></a>
+      <a class="card" href="books.html"><div><h2>书籍解析</h2><p class="muted">本地识别 TXT 编码和章节、EPUB 封面与目录，不上传服务器。</p></div><span>解析一本书 →</span></a>
+    </section>
+  </main>
+  <footer><div class="wrap">中文名小纸 Pico，英文 Read Pico。本站是静态页，刷写走 Web Serial，资源文件只在你这台电脑上处理。</div></footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

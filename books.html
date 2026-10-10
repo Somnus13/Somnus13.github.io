@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>书籍解析 · 小纸 Pico</title>
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+</head>
+<body data-page="books">
+  <header class="top"><div class="wrap top-inner">
+    <a class="brand" href="index.html">Aura Reader<small>小纸 Pico</small></a>
+    <nav>
+      <a href="index.html" data-page="home">概览</a>
+      <a href="flash.html" data-page="flash">刷写</a>
+      <a href="fonts.html" data-page="fonts">字体</a>
+      <a href="wallpapers.html" data-page="wallpapers">壁纸</a>
+      <a href="books.html" data-page="books">书籍</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker">TXT / EPUB · 本地解析</p>
+      <h1>看设备会读到什么</h1>
+      <p class="lead">文件不离开这台电脑。TXT 按固件规则认 UTF-8 / GBK 和章节标题；EPUB 读 OPF、spine 和封面。确认没问题后，把原文件拷到 <code>/sdcard/Aura/books/</code>。</p>
+    </section>
+    <section class="stack">
+      <div id="drop" role="button" tabindex="0">把 TXT 或 EPUB 拖到这里，或点击选择文件
+        <div class="hint">章节行：第…章/节/卷/回/集/部/篇，或 Chapter 数字。标题最多 120 字节，全书最多 2048 章。</div>
+      </div>
+      <input id="bookFile" type="file" accept=".txt,.epub,text/plain,application/epub+zip" hidden>
+      <div class="actions">
+        <button class="outlined" id="parseSample" type="button">解析示例 TXT</button>
+        <a class="outlined" href="assets/sample.txt" download>下载示例</a>
+      </div>
+      <p id="bookStatus" class="status hint">还没有文件。</p>
+      <div id="bookReport" class="panel"></div>
+    </section>
+    <section class="section">
+      <div class="panel">
+        <h2>设备限制</h2>
+        <div class="row"><strong>格式</strong><span>直属 .txt / .epub</span></div>
+        <div class="row"><strong>TXT 编码</strong><span>UTF-8（可带 BOM）或 GBK</span></div>
+        <div class="row"><strong>EPUB</strong><span>本地 ZIP，封面 JPEG/PNG，单资源通常不超过 2 MiB</span></div>
+        <div class="row"><strong>不支持</strong><span>MOBI、AZW、PDF、在线书源</span></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">解析只做预览。真机打开时仍由固件重新扫描，进度按原始字节偏移保存。</div></footer>
+  <script src="js/site.js"></script>
+  <script src="js/book.js"></script>
+</body>
+</html>
