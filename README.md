@@ -31,10 +31,13 @@ python3 -m http.server 4173
 
 打开 <http://127.0.0.1:4173>。不要直接用文件协议打开，Web Serial 和固件 HEAD 检查会失败。
 
-从 pico-reader 更新固件产物：
+从 pico-reader 一键编译、更新固件产物并发布：
 
 ```
-python3 ../pico-reader/tools/pack_github_pages.py
+../pico-reader/tools/publish_github_pages.sh
 ```
+
+发布脚本会在应用固件内容变化时更新 `firmware/release.json`，
+提交并推送 `main`，然后等待 GitHub Pages 上的固件哈希通过验收。
 
 刷写需要 Chrome 或 Edge，USB 连小纸 Pico（VID 303A / PID 1001）。

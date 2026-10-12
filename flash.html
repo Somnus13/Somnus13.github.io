@@ -27,6 +27,7 @@
         <esp-web-install-button manifest="firmware/manifest.json"></esp-web-install-button>
         <a class="outlined" href="firmware/Read_Pico.bin">下载应用固件</a>
       </div>
+      <p class="hint">最近更新：<time id="firmwareUpdated">正在读取…</time></p>
       <p id="flashHint" class="hint">如果按钮不可用：当前浏览器没有 Web Serial，或固件文件还没放进本站 <code>firmware/</code>。</p>
     </section>
     <section class="section stack">
@@ -57,11 +58,26 @@
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const hint = document.getElementById("flashHint");
+      const updated = document.getElementById("firmwareUpdated");
       try {
         const res = await fetch("firmware/Read_Pico.bin", { method: "HEAD" });
         if (!res.ok) hint.textContent = "应用固件还没放到 firmware/Read_Pico.bin。先从 pico-reader 的 build 拷过来，或运行打包脚本。";
       } catch {
         hint.textContent = "无法读取固件文件。用本地静态服务器打开本站，不要直接双击 HTML。";
+      }
+      try {
+        const res = await fetch("firmware/release.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const release = await res.json();
+        const time = new Date(release.updatedAt);
+        if (Number.isNaN(time.getTime())) throw new Error("invalid updatedAt");
+        updated.textContent = new Intl.DateTimeFormat("zh-CN", {
+          dateStyle: "long",
+          timeStyle: "short",
+        }).format(time);
+        updated.dateTime = release.updatedAt;
+      } catch {
+        updated.textContent = "暂无发布记录";
       }
     });
   </script>
